@@ -54,10 +54,10 @@
   --sesc-stage-radius-cream: 40px;
   --sesc-stage-radius-soft: 34px;
   --sesc-stage-radius-frost: 46px;
-  --sesc-stage-shadow-paper: 0 18px 42px rgba(39, 35, 72, 0.16);
-  --sesc-stage-shadow-cream: 0 18px 72px rgba(39, 35, 72, 0.16);
-  --sesc-stage-shadow-soft: 0 14px 34px rgba(39, 35, 72, 0.14);
-  --sesc-stage-shadow-frost: 0 24px 56px rgba(39, 35, 72, 0.18);
+  --sesc-stage-shadow-paper: 0 18px 42px rgba(39, 35, 72, 0.36);
+  --sesc-stage-shadow-cream: 0 18px 72px rgba(39, 35, 72, 0.36);
+  --sesc-stage-shadow-soft: 0 14px 34px rgba(39, 35, 72, 0.34);
+  --sesc-stage-shadow-frost: 0 24px 56px rgba(39, 35, 72, 0.38);
   --sesc-stage-blur-paper: 14px;
   --sesc-stage-blur-cream: 24px;
   --sesc-stage-blur-soft: 10px;
