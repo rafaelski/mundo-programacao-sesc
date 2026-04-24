@@ -70,20 +70,18 @@ export default function App() {
   ];
 
   return (
-    <div className="size-full overflow-hidden touch-none px-6 py-5">
-      <div className="relative mx-auto my-0 flex size-full items-center justify-center overflow-hidden rounded-[36px] border-[6px] border-white/50 bg-white/30 shadow-[0_24px_80px_rgba(39,35,72,0.22)] backdrop-blur-[6px]">
-        <div
-          className="relative origin-center overflow-hidden rounded-[28px] border-[3px] border-[rgba(39,35,72,0.18)] animate-fadeIn"
-          style={{
-            width: "1920px",
-            height: "1080px",
-            transform: `scale(${scale})`,
-            touchAction: "none",
-          }}
-          key={currentScreen}
-        >
-          {screens[currentScreen]}
-        </div>
+    <div className="relative size-full overflow-hidden touch-none">
+      <div
+        className="absolute left-1/2 top-1/2 origin-center overflow-hidden animate-fadeIn"
+        style={{
+          width: "1920px",
+          height: "1080px",
+          transform: `translate(-50%, -50%) scale(${scale})`,
+          touchAction: "none",
+        }}
+        key={currentScreen}
+      >
+        {screens[currentScreen]}
       </div>
     </div>
   );
