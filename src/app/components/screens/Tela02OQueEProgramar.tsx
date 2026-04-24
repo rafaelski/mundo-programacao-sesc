@@ -91,7 +91,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
         <div className="relative animate-clipboard-sway [transform-origin:50%_14%]">
           <div className="relative">
             <div className="h-[120px] w-[400px] rounded-t-3xl border-[6px] border-black bg-[var(--sesc-orange)]"></div>
-            <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div>
+            /* <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div> */
             <div className="h-[120px] w-[400px] border-x-[6px] border-black bg-[var(--sesc-yellow-flower)]"></div>
             <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div>
             <div className="h-[120px] w-[400px] rounded-b-3xl border-[6px] border-t-0 border-black bg-[var(--sesc-pink)]"></div>
