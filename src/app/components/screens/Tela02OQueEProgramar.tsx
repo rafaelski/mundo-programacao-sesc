@@ -16,7 +16,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
 
       <div className="grid h-full grid-cols-[1.02fr_0.98fr] gap-12 px-24 pb-24 pt-38">
         <div className="flex flex-col justify-center gap-8">
-          <div className="surface-panel p-10">
+          <div className="surface-panel surface-panel-pad-lg">
             <ScreenTitle title="O que é programar?" eyebrow="Começando a viagem" />
 
             <div className="mt-8 space-y-5 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
@@ -32,12 +32,12 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
             </div>
           </div>
 
-          <SpeechBubble className="max-w-[760px] bg-[rgba(255,249,239,0.98)]">
+          <SpeechBubble showTail={false} className="max-w-[760px]">
             <span className="text-[var(--sesc-pink)]">E VOCÊ?</span> JÁ ENSINOU ALGUÉM A FAZER UMA COISA NOVA HOJE?
           </SpeechBubble>
         </div>
 
-        <div className="surface-panel-strong flex items-center justify-center p-10">
+        <div className="surface-panel-strong surface-panel-pad-lg relative self-center h-[760px] flex items-center justify-center">
           <div className="relative scale-[0.98]">
             <div className="relative">
               <div className="w-[400px] h-[120px] bg-[var(--sesc-orange)] border-[6px] border-black rounded-t-3xl"></div>
@@ -54,7 +54,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
               </div>
             </div>
 
-            <div className="absolute -right-44 top-4 rounded-[24px] border-[4px] border-[var(--sesc-ink)] bg-[rgba(255,250,241,0.98)] p-8 shadow-[0_12px_24px_rgba(39,35,72,0.16)]">
+            <div className="surface-panel absolute -right-36 top-6 surface-panel-pad-md">
               <div className="mb-4 text-[18px] font-black uppercase tracking-[0.18em] text-[var(--sesc-orange)]">
                 Receita da instrução
               </div>
