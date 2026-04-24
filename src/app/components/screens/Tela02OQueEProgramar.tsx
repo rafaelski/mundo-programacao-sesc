@@ -106,7 +106,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
               <div className="-ml-[5px] -mt-2 h-[30px] w-[30px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)]"></div>
             </div>
 
-            <div className="pointer-events-none absolute inset-y-[78px] right-8 flex w-[170px] flex-col justify-between pb-8">
+            <div className="pointer-events-none absolute inset-x-[86px] top-[96px] flex flex-col items-center gap-4">
               {RECIPE_LINES.map((line, index) => {
                 const lineIndex = index + 1;
                 const visibleText = getVisibleText(typingStep, line, lineIndex, typingLines);
@@ -115,7 +115,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
                 return (
                   <div
                     key={line}
-                    className="border-b-2 border-[rgba(39,35,72,0.18)] pb-2 text-[24px] font-black text-[var(--sesc-blue-dark)]"
+                    className="w-full max-w-[230px] border-b-2 border-[rgba(39,35,72,0.18)] pb-2 text-center text-[28px] font-black text-[var(--sesc-blue-dark)]"
                   >
                     <span className={active ? 'recipe-writing-caret' : ''}>{visibleText}</span>
                   </div>
