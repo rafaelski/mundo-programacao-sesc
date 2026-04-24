@@ -30,11 +30,17 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
       onNext={onNext}
       layout={TELA03_LAYOUT}
       contentStageThemeClassName={TELA03_THEME.contentStageThemeClassName}
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <ScreenTitle title="A primeira programadora" eyebrow="1843" />
+          <ScreenTitle
+            title="A primeira programadora"
+            eyebrow="1843"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[18px]"
+          />
 
-          <div className="mt-8 space-y-4 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
+          <div className="mt-5 space-y-4 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Há quase <span className="text-[var(--sesc-pink)]">200 anos</span>, uma mulher chamada{' '}
               <span className="text-[var(--sesc-blue-dark)]">Ada Lovelace</span> escreveu o primeiro programa de

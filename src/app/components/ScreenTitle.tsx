@@ -7,6 +7,9 @@ interface ScreenTitleProps {
   align?: "left" | "center";
   size?: "md" | "lg" | "xl";
   className?: string;
+  gapClassName?: string;
+  eyebrowClassName?: string;
+  titleClassName?: string;
 }
 
 const sizeClasses = {
@@ -22,16 +25,27 @@ export function ScreenTitle({
   align = "left",
   size = "lg",
   className,
+  gapClassName,
+  eyebrowClassName,
+  titleClassName,
 }: ScreenTitleProps) {
   const darkTone = tone === "dark";
 
   return (
-    <div className={cn("flex flex-col gap-3", align === "center" && "items-center text-center", className)}>
+    <div
+      className={cn(
+        "flex flex-col gap-3",
+        gapClassName,
+        align === "center" && "items-center text-center",
+        className,
+      )}
+    >
       {eyebrow && (
         <p
           className={cn(
             "font-display text-[20px] font-black uppercase tracking-[0.22em]",
             darkTone ? "text-[rgba(255,232,156,0.95)]" : "text-[var(--sesc-orange)]",
+            eyebrowClassName,
           )}
         >
           {eyebrow}
@@ -43,7 +57,7 @@ export function ScreenTitle({
           "font-display max-w-[860px] text-balance-pretty font-black uppercase leading-[0.92] tracking-[-0.04em]",
           sizeClasses[size],
           darkTone ? "text-white" : "text-[var(--sesc-ink)]",
-          className,
+          titleClassName,
         )}
         style={
           darkTone
