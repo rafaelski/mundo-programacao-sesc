@@ -15,8 +15,14 @@ export const TELA02_THEME: ScreenThemeConfig = {
 };
 
 const TELA02_LAYOUT = createStoryScreenLayout({
+  stageInsetX: '3rem',
+  stageInsetY: '2.5rem',
+  contentHorizontalPadding: '6rem',
+  contentTopPadding: '9.5rem',
+  contentBottomSafeArea: '6rem',
   leftBottomMinHeight: '8.75rem',
 });
+
 
 const RECIPE_LINES = ['1. Farinha', '2. Ovos', '3. Açúcar', '4. Mistura', '5. Forno'];
 const RECIPE_TITLE = 'RECEITA DA INSTRUÇÃO';
@@ -91,6 +97,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
         <div className="relative animate-clipboard-sway [transform-origin:50%_18%]">
           <div className="relative">
             <div className="h-[120px] w-[400px] rounded-t-3xl border-[6px] border-black bg-[var(--sesc-orange)]"></div>
+            <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div>
             <div className="h-[120px] w-[400px] border-x-[6px] border-black bg-[var(--sesc-yellow-flower)]"></div>
             <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div>
             <div className="h-[120px] w-[400px] rounded-b-3xl border-[6px] border-t-0 border-black bg-[var(--sesc-pink)]"></div>
