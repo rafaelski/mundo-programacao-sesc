@@ -18,7 +18,7 @@ import { Tela16AgoraESuaVez } from "./components/screens/Tela16AgoraESuaVez";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 
 const appBackgrounds = [
-  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-blue-dots",
   "app-bg-tile app-bg-mustard-argyle",
   "app-bg-tile app-bg-binary",
   "app-bg-tile app-bg-pink-grid",
