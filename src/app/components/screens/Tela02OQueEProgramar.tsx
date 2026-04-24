@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { Header } from '../Header';
 import { Navigation } from '../Navigation';
 import { ScreenShell } from '../ScreenShell';
@@ -9,15 +10,34 @@ interface Tela02OQueEProgramarProps {
   onNext: () => void;
 }
 
+const TELA02_LAYOUT = {
+  contentBottomSafeArea: '12rem',
+  contentTopPadding: '9.5rem',
+  columnGap: '3rem',
+  leftColumnGap: '2rem',
+  leftBubbleMinHeight: '8.75rem',
+} as const;
+
 export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEProgramarProps) {
+  const layoutVars = {
+    '--tela02-content-bottom-safe-area': TELA02_LAYOUT.contentBottomSafeArea,
+    '--tela02-content-top-padding': TELA02_LAYOUT.contentTopPadding,
+    '--tela02-column-gap': TELA02_LAYOUT.columnGap,
+    '--tela02-left-column-gap': TELA02_LAYOUT.leftColumnGap,
+    '--tela02-left-bubble-min-height': TELA02_LAYOUT.leftBubbleMinHeight,
+  } as CSSProperties;
+
   return (
     <ScreenShell tone="transparent" showDecorations={false}>
       <div className="content-stage content-stage-theme-cream pointer-events-none absolute inset-x-10 inset-y-8" />
 
       <Header currentScreen={2} totalScreens={16} />
 
-      <div className="relative z-10 grid h-full min-h-0 grid-cols-[1.02fr_0.98fr] items-stretch gap-12 px-24 pb-24 pt-38">
-        <div className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] gap-8">
+      <div
+        className="relative z-10 grid h-full min-h-0 grid-cols-[1.02fr_0.98fr] items-stretch gap-[var(--tela02-column-gap)] px-24 pb-[var(--tela02-content-bottom-safe-area)] pt-[var(--tela02-content-top-padding)]"
+        style={layoutVars}
+      >
+        <div className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] gap-[var(--tela02-left-column-gap)]">
           <div className="surface-panel surface-panel-pad-lg flex h-full min-h-0 flex-col">
             <ScreenTitle title="O que é programar?" eyebrow="Começando a viagem" />
 
@@ -34,7 +54,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
             </div>
           </div>
 
-          <SpeechBubble showTail={false} className="max-w-[760px]">
+          <SpeechBubble showTail={false} className="min-h-[var(--tela02-left-bubble-min-height)] max-w-[760px]">
             <span className="text-[var(--sesc-pink)]">E VOCÊ?</span> JÁ ENSINOU ALGUÉM A FAZER UMA COISA NOVA HOJE?
           </SpeechBubble>
         </div>
