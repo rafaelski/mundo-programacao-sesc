@@ -145,7 +145,7 @@ export function Tela13StandOtto({ onPrevious, onNext }: Tela13StandOttoProps) {
         {/* Texto */}
         <div className="bg-white bg-opacity-95 border-[6px] border-black rounded-3xl p-12 max-w-4xl shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
           <p className="text-[32px] leading-relaxed font-bold text-black text-center">
-            No stand ao lado, dois robozinhos estão esperando por você. Eles são robôs <span className="text-[var(--sesc-orange)]">ABERTOS</span> — qualquer pessoa pode montar, programar e até imprimir as peças numa impressora 3D. Você pode fazer o Otto <span className="text-[var(--sesc-pink)]">dançar, andar, desviar de obstáculos</span> e piscar os olhos. Tudo com programação!
+            No stand ao lado, dois robôzinhos estão esperando por você. Eles são robôs <span className="text-[var(--sesc-orange)]">ABERTOS</span> — qualquer pessoa pode montar, programar e até imprimir as peças numa impressora 3D. Você pode fazer o Otto <span className="text-[var(--sesc-pink)]">dançar, andar, desviar de obstáculos</span> e piscar os olhos. Tudo com programação!
           </p>
         </div>
 

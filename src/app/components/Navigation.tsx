@@ -27,9 +27,9 @@ export function Navigation({ onPrevious, onNext, showPrevious = true, showNext =
           onClick={onNext}
           type="button"
           className={`${arrowButtonStyles} right-10 bg-[linear-gradient(180deg,#ffe589_0%,#f9c843_100%)]`}
-          aria-label="Proxima tela"
+          aria-label="Próxima tela"
         >
-          <span className="pointer-events-none">Avancar</span>
+          <span className="pointer-events-none">Avançar</span>
           <span className="pointer-events-none text-[38px] leading-none">&gt;</span>
         </button>
       )}

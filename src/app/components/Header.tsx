@@ -20,7 +20,7 @@ export function Header({ currentScreen, totalScreens }: HeaderProps) {
               SESC apresenta
             </p>
             <p className="text-[34px] font-black leading-none text-[var(--sesc-ink)]">
-              O Mundo da Programacao
+              O Mundo da Programação
             </p>
           </div>
         </div>

@@ -17,23 +17,23 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
       <div className="grid h-full grid-cols-[1.02fr_0.98fr] gap-12 px-24 pb-24 pt-38">
         <div className="flex flex-col justify-center gap-8">
           <div className="surface-panel p-10">
-            <ScreenTitle title="O que e programar?" eyebrow="Comecando a viagem" />
+            <ScreenTitle title="O que é programar?" eyebrow="Começando a viagem" />
 
             <div className="mt-8 space-y-5 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
               <p>
-                Programar e dar instrucoes pra uma maquina fazer alguma coisa. E parecido com uma <span className="text-[var(--sesc-orange)]">receita de bolo</span>: passo 1, passo 2, passo 3...
+                Programar é dar instruções pra uma máquina fazer alguma coisa. É parecido com uma <span className="text-[var(--sesc-orange)]">receita de bolo</span>: passo 1, passo 2, passo 3...
               </p>
               <p>
-                Se a receita estiver certa, o bolo fica pronto. Se voce pular um passo, o bolo desanda!
+                Se a receita estiver certa, o bolo fica pronto. Se você pular um passo, o bolo desanda!
               </p>
               <p>
-                Computadores, celulares, jogos e robos - todos seguem receitas feitas por programadores.
+                Computadores, celulares, jogos e robôs - todos seguem receitas feitas por programadores.
               </p>
             </div>
           </div>
 
           <SpeechBubble className="max-w-[760px] bg-[rgba(255,249,239,0.98)]">
-            <span className="text-[var(--sesc-pink)]">E VOCE?</span> JA ENSINOU ALGUEM A FAZER UMA COISA NOVA HOJE?
+            <span className="text-[var(--sesc-pink)]">E VOCÊ?</span> JÁ ENSINOU ALGUÉM A FAZER UMA COISA NOVA HOJE?
           </SpeechBubble>
         </div>
 
@@ -56,7 +56,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
 
             <div className="absolute -right-44 top-4 rounded-[24px] border-[4px] border-[var(--sesc-ink)] bg-[rgba(255,250,241,0.98)] p-8 shadow-[0_12px_24px_rgba(39,35,72,0.16)]">
               <div className="mb-4 text-[18px] font-black uppercase tracking-[0.18em] text-[var(--sesc-orange)]">
-                Receita da instrucao
+                Receita da instrução
               </div>
               <div className="space-y-3 font-bold-text text-[24px] font-black text-[var(--sesc-ink)]">
                 <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
                   <span className="text-[var(--sesc-blue-dark)]">2.</span> Ovos
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-[var(--sesc-blue-dark)]">3.</span> Acucar
+                  <span className="text-[var(--sesc-blue-dark)]">3.</span> Açúcar
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[var(--sesc-blue-dark)]">4.</span> Mistura

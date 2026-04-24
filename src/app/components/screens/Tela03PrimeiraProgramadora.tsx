@@ -21,19 +21,19 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
 
             <div className="mt-8 space-y-5 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
               <p>
-                Ha quase <span className="text-[var(--sesc-pink)]">200 anos</span>, uma mulher chamada <span className="text-[var(--sesc-blue-dark)]">Ada Lovelace</span> escreveu o primeiro programa de computador da historia.
+                Há quase <span className="text-[var(--sesc-pink)]">200 anos</span>, uma mulher chamada <span className="text-[var(--sesc-blue-dark)]">Ada Lovelace</span> escreveu o primeiro programa de computador da história.
               </p>
               <p>
-                O mais impressionante: <span className="text-[var(--sesc-orange)]">o computador ainda nem existia!</span> Ela so imaginou como seria.
+                O mais impressionante: <span className="text-[var(--sesc-orange)]">o computador ainda nem existia!</span> Ela só imaginou como seria.
               </p>
               <p>
-                Ada viveu na Inglaterra, era filha de um poeta famoso e amava matematica desde pequena.
+                Ada viveu na Inglaterra, era filha de um poeta famoso e amava matemática desde pequena.
               </p>
             </div>
           </div>
 
           <Card variant="you-knew">
-            A palavra <span className="text-[var(--sesc-blue-dark)]">ALGORITMO</span> vem do nome de um matematico arabe chamado <span className="text-[var(--sesc-pink)]">Al-Khwarizmi</span>, que viveu ha mais de 1.000 anos.
+            A palavra <span className="text-[var(--sesc-blue-dark)]">ALGORITMO</span> vem do nome de um matemático árabe chamado <span className="text-[var(--sesc-pink)]">Al-Khwarizmi</span>, que viveu há mais de 1.000 anos.
           </Card>
         </div>
 

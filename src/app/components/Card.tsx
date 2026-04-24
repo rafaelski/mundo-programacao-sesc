@@ -19,7 +19,7 @@ export function Card({ children, variant = 'content', className = '' }: CardProp
           <div className="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[var(--sesc-ink)] bg-white text-4xl font-black shadow-[0_6px_0_rgba(39,35,72,0.12)]">!</div>
           <div>
             <p className="text-[18px] font-black uppercase tracking-[0.18em] text-[var(--sesc-orange)]">Curiosidade</p>
-            <h3 className="text-[34px] font-black uppercase text-[var(--sesc-ink)]">VOCE SABIA?</h3>
+            <h3 className="text-[34px] font-black uppercase text-[var(--sesc-ink)]">VOCÊ SABIA?</h3>
           </div>
         </div>
       )}
