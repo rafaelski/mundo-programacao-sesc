@@ -33,6 +33,7 @@
   --sesc-stage-radius: 40px;
   --sesc-stage-shadow: 0 18px 42px rgba(39, 35, 72, 0.16);
   --sesc-stage-blur: 14px;
+  --sesc-stage-padding: 2.5rem;
   --sesc-stage-bg: rgba(255, 245, 223, 0.72);
   --sesc-stage-bg-paper: rgba(255, 250, 241, 0.74);
   --sesc-stage-bg-cream: rgba(255, 245, 223, 0.72);
@@ -50,6 +51,10 @@
   --sesc-stage-blur-cream: 14px;
   --sesc-stage-blur-soft: 10px;
   --sesc-stage-blur-frost: 18px;
+  --sesc-stage-padding-paper: 2.5rem;
+  --sesc-stage-padding-cream: 2.5rem;
+  --sesc-stage-padding-soft: 2.25rem;
+  --sesc-stage-padding-frost: 2.75rem;
 
   --background: var(--sesc-beige-light);
   --foreground: var(--sesc-ink);
@@ -392,6 +397,7 @@
     box-shadow: var(--content-stage-shadow, var(--sesc-stage-shadow));
     backdrop-filter: blur(var(--content-stage-blur, var(--sesc-stage-blur)));
     -webkit-backdrop-filter: blur(var(--content-stage-blur, var(--sesc-stage-blur)));
+    padding: var(--content-stage-padding, var(--sesc-stage-padding));
   }
 
   /* Duplicate one of the theme classes below to create a new content-stage look per screen. */
@@ -400,6 +406,7 @@
     --content-stage-radius: var(--sesc-stage-radius-paper);
     --content-stage-shadow: var(--sesc-stage-shadow-paper);
     --content-stage-blur: var(--sesc-stage-blur-paper);
+    --content-stage-padding: var(--sesc-stage-padding-paper);
   }
 
   .content-stage-theme-cream {
@@ -407,6 +414,7 @@
     --content-stage-radius: var(--sesc-stage-radius-cream);
     --content-stage-shadow: var(--sesc-stage-shadow-cream);
     --content-stage-blur: var(--sesc-stage-blur-cream);
+    --content-stage-padding: var(--sesc-stage-padding-cream);
   }
 
   .content-stage-theme-soft {
@@ -414,6 +422,7 @@
     --content-stage-radius: var(--sesc-stage-radius-soft);
     --content-stage-shadow: var(--sesc-stage-shadow-soft);
     --content-stage-blur: var(--sesc-stage-blur-soft);
+    --content-stage-padding: var(--sesc-stage-padding-soft);
   }
 
   .content-stage-theme-frost {
@@ -421,6 +430,7 @@
     --content-stage-radius: var(--sesc-stage-radius-frost);
     --content-stage-shadow: var(--sesc-stage-shadow-frost);
     --content-stage-blur: var(--sesc-stage-blur-frost);
+    --content-stage-padding: var(--sesc-stage-padding-frost);
   }
 
   .text-balance-pretty {

@@ -16,9 +16,9 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
 
       <Header currentScreen={2} totalScreens={16} />
 
-      <div className="relative z-10 grid h-full grid-cols-[1.02fr_0.98fr] gap-12 px-24 pb-24 pt-38">
-        <div className="flex flex-col justify-center gap-8">
-          <div className="surface-panel surface-panel-pad-lg">
+      <div className="relative z-10 grid h-full min-h-0 grid-cols-[1.02fr_0.98fr] items-stretch gap-12 px-24 pb-24 pt-38">
+        <div className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] gap-8">
+          <div className="surface-panel surface-panel-pad-lg flex h-full min-h-0 flex-col">
             <ScreenTitle title="O que é programar?" eyebrow="Começando a viagem" />
 
             <div className="mt-8 space-y-5 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
@@ -39,7 +39,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
           </SpeechBubble>
         </div>
 
-        <div className="surface-panel-strong surface-panel-pad-lg relative self-center h-[700px] flex items-center justify-center">
+        <div className="surface-panel-strong surface-panel-pad-lg relative flex h-full min-h-0 items-center justify-center">
           <div className="relative scale-[0.98]">
             <div className="relative">
               <div className="w-[400px] h-[120px] bg-[var(--sesc-orange)] border-[6px] border-black rounded-t-3xl"></div>
