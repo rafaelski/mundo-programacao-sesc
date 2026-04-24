@@ -252,6 +252,42 @@
   }
 }
 
+@keyframes machineLightTwinkle {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.86;
+    filter: brightness(1.2);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes machineDialSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bugHover {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(-9deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(12px) rotate(-3deg);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-in-out;
 }
@@ -266,6 +302,18 @@
 
 .animate-symbol-float {
   animation: symbolFloat 3.4s ease-in-out infinite;
+}
+
+.animate-machine-light-twinkle {
+  animation: machineLightTwinkle 1.8s ease-in-out infinite;
+}
+
+.animate-machine-dial-spin {
+  animation: machineDialSpin 7s linear infinite;
+}
+
+.animate-bug-hover {
+  animation: bugHover 2.8s ease-in-out infinite;
 }
 
 .recipe-writing-caret::after {
