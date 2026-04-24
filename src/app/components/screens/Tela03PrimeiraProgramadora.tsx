@@ -71,17 +71,17 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
             <div className="relative h-[500px] w-[400px] overflow-hidden rounded-2xl border-[6px] border-black bg-[var(--sesc-pink)]">
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                 <div className="h-[350px] w-[300px] rounded-t-full border-[4px] border-black bg-[var(--sesc-blue-dark)]"></div>
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-20">
+                <div className="animate-ada-head-sway absolute left-1/2 top-0">
                   <div className="h-[120px] w-[100px] rounded-full border-[4px] border-black bg-[#f5d3a8]"></div>
                   <div className="absolute -top-8 left-1/2 h-[100px] w-[140px] -translate-x-1/2 rounded-full border-[4px] border-black bg-black"></div>
                 </div>
               </div>
 
-              <div className="absolute left-8 top-8 -rotate-12 transform text-[32px] font-bold text-white">π</div>
-              <div className="absolute right-12 top-12 rotate-12 transform text-[28px] font-bold text-white">∑</div>
-              <div className="absolute bottom-20 left-12 -rotate-6 transform text-[24px] font-bold text-white">x²</div>
-              <div className="absolute bottom-32 right-8 rotate-15 transform text-[26px] font-bold text-white">√</div>
-              <div className="absolute right-16 top-1/3 text-[30px] font-bold text-white">∞</div>
+              <div className="animate-symbol-float absolute left-8 top-8 -rotate-12 transform text-[32px] font-bold text-white" style={{ animationDelay: '0s' }}>π</div>
+              <div className="animate-symbol-float absolute right-12 top-12 rotate-12 transform text-[28px] font-bold text-white" style={{ animationDelay: '0.8s' }}>∑</div>
+              <div className="animate-symbol-float absolute bottom-20 left-12 -rotate-6 transform text-[24px] font-bold text-white" style={{ animationDelay: '1.2s' }}>x²</div>
+              <div className="animate-symbol-float absolute bottom-32 right-8 rotate-15 transform text-[26px] font-bold text-white" style={{ animationDelay: '0.4s' }}>√</div>
+              <div className="animate-symbol-float absolute right-16 top-1/3 text-[30px] font-bold text-white" style={{ animationDelay: '1.6s' }}>∞</div>
             </div>
 
             <div className="mt-6 rounded-xl border-[4px] border-black bg-[var(--sesc-yellow-flower)] p-4 text-center">
