@@ -69,17 +69,17 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
             <div className="relative h-[500px] w-[400px] overflow-hidden rounded-2xl border-[6px] border-black bg-[var(--sesc-pink)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.18),transparent_18%),radial-gradient(circle_at_80%_16%,rgba(255,255,255,0.18),transparent_14%),radial-gradient(circle_at_82%_74%,rgba(255,255,255,0.14),transparent_12%)]"></div>
 
-              <div className="absolute -left-8 bottom-10 h-[180px] w-[180px] rounded-full border-[4px] border-black bg-[#1197b7] shadow-[0_10px_0_rgba(9,60,92,0.18)]">
-                <div className="absolute left-0 top-10 h-[52px] w-[88px] rounded-r-full bg-[#8cf400]"></div>
-                <div className="absolute left-7 top-0 h-[180px] w-[24px] bg-[#18c2a7] opacity-95"></div>
-                <div className="absolute left-[92px] top-0 h-[180px] w-[18px] bg-[#0f7f99] opacity-95"></div>
+              <div className="absolute -left-14 bottom-8 h-[172px] w-[172px] rounded-full border-[4px] border-black bg-[#1197b7] shadow-[0_10px_0_rgba(9,60,92,0.18)]">
+                <div className="absolute left-0 top-10 h-[52px] w-[84px] rounded-r-full bg-[#8cf400]"></div>
+                <div className="absolute left-7 top-0 h-[172px] w-[24px] bg-[#18c2a7] opacity-95"></div>
+                <div className="absolute left-[88px] top-0 h-[172px] w-[18px] bg-[#0f7f99] opacity-95"></div>
                 <div className="absolute inset-x-0 top-[58px] h-[18px] bg-[#087b94] opacity-85"></div>
                 <div className="absolute inset-x-0 bottom-[42px] h-[18px] bg-[#087b94] opacity-85"></div>
                 <div className="absolute right-7 top-8 h-[26px] w-[58px] rounded-full bg-[#0d7e96]"></div>
                 <div className="absolute right-8 bottom-12 h-[24px] w-[72px] rounded-full bg-[#0d7e96]"></div>
               </div>
 
-              <div className="absolute right-14 top-12 rotate-[28deg]">
+              <div className="absolute right-4 top-4 rotate-[28deg] scale-[0.92]">
                 <div className="absolute -left-3 top-[94px] h-[40px] w-[24px] skew-y-[18deg] rounded-bl-[18px] rounded-tl-[10px] border-[4px] border-black bg-[#b4b4bc]"></div>
                 <div className="absolute -right-3 top-[94px] h-[40px] w-[24px] -skew-y-[18deg] rounded-br-[18px] rounded-tr-[10px] border-[4px] border-black bg-[#b4b4bc]"></div>
                 <div className="relative h-[154px] w-[92px] rounded-b-[34px] rounded-t-[44px] border-[4px] border-black bg-[#e8e8ee]">
@@ -100,16 +100,16 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
               </div>
 
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-                <div className="h-[350px] w-[300px] rounded-t-full border-[4px] border-black bg-[var(--sesc-blue-dark)]"></div>
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[4.8rem]">
-                  <div className="absolute left-1/2 top-2 h-[156px] w-[164px] -translate-x-1/2 rounded-[44%_44%_52%_52%] border-[4px] border-black bg-[#7b5c4d]"></div>
-                  <div className="absolute left-1/2 top-[78px] h-[116px] w-[52px] -translate-x-[82px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>
-                  <div className="absolute left-1/2 top-[78px] h-[116px] w-[52px] translate-x-[30px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>
-                  <div className="relative h-[120px] w-[100px] rounded-full border-[4px] border-black bg-[#f5d3a8]"></div>
-                  <div className="absolute -top-7 left-1/2 h-[90px] w-[138px] -translate-x-1/2 rounded-full border-[4px] border-black bg-[#6d4c3d]"></div>
-                  <div className="absolute left-1/2 top-[42px] flex -translate-x-1/2 items-center gap-2">
+                <div className="h-[312px] w-[252px] rounded-t-full border-[4px] border-black bg-[var(--sesc-blue-dark)]"></div>
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[4.15rem]">
+                  <div className="absolute left-1/2 top-2 h-[140px] w-[150px] -translate-x-1/2 rounded-[44%_44%_52%_52%] border-[4px] border-black bg-[#7b5c4d]"></div>
+                  <div className="absolute left-1/2 top-[64px] h-[108px] w-[40px] -translate-x-[70px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>
+                  <div className="absolute left-1/2 top-[64px] h-[108px] w-[40px] translate-x-[30px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>
+                  <div className="relative h-[112px] w-[92px] rounded-full border-[4px] border-black bg-[#f5d3a8]"></div>
+                  <div className="absolute -top-10 left-1/2 h-[78px] w-[130px] -translate-x-1/2 rounded-full border-[4px] border-black bg-[#6d4c3d]"></div>
+                  <div className="absolute left-1/2 top-[12px] h-[28px] w-[90px] -translate-x-1/2 rounded-b-[24px] rounded-t-[18px] border-[4px] border-black bg-[#6d4c3d]"></div>
+                  <div className="absolute left-1/2 top-[48px] flex -translate-x-1/2 items-center gap-2.5">
                     <div className="h-[26px] w-[26px] rounded-full border-[4px] border-black bg-[rgba(255,255,255,0.16)]"></div>
-                    <div className="h-[4px] w-[18px] rounded-full bg-black"></div>
                     <div className="h-[26px] w-[26px] rounded-full border-[4px] border-black bg-[rgba(255,255,255,0.16)]"></div>
                   </div>
                 </div>
