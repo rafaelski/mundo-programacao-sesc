@@ -269,7 +269,7 @@
   }
 
   .app-bg-blue-dots {
-    background-color: #16587f;
+    background-color: #1b567b;
     background-image:
       radial-gradient(circle, rgba(176, 214, 237, 0.58) 0 1.8px, transparent 2.2px);
     background-size: 40px 40px;
@@ -277,10 +277,8 @@
   }
 
   .app-bg-blue-dots::before {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 22%, transparent 78%, rgba(255, 255, 255, 0.04)),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent 14%, transparent 86%, rgba(255, 255, 255, 0.03));
-    opacity: 0.95;
+    background: none;
+    opacity: 0;
   }
 
   .app-bg-binary {
