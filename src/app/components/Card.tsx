@@ -17,13 +17,13 @@ export function Card({ children, variant = 'content', className = '' }: CardProp
     <div className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
       {isYouKnew && (
         <div className="mb-4 flex items-center gap-3">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[var(--sesc-ink)] bg-white text-4xl font-black shadow-[0_6px_0_rgba(39,35,72,0.12)]">!</div>
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-[var(--sesc-ink)] bg-white text-4xl font-black shadow-[0_6px_0_rgba(39,35,72,0.12)]">!</div>
           <div>
-            <h3 className="text-[30px] font-black uppercase leading-none text-[var(--sesc-ink)]">VOCÊ SABIA?</h3>
+            <h3 className="text-[20px] font-black uppercase leading-none text-[var(--sesc-ink)]">VOCÊ SABIA?</h3>
           </div>
         </div>
       )}
-      <div className={`font-bold-text leading-[1.35] text-[var(--sesc-ink)] ${isYouKnew ? 'text-[26px]' : 'text-[28px]'}`}>
+      <div className={`font-bold-text leading-[1.35] text-[var(--sesc-ink)] ${isYouKnew ? 'text-[26px]' : 'text-[18px]'}`}>
         {children}
       </div>
     </div>
