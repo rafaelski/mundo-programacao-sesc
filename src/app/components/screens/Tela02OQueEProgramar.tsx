@@ -15,11 +15,11 @@ export const TELA02_THEME: ScreenThemeConfig = {
 };
 
 const TELA02_LAYOUT = createStoryScreenLayout({
-  stageInsetX: '3rem',
-  stageInsetY: '2.5rem',
+  stageInsetX: '1rem',
+  stageInsetY: '1rem',
   contentHorizontalPadding: '6rem',
   contentTopPadding: '9.5rem',
-  contentBottomSafeArea: '6rem',
+  contentBottomSafeArea: '9rem',
   leftBottomMinHeight: '8.75rem',
 });
 
@@ -117,7 +117,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
               <div className="-ml-[5px] -mt-2 h-[30px] w-[30px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)]"></div>
             </div>
 
-            <div className="pointer-events-none absolute inset-x-[86px] top-[96px] flex flex-col items-center gap-4">
+            <div className="pointer-events-none absolute inset-x-[86px] top-[116px] flex flex-col items-center gap-2">
               {RECIPE_LINES.map((line, index) => {
                 const lineIndex = index + 1;
                 const visibleText = getVisibleText(typingStep, line, lineIndex, typingLines);
