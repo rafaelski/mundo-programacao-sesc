@@ -69,14 +69,16 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
             <div className="relative h-[500px] w-[400px] overflow-hidden rounded-2xl border-[6px] border-black bg-[var(--sesc-pink)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.18),transparent_18%),radial-gradient(circle_at_80%_16%,rgba(255,255,255,0.18),transparent_14%),radial-gradient(circle_at_82%_74%,rgba(255,255,255,0.14),transparent_12%)]"></div>
 
-              <div className="absolute -left-14 bottom-8 h-[172px] w-[172px] rounded-full border-[4px] border-black bg-[#1197b7] shadow-[0_10px_0_rgba(9,60,92,0.18)]">
-                <div className="absolute left-0 top-10 h-[52px] w-[84px] rounded-r-full bg-[#8cf400]"></div>
-                <div className="absolute left-7 top-0 h-[172px] w-[24px] bg-[#18c2a7] opacity-95"></div>
-                <div className="absolute left-[88px] top-0 h-[172px] w-[18px] bg-[#0f7f99] opacity-95"></div>
-                <div className="absolute inset-x-0 top-[58px] h-[18px] bg-[#087b94] opacity-85"></div>
-                <div className="absolute inset-x-0 bottom-[42px] h-[18px] bg-[#087b94] opacity-85"></div>
-                <div className="absolute right-7 top-8 h-[26px] w-[58px] rounded-full bg-[#0d7e96]"></div>
-                <div className="absolute right-8 bottom-12 h-[24px] w-[72px] rounded-full bg-[#0d7e96]"></div>
+              <div className="absolute -left-14 bottom-8 h-[172px] w-[172px] overflow-hidden rounded-full border-[4px] border-black bg-[#1197b7] shadow-[0_10px_0_rgba(9,60,92,0.18)]">
+                <div className="animate-earth-spin absolute inset-0">
+                  <div className="absolute left-0 top-10 h-[52px] w-[84px] rounded-r-full bg-[#8cf400]"></div>
+                  <div className="absolute left-7 top-0 h-[172px] w-[24px] bg-[#18c2a7] opacity-95"></div>
+                  <div className="absolute left-[88px] top-0 h-[172px] w-[18px] bg-[#0f7f99] opacity-95"></div>
+                  <div className="absolute inset-x-0 top-[58px] h-[18px] bg-[#087b94] opacity-85"></div>
+                  <div className="absolute inset-x-0 bottom-[42px] h-[18px] bg-[#087b94] opacity-85"></div>
+                  <div className="absolute right-7 top-8 h-[26px] w-[58px] rounded-full bg-[#0d7e96]"></div>
+                  <div className="absolute right-8 bottom-12 h-[24px] w-[72px] rounded-full bg-[#0d7e96]"></div>
+                </div>
               </div>
 
               <div className="absolute right-4 top-4 rotate-[28deg] scale-[0.92]">
@@ -94,14 +96,14 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
                 <div className="absolute left-[14px] top-[146px] h-[42px] w-[16px] rounded-b-full bg-white"></div>
                 <div className="absolute left-[38px] top-[150px] h-[48px] w-[16px] rounded-b-full bg-white"></div>
                 <div className="absolute right-[14px] top-[146px] h-[42px] w-[16px] rounded-b-full bg-white"></div>
-                <div className="absolute left-[10px] top-[174px] h-[24px] w-[24px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]"></div>
-                <div className="absolute left-[34px] top-[182px] h-[26px] w-[26px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]"></div>
-                <div className="absolute right-[10px] top-[174px] h-[24px] w-[24px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]"></div>
+                <div className="animate-rocket-flame absolute left-[10px] top-[174px] h-[24px] w-[24px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]" style={{ animationDelay: '0s' }}></div>
+                <div className="animate-rocket-flame absolute left-[34px] top-[182px] h-[26px] w-[26px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]" style={{ animationDelay: '0.12s' }}></div>
+                <div className="animate-rocket-flame absolute right-[10px] top-[174px] h-[24px] w-[24px] rotate-[14deg] rounded-bl-full rounded-tr-full border-[4px] border-[var(--sesc-pink)] bg-[var(--sesc-orange)]" style={{ animationDelay: '0.24s' }}></div>
               </div>
 
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                 <div className="h-[312px] w-[252px] rounded-t-full border-[4px] border-black bg-[var(--sesc-blue-dark)]"></div>
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[4.15rem]">
+                <div className="animate-ada-head-sway absolute left-1/2 top-3">
                   <div className="absolute left-1/2 top-2 h-[140px] w-[150px] -translate-x-1/2 rounded-[44%_44%_52%_52%] border-[4px] border-black bg-[#7b5c4d]"></div>
                   <div className="absolute left-1/2 top-[64px] h-[108px] w-[40px] -translate-x-[70px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>
                   <div className="absolute left-1/2 top-[64px] h-[108px] w-[40px] translate-x-[30px] rounded-b-[36px] rounded-t-[24px] border-[4px] border-black bg-[#7b5c4d]"></div>

@@ -312,6 +312,29 @@
   }
 }
 
+@keyframes earthSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rocketFlamePulse {
+  0%,
+  100% {
+    transform: rotate(14deg) scale(0.92);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: rotate(14deg) scale(1.18);
+    opacity: 1;
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-in-out;
 }
@@ -342,6 +365,15 @@
 
 .animate-bug-hover {
   animation: bugHover 1.9s ease-in-out infinite;
+}
+
+.animate-earth-spin {
+  animation: earthSpin 9s linear infinite;
+}
+
+.animate-rocket-flame {
+  animation: rocketFlamePulse 0.75s ease-in-out infinite;
+  transform-origin: center top;
 }
 
 .recipe-writing-caret::after {
