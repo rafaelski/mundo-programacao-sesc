@@ -23,17 +23,17 @@ const appBackgrounds = [
   "app-bg-tile app-bg-binary",
   "app-bg-tile app-bg-pink-grid",
   "app-bg-tile app-bg-mint-hex",
-  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-blue-dots",
   "app-bg-tile app-bg-pink-grid",
   "app-bg-tile app-bg-mint-hex",
   "app-bg-tile app-bg-binary",
   "app-bg-tile app-bg-mustard-argyle",
-  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-blue-dots",
   "app-bg-tile app-bg-pink-grid",
   "app-bg-tile app-bg-mint-hex",
   "app-bg-tile app-bg-binary",
   "app-bg-tile app-bg-mustard-argyle",
-  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-blue-dots",
 ];
 
 export default function App() {
