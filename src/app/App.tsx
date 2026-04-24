@@ -17,6 +17,25 @@ import { Tela15StandMicroBit } from "./components/screens/Tela15StandMicroBit";
 import { Tela16AgoraESuaVez } from "./components/screens/Tela16AgoraESuaVez";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 
+const appBackgrounds = [
+  "bg-[linear-gradient(180deg,#0d4568_0%,#156189_100%)]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[#f7efdf]",
+  "bg-[linear-gradient(135deg,var(--sesc-yellow-flower),var(--sesc-pink),var(--sesc-orange))]",
+];
+
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const { scale } = useResponsiveScale();
@@ -70,7 +89,7 @@ export default function App() {
   ];
 
   return (
-    <div className="relative size-full overflow-hidden touch-none">
+    <div className={`relative size-full overflow-hidden touch-none ${appBackgrounds[currentScreen]}`}>
       <div
         className="absolute left-1/2 top-1/2 origin-center overflow-hidden animate-fadeIn"
         style={{

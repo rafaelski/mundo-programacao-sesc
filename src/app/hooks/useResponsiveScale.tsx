@@ -9,7 +9,7 @@ export function useResponsiveScale() {
       const windowHeight = window.innerHeight;
       const scaleX = windowWidth / 1920;
       const scaleY = windowHeight / 1080;
-      const newScale = Math.max(scaleX, scaleY);
+      const newScale = Math.min(scaleX, scaleY);
 
       setScale(newScale);
     };
