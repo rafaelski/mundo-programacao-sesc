@@ -1,8 +1,13 @@
 @custom-variant dark (&:is(.dark *));
 
+/* =========================================================
+   TOKENS GERAIS DO PROJETO
+   Cores, sombras, superfícies, content-stage e tokens base
+   ========================================================= */
 :root {
   --font-size: 16px;
 
+  /* Paleta base */
   --sesc-blue-dark: #093c5c;
   --sesc-blue-mid: #1582c4;
   --sesc-blue-sky: #d9efff;
@@ -21,6 +26,8 @@
   --sesc-beige-light: #f5f3ed;
   --sesc-black: #000000;
   --sesc-white: #ffffff;
+
+  /* Elevação e superfícies compartilhadas */
   --sesc-shadow-soft: 0 14px 32px rgba(39, 35, 72, 0.18);
   --sesc-shadow-chunky: 0 12px 0 rgba(39, 35, 72, 0.14);
   --sesc-panel-radius: 32px;
@@ -30,11 +37,15 @@
   --sesc-panel-bg-strong: rgba(255, 245, 223, 0.76);
   --sesc-panel-padding-md: 2rem;
   --sesc-panel-padding-lg: 2.5rem;
+
+  /* Content-stage compartilhado */
   --sesc-stage-radius: 40px;
   --sesc-stage-shadow: 0 18px 42px rgba(39, 35, 72, 0.16);
   --sesc-stage-blur: 14px;
   --sesc-stage-padding: 2.5rem;
   --sesc-stage-bg: rgba(255, 245, 223, 0.72);
+
+  /* Variantes de content-stage por tema */
   --sesc-stage-bg-paper: rgba(255, 250, 241, 0.74);
   --sesc-stage-bg-cream: rgba(255, 245, 223, 0.72);
   --sesc-stage-bg-soft: rgba(250, 244, 232, 0.68);
@@ -56,6 +67,7 @@
   --sesc-stage-padding-soft: 2.25rem;
   --sesc-stage-padding-frost: 2.75rem;
 
+  /* Tokens do sistema/UI */
   --background: var(--sesc-beige-light);
   --foreground: var(--sesc-ink);
   --card: var(--sesc-paper);
@@ -95,6 +107,9 @@
   --sidebar-ring: var(--sesc-blue-mid);
 }
 
+/* =========================================================
+   TEMA ESCURO DO SISTEMA
+   ========================================================= */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -132,6 +147,9 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+/* =========================================================
+   MAPEAMENTO PARA O THEME INLINE
+   ========================================================= */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -173,6 +191,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* =========================================================
+   ANIMACOES GERAIS
+   Utilizaveis em varias telas/componentes
+   ========================================================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -228,6 +250,9 @@
   animation: blinkCaret 0.9s steps(1) infinite;
 }
 
+/* =========================================================
+   RESET E BASE GLOBAL
+   ========================================================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -306,7 +331,11 @@
   }
 }
 
+/* =========================================================
+   COMPONENTES E UTILITARIOS GERAIS
+   ========================================================= */
 @layer components {
+  /* Backgrounds gerais do app */
   .app-bg-tile {
     position: absolute;
     inset: 0;
@@ -321,6 +350,7 @@
     pointer-events: none;
   }
 
+  /* Variantes de background por tema/tela */
   .app-bg-blue-argyle {
     background-color: #6ea8dc;
     background-image:
@@ -404,6 +434,7 @@
     opacity: 0.85;
   }
 
+  /* Superficies compartilhadas */
   .surface-panel {
     background: var(--sesc-panel-bg);
     border: 4px solid var(--sesc-ink);
@@ -430,6 +461,7 @@
     padding: var(--sesc-panel-padding-lg);
   }
 
+  /* Content-stage compartilhado */
   .content-stage {
     background: var(--content-stage-bg, var(--sesc-stage-bg));
     border-radius: var(--content-stage-radius, var(--sesc-stage-radius));
@@ -439,7 +471,7 @@
     padding: var(--content-stage-padding, var(--sesc-stage-padding));
   }
 
-  /* Duplicate one of the theme classes below to create a new content-stage look per screen. */
+  /* Variantes de content-stage por tela/tema */
   .content-stage-theme-paper {
     --content-stage-bg: var(--sesc-stage-bg-paper);
     --content-stage-radius: var(--sesc-stage-radius-paper);
@@ -472,6 +504,7 @@
     --content-stage-padding: var(--sesc-stage-padding-frost);
   }
 
+  /* Utilitarios gerais */
   .text-balance-pretty {
     text-wrap: balance;
   }
