@@ -40,7 +40,7 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
             eyebrowClassName="text-[18px]"
           />
 
-          <div className="mt-5 space-y-4 font-bold-text text-[30px] leading-[1.34] text-[var(--sesc-ink)]">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Há quase <span className="text-[var(--sesc-pink)]">200 anos</span>, uma mulher chamada{' '}
               <span className="text-[var(--sesc-blue-dark)]">Ada Lovelace</span> escreveu o primeiro programa de
