@@ -233,11 +233,11 @@
 @keyframes adaHeadSway {
   0%,
   100% {
-    transform: translateX(-50%) translateY(-5rem) rotate(-4deg);
+    transform: translateX(-50%) translateY(-5rem) rotate(-6deg);
   }
 
   50% {
-    transform: translateX(-50%) translateY(-5rem) rotate(4deg);
+    transform: translateX(-50%) translateY(-5rem) rotate(6deg);
   }
 }
 
@@ -248,7 +248,7 @@
   }
 
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -20px, 0);
   }
 }
 
@@ -298,17 +298,17 @@
   0%,
   100% {
     transform: translateX(-50%) translateY(0) rotate(-13deg) scale(1);
-    filter: drop-shadow(0 10px 0 rgba(39, 35, 72, 0.16));
+    filter: drop-shadow(0 10px 0 rgba(39, 35, 72, 0.38));
   }
 
   30% {
     transform: translateX(-50%) translateY(18px) rotate(-4deg) scale(1.06);
-    filter: drop-shadow(0 16px 0 rgba(39, 35, 72, 0.22));
+    filter: drop-shadow(0 16px 0 rgba(39, 35, 72, 0.44));
   }
 
   65% {
     transform: translateX(-50%) translateY(-6px) rotate(-18deg) scale(0.98);
-    filter: drop-shadow(0 12px 0 rgba(39, 35, 72, 0.2));
+    filter: drop-shadow(0 12px 0 rgba(39, 35, 72, 0.4));
   }
 }
 
@@ -317,15 +317,15 @@
 }
 
 .animate-clipboard-sway {
-  animation: clipboardSway 4.2s ease-in-out infinite;
+  animation: clipboardSway 3.2s ease-in-out infinite;
 }
 
 .animate-ada-head-sway {
-  animation: adaHeadSway 3.4s ease-in-out infinite;
+  animation: adaHeadSway 2.4s ease-in-out infinite;
 }
 
 .animate-symbol-float {
-  animation: symbolFloat 3.4s ease-in-out infinite;
+  animation: symbolFloat 2.4s ease-in-out infinite;
 }
 
 .animate-machine-light-twinkle {
