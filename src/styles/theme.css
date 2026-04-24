@@ -185,8 +185,47 @@
   }
 }
 
+@keyframes clipboardSway {
+  0%,
+  100% {
+    transform: rotate(-2.1deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes blinkCaret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-in-out;
+}
+
+.animate-clipboard-sway {
+  animation: clipboardSway 4.2s ease-in-out infinite;
+}
+
+.recipe-writing-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.12em;
+  height: 0.9em;
+  margin-left: 0.16em;
+  border-radius: 999px;
+  background: currentColor;
+  vertical-align: -0.06em;
+  animation: blinkCaret 0.9s steps(1) infinite;
 }
 
 @layer base {
