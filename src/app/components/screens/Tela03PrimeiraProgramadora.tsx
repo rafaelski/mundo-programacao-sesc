@@ -14,7 +14,12 @@ export const TELA03_THEME: ScreenThemeConfig = {
 };
 
 const TELA03_LAYOUT = createStoryScreenLayout({
-  leftBottomMinHeight: '11rem',
+  stageInsetX: '1rem',
+  stageInsetY: '1rem',
+  contentHorizontalPadding: '6rem',
+  contentTopPadding: '9.5rem',
+  contentBottomSafeArea: '9rem',
+  leftBottomMinHeight: '8.75rem',
 });
 
 export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03PrimeiraProgramadoraProps) {
