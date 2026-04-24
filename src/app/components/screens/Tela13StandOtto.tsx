@@ -1,3 +1,4 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Header } from '../Header';
 import { Navigation } from '../Navigation';
 import { Button } from '../Button';
@@ -6,6 +7,11 @@ interface Tela13StandOttoProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA13_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mint-hex",
+  contentStageThemeClassName: "",
+};
 
 export function Tela13StandOtto({ onPrevious, onNext }: Tela13StandOttoProps) {
   return (

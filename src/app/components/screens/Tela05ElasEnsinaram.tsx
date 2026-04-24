@@ -1,10 +1,15 @@
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela05ElasEnsinaramProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA05_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mint-hex",
+  contentStageThemeClassName: "content-stage-theme-frost",
+};
 
 const TELA05_LAYOUT = createStoryScreenLayout({
   columns: '1fr 1fr',
@@ -17,7 +22,7 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA05_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela05.contentStageThemeClassName}
+      contentStageThemeClassName={TELA05_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <h2 className="relative inline-block">

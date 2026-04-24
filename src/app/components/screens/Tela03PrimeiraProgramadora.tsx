@@ -1,12 +1,17 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
 import { ScreenTitle } from '../ScreenTitle';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela03PrimeiraProgramadoraProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA03_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-binary",
+  contentStageThemeClassName: "content-stage-theme-paper",
+};
 
 const TELA03_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '11rem',
@@ -19,7 +24,7 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA03_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela03.contentStageThemeClassName}
+      contentStageThemeClassName={TELA03_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <ScreenTitle title="A primeira programadora" eyebrow="1843" />

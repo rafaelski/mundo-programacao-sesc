@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useEffect, useRef, useState } from 'react';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela07VideogameNasceProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA07_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-pink-grid",
+  contentStageThemeClassName: "content-stage-theme-cream",
+};
 
 const TELA07_LAYOUT = createStoryScreenLayout({
   columns: '0.94fr 1.06fr',
@@ -107,7 +112,7 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA07_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela07.contentStageThemeClassName}
+      contentStageThemeClassName={TELA07_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
       leftMain={
         <>

@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela09ComputadorEmCasaProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA09_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-binary",
+  contentStageThemeClassName: "content-stage-theme-frost",
+};
 
 const TELA09_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '10rem',
@@ -18,7 +23,7 @@ export function Tela09ComputadorEmCasa({ onPrevious, onNext }: Tela09ComputadorE
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA09_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela09.contentStageThemeClassName}
+      contentStageThemeClassName={TELA09_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <div>

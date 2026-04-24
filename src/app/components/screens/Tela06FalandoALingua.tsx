@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela06FalandoALinguaProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA06_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-blue-dots",
+  contentStageThemeClassName: "content-stage-theme-paper",
+};
 
 const TELA06_LAYOUT = createStoryScreenLayout({
   columns: '1fr 1fr',
@@ -44,7 +49,7 @@ export function Tela06FalandoALingua({ onPrevious, onNext }: Tela06FalandoALingu
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA06_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela06.contentStageThemeClassName}
+      contentStageThemeClassName={TELA06_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
       leftMain={
         <>

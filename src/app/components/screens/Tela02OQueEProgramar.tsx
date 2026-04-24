@@ -1,13 +1,18 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useEffect, useState } from 'react';
 import { ScreenTitle } from '../ScreenTitle';
 import { SpeechBubble } from '../SpeechBubble';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela02OQueEProgramarProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA02_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mustard-argyle",
+  contentStageThemeClassName: "content-stage-theme-cream",
+};
 
 const TELA02_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '8.75rem',
@@ -61,7 +66,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA02_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela02.contentStageThemeClassName}
+      contentStageThemeClassName={TELA02_THEME.contentStageThemeClassName}
       leftBottomClassName="max-w-[760px]"
       leftMain={
         <>

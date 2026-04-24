@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela04MaquinasGigantesProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA04_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-pink-grid",
+  contentStageThemeClassName: "content-stage-theme-soft",
+};
 
 const TELA04_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '12rem',
@@ -18,7 +23,7 @@ export function Tela04MaquinasGigantes({ onPrevious, onNext }: Tela04MaquinasGig
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA04_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela04.contentStageThemeClassName}
+      contentStageThemeClassName={TELA04_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <div>

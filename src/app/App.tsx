@@ -1,22 +1,40 @@
 import { useState, useEffect, useCallback } from "react";
-import { Tela01Home } from "./components/screens/Tela01Home";
-import { Tela02OQueEProgramar } from "./components/screens/Tela02OQueEProgramar";
-import { Tela03PrimeiraProgramadora } from "./components/screens/Tela03PrimeiraProgramadora";
-import { Tela04MaquinasGigantes } from "./components/screens/Tela04MaquinasGigantes";
-import { Tela05ElasEnsinaram } from "./components/screens/Tela05ElasEnsinaram";
-import { Tela06FalandoALingua } from "./components/screens/Tela06FalandoALingua";
-import { Tela07VideogameNasce } from "./components/screens/Tela07VideogameNasce";
-import { Tela08TartarugaDesenha } from "./components/screens/Tela08TartarugaDesenha";
-import { Tela09ComputadorEmCasa } from "./components/screens/Tela09ComputadorEmCasa";
-import { Tela10Scratch } from "./components/screens/Tela10Scratch";
-import { Tela11GamesNoBolso } from "./components/screens/Tela11GamesNoBolso";
-import { Tela12EAgora } from "./components/screens/Tela12EAgora";
-import { Tela13StandOtto } from "./components/screens/Tela13StandOtto";
-import { Tela14StandArteGenerativa } from "./components/screens/Tela14StandArteGenerativa";
-import { Tela15StandMicroBit } from "./components/screens/Tela15StandMicroBit";
-import { Tela16AgoraESuaVez } from "./components/screens/Tela16AgoraESuaVez";
-import { APP_BACKGROUNDS_BY_SCREEN } from "./config/storyScreenThemes";
+import { Tela01Home, TELA01_THEME } from "./components/screens/Tela01Home";
+import { Tela02OQueEProgramar, TELA02_THEME } from "./components/screens/Tela02OQueEProgramar";
+import { Tela03PrimeiraProgramadora, TELA03_THEME } from "./components/screens/Tela03PrimeiraProgramadora";
+import { Tela04MaquinasGigantes, TELA04_THEME } from "./components/screens/Tela04MaquinasGigantes";
+import { Tela05ElasEnsinaram, TELA05_THEME } from "./components/screens/Tela05ElasEnsinaram";
+import { Tela06FalandoALingua, TELA06_THEME } from "./components/screens/Tela06FalandoALingua";
+import { Tela07VideogameNasce, TELA07_THEME } from "./components/screens/Tela07VideogameNasce";
+import { Tela08TartarugaDesenha, TELA08_THEME } from "./components/screens/Tela08TartarugaDesenha";
+import { Tela09ComputadorEmCasa, TELA09_THEME } from "./components/screens/Tela09ComputadorEmCasa";
+import { Tela10Scratch, TELA10_THEME } from "./components/screens/Tela10Scratch";
+import { Tela11GamesNoBolso, TELA11_THEME } from "./components/screens/Tela11GamesNoBolso";
+import { Tela12EAgora, TELA12_THEME } from "./components/screens/Tela12EAgora";
+import { Tela13StandOtto, TELA13_THEME } from "./components/screens/Tela13StandOtto";
+import { Tela14StandArteGenerativa, TELA14_THEME } from "./components/screens/Tela14StandArteGenerativa";
+import { Tela15StandMicroBit, TELA15_THEME } from "./components/screens/Tela15StandMicroBit";
+import { Tela16AgoraESuaVez, TELA16_THEME } from "./components/screens/Tela16AgoraESuaVez";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
+
+const APP_BACKGROUNDS_BY_SCREEN = [
+  TELA01_THEME.appBackgroundClassName,
+  TELA02_THEME.appBackgroundClassName,
+  TELA03_THEME.appBackgroundClassName,
+  TELA04_THEME.appBackgroundClassName,
+  TELA05_THEME.appBackgroundClassName,
+  TELA06_THEME.appBackgroundClassName,
+  TELA07_THEME.appBackgroundClassName,
+  TELA08_THEME.appBackgroundClassName,
+  TELA09_THEME.appBackgroundClassName,
+  TELA10_THEME.appBackgroundClassName,
+  TELA11_THEME.appBackgroundClassName,
+  TELA12_THEME.appBackgroundClassName,
+  TELA13_THEME.appBackgroundClassName,
+  TELA14_THEME.appBackgroundClassName,
+  TELA15_THEME.appBackgroundClassName,
+  TELA16_THEME.appBackgroundClassName,
+];
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);

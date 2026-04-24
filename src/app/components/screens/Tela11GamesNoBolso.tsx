@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela11GamesNoBolsoProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA11_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-blue-dots",
+  contentStageThemeClassName: "content-stage-theme-paper",
+};
 
 const TELA11_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '12rem',
@@ -18,7 +23,7 @@ export function Tela11GamesNoBolso({ onPrevious, onNext }: Tela11GamesNoBolsoPro
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA11_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela11.contentStageThemeClassName}
+      contentStageThemeClassName={TELA11_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <div>

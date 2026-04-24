@@ -1,3 +1,4 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
 import { Header } from '../Header';
 import { Navigation } from '../Navigation';
@@ -7,6 +8,11 @@ interface Tela15StandMicroBitProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA15_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mustard-argyle",
+  contentStageThemeClassName: "",
+};
 
 export function Tela15StandMicroBit({ onPrevious, onNext }: Tela15StandMicroBitProps) {
   const [isHeartLit, setIsHeartLit] = useState(true);

@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useEffect, useState } from 'react';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela08TartarugaDesenhaProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA08_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mint-hex",
+  contentStageThemeClassName: "content-stage-theme-paper",
+};
 
 const TELA08_LAYOUT = createStoryScreenLayout();
 
@@ -26,7 +31,7 @@ export function Tela08TartarugaDesenha({ onPrevious, onNext }: Tela08TartarugaDe
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA08_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela08.contentStageThemeClassName}
+      contentStageThemeClassName={TELA08_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <div>

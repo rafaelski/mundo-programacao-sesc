@@ -1,11 +1,16 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
-import { STORY_SCREEN_THEMES } from '../../config/storyScreenThemes';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela10ScratchProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA10_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-mustard-argyle",
+  contentStageThemeClassName: "content-stage-theme-soft",
+};
 
 interface Block {
   id: string;
@@ -57,7 +62,7 @@ export function Tela10Scratch({ onPrevious, onNext }: Tela10ScratchProps) {
       onPrevious={onPrevious}
       onNext={onNext}
       layout={TELA10_LAYOUT}
-      contentStageThemeClassName={STORY_SCREEN_THEMES.tela10.contentStageThemeClassName}
+      contentStageThemeClassName={TELA10_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
       leftMain={
         <>

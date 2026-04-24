@@ -1,8 +1,14 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Button } from '../Button';
 
 interface Tela16AgoraESuaVezProps {
   onRestart: () => void;
 }
+
+export const TELA16_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-blue-dots",
+  contentStageThemeClassName: "",
+};
 
 export function Tela16AgoraESuaVez({ onRestart }: Tela16AgoraESuaVezProps) {
   return (

@@ -1,3 +1,4 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Button } from '../Button';
 import { ScreenShell } from '../ScreenShell';
 import { ScreenTitle } from '../ScreenTitle';
@@ -5,6 +6,11 @@ import { ScreenTitle } from '../ScreenTitle';
 interface Tela01HomeProps {
   onStart: () => void;
 }
+
+export const TELA01_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-blue-dots",
+  contentStageThemeClassName: "",
+};
 
 export function Tela01Home({ onStart }: Tela01HomeProps) {
   return (

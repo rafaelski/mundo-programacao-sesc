@@ -1,3 +1,4 @@
+import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState, useEffect } from 'react';
 import { Header } from '../Header';
 import { Navigation } from '../Navigation';
@@ -7,6 +8,11 @@ interface Tela14StandArteGenerativaProps {
   onPrevious: () => void;
   onNext: () => void;
 }
+
+export const TELA14_THEME: ScreenThemeConfig = {
+  appBackgroundClassName: "app-bg-tile app-bg-binary",
+  contentStageThemeClassName: "",
+};
 
 interface Particle {
   x: number;
