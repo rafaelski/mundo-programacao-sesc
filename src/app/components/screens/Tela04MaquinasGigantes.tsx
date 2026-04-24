@@ -37,7 +37,7 @@ export function Tela04MaquinasGigantes({ onPrevious, onNext }: Tela04MaquinasGig
             title={"M\u00E1quinas gigantes"}
             eyebrow="1940"
             gapClassName="gap-1"
-            eyebrowClassName="text-[22px]"
+            eyebrowClassName="text-[24px]"
           />
 
           <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
