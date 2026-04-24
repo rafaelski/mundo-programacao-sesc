@@ -15,7 +15,7 @@ const TELA02_LAYOUT = createStoryScreenLayout({
 
 const RECIPE_LINES = ['1. Farinha', '2. Ovos', '3. Açúcar', '4. Mistura', '5. Forno'];
 const RECIPE_TITLE = 'RECEITA DA INSTRUÇÃO';
-const TYPE_INTERVAL_MS = 95;
+const TYPE_INTERVAL_MS = 75;
 const LINE_PAUSE_STEPS = 8;
 const LOOP_PAUSE_STEPS = 22;
 
@@ -91,7 +91,7 @@ export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEPrograma
             <div className="h-[40px] w-[400px] border-x-[6px] border-black bg-white"></div>
             <div className="h-[120px] w-[400px] rounded-b-3xl border-[6px] border-t-0 border-black bg-[var(--sesc-pink)]"></div>
 
-            <div className="absolute -top-8 left-1/2 flex h-[60px] w-[380px] -translate-x-1/2 items-center justify-center rounded-t-full border-[6px] border-black bg-[var(--sesc-green-grass)] px-8 text-center">
+            <div className="absolute -top-14 left-1/2 flex h-[60px] w-[380px] -translate-x-1/2 items-center justify-center rounded-t-full border-[6px] border-black bg-[var(--sesc-green-grass)] px-8 text-center">
               <span
                 className={`text-[18px] font-black uppercase tracking-[0.16em] text-[var(--sesc-ink)] ${
                   isLineActive(typingStep, RECIPE_TITLE, 0, typingLines) ? 'recipe-writing-caret' : ''
