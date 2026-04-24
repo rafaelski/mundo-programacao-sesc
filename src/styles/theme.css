@@ -256,14 +256,31 @@
   0%,
   100% {
     opacity: 1;
-    filter: brightness(1);
+    filter: brightness(1) saturate(1);
     transform: scale(1);
   }
 
+  35% {
+    opacity: 0.74;
+    filter: brightness(1.28) saturate(1.18);
+    transform: scale(1.12);
+  }
+
+  65% {
+    opacity: 0.96;
+    filter: brightness(1.42) saturate(1.26);
+    transform: scale(1.18);
+  }
+}
+
+@keyframes machineBodyHum {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.35deg);
+  }
+
   50% {
-    opacity: 0.86;
-    filter: brightness(1.2);
-    transform: scale(1.08);
+    transform: translate3d(0, -6px, 0) rotate(0.35deg);
   }
 }
 
@@ -280,11 +297,18 @@
 @keyframes bugHover {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0) rotate(-9deg);
+    transform: translateX(-50%) translateY(0) rotate(-13deg) scale(1);
+    filter: drop-shadow(0 10px 0 rgba(39, 35, 72, 0.16));
   }
 
-  50% {
-    transform: translateX(-50%) translateY(12px) rotate(-3deg);
+  30% {
+    transform: translateX(-50%) translateY(18px) rotate(-4deg) scale(1.06);
+    filter: drop-shadow(0 16px 0 rgba(39, 35, 72, 0.22));
+  }
+
+  65% {
+    transform: translateX(-50%) translateY(-6px) rotate(-18deg) scale(0.98);
+    filter: drop-shadow(0 12px 0 rgba(39, 35, 72, 0.2));
   }
 }
 
@@ -305,15 +329,19 @@
 }
 
 .animate-machine-light-twinkle {
-  animation: machineLightTwinkle 1.8s ease-in-out infinite;
+  animation: machineLightTwinkle 1.15s ease-in-out infinite;
+}
+
+.animate-machine-body-hum {
+  animation: machineBodyHum 2.6s ease-in-out infinite;
 }
 
 .animate-machine-dial-spin {
-  animation: machineDialSpin 7s linear infinite;
+  animation: machineDialSpin 4.4s linear infinite;
 }
 
 .animate-bug-hover {
-  animation: bugHover 2.8s ease-in-out infinite;
+  animation: bugHover 1.9s ease-in-out infinite;
 }
 
 .recipe-writing-caret::after {

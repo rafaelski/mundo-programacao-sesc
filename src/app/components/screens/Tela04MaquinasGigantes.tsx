@@ -67,7 +67,7 @@ export function Tela04MaquinasGigantes({ onPrevious, onNext }: Tela04MaquinasGig
       right={
         <div className="relative">
           <div className="relative">
-            <div className="relative h-[600px] w-[500px] rounded-3xl border-[8px] border-black bg-[var(--sesc-gray-stone)] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <div className="animate-machine-body-hum relative h-[600px] w-[500px] rounded-3xl border-[8px] border-black bg-[var(--sesc-gray-stone)] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
               <div className="grid grid-cols-8 gap-3 p-8">
                 {[...Array(32)].map((_, i) => (
                   <div
