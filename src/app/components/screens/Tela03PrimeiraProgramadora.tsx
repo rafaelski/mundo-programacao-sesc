@@ -37,7 +37,7 @@ export function Tela03PrimeiraProgramadora({ onPrevious, onNext }: Tela03Primeir
             title="A primeira programadora"
             eyebrow="1843"
             gapClassName="gap-1"
-            eyebrowClassName="text-[25px]"
+            eyebrowClassName="text-[24px]"
           />
 
           <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
