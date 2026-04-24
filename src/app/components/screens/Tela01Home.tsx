@@ -8,7 +8,7 @@ interface Tela01HomeProps {
 
 export function Tela01Home({ onStart }: Tela01HomeProps) {
   return (
-    <ScreenShell tone="blue" className="flex flex-col items-center justify-center">
+    <ScreenShell tone="blue">
       <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" viewBox="0 0 1920 1080">
           <path d="M 100 100 L 300 100 L 300 200 M 300 150 L 500 150" stroke="white" strokeWidth="8" fill="none" />
@@ -37,32 +37,34 @@ export function Tela01Home({ onStart }: Tela01HomeProps) {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-[1220px] flex-col items-center gap-10 rounded-[44px] border-[4px] border-[rgba(255,255,255,0.22)] bg-[rgba(7,34,53,0.24)] px-20 py-18 text-center shadow-[0_30px_80px_rgba(0,0,0,0.2)] backdrop-blur-[10px]">
-        <div className="rounded-full border-[3px] border-[rgba(255,255,255,0.28)] bg-[rgba(255,255,255,0.14)] px-8 py-3 text-[22px] font-black uppercase tracking-[0.24em] text-[var(--sesc-yellow-soft)]">
-          SESC apresenta uma experiência interativa
+      <div className="relative z-10 flex h-full w-full items-center justify-center px-20 py-14">
+        <div className="mx-auto flex w-full max-w-[1220px] flex-col items-center gap-10 rounded-[44px] border-[4px] border-[rgba(255,255,255,0.22)] bg-[rgba(7,34,53,0.24)] px-20 py-20 text-center shadow-[0_30px_80px_rgba(0,0,0,0.2)] backdrop-blur-[10px]">
+          <div className="rounded-full border-[3px] border-[rgba(255,255,255,0.28)] bg-[rgba(255,255,255,0.14)] px-8 py-3 text-[22px] font-black uppercase tracking-[0.24em] text-[var(--sesc-yellow-soft)]">
+            SESC apresenta uma experiência interativa
+          </div>
+
+          <ScreenTitle
+            title="O Mundo da Programação"
+            eyebrow="Uma aventura para crianças curiosas"
+            tone="dark"
+            align="center"
+            size="xl"
+          />
+
+          <p className="max-w-[920px] text-balance-pretty font-bold-text text-[36px] leading-[1.25] text-[rgba(255,255,255,0.95)]">
+            Uma viagem divertida pela história das ideias, das pessoas e dos jogos que ensinaram as máquinas a seguir instruções.
+          </p>
+
+          <div className="flex items-center gap-4 rounded-full border-[3px] border-[rgba(255,255,255,0.24)] bg-[rgba(255,255,255,0.12)] px-8 py-4 text-[22px] font-black uppercase tracking-[0.08em] text-white">
+            <span>16 telas</span>
+            <span className="text-[var(--sesc-yellow-soft)]">•</span>
+            <span>histórias, jogos e experiências</span>
+          </div>
+
+          <Button variant="primary" onClick={onStart} icon=">" className="mt-4">
+            Começar a viagem
+          </Button>
         </div>
-
-        <ScreenTitle
-          title="O Mundo da Programação"
-          eyebrow="Uma aventura para crianças curiosas"
-          tone="dark"
-          align="center"
-          size="xl"
-        />
-
-        <p className="max-w-[920px] text-balance-pretty font-bold-text text-[36px] leading-[1.25] text-[rgba(255,255,255,0.95)]">
-          Uma viagem divertida pela história das ideias, das pessoas e dos jogos que ensinaram as máquinas a seguir instruções.
-        </p>
-
-        <div className="flex items-center gap-4 rounded-full border-[3px] border-[rgba(255,255,255,0.24)] bg-[rgba(255,255,255,0.12)] px-8 py-4 text-[22px] font-black uppercase tracking-[0.08em] text-white">
-          <span>16 telas</span>
-          <span className="text-[var(--sesc-yellow-soft)]">•</span>
-          <span>histórias, jogos e experiências</span>
-        </div>
-
-        <Button variant="primary" onClick={onStart} icon=">" className="mt-4">
-          Começar a viagem
-        </Button>
       </div>
     </ScreenShell>
   );
