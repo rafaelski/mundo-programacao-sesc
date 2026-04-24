@@ -34,6 +34,22 @@
   --sesc-stage-shadow: 0 18px 42px rgba(39, 35, 72, 0.16);
   --sesc-stage-blur: 14px;
   --sesc-stage-bg: rgba(255, 245, 223, 0.72);
+  --sesc-stage-bg-paper: rgba(255, 250, 241, 0.74);
+  --sesc-stage-bg-cream: rgba(255, 245, 223, 0.72);
+  --sesc-stage-bg-soft: rgba(250, 244, 232, 0.68);
+  --sesc-stage-bg-frost: rgba(247, 248, 244, 0.64);
+  --sesc-stage-radius-paper: 40px;
+  --sesc-stage-radius-cream: 40px;
+  --sesc-stage-radius-soft: 34px;
+  --sesc-stage-radius-frost: 46px;
+  --sesc-stage-shadow-paper: 0 18px 42px rgba(39, 35, 72, 0.16);
+  --sesc-stage-shadow-cream: 0 18px 42px rgba(39, 35, 72, 0.16);
+  --sesc-stage-shadow-soft: 0 14px 34px rgba(39, 35, 72, 0.14);
+  --sesc-stage-shadow-frost: 0 24px 56px rgba(39, 35, 72, 0.18);
+  --sesc-stage-blur-paper: 14px;
+  --sesc-stage-blur-cream: 14px;
+  --sesc-stage-blur-soft: 10px;
+  --sesc-stage-blur-frost: 18px;
 
   --background: var(--sesc-beige-light);
   --foreground: var(--sesc-ink);
@@ -371,11 +387,40 @@
   }
 
   .content-stage {
-    background: var(--sesc-stage-bg);
-    border-radius: var(--sesc-stage-radius);
-    box-shadow: var(--sesc-stage-shadow);
-    backdrop-filter: blur(var(--sesc-stage-blur));
-    -webkit-backdrop-filter: blur(var(--sesc-stage-blur));
+    background: var(--content-stage-bg, var(--sesc-stage-bg));
+    border-radius: var(--content-stage-radius, var(--sesc-stage-radius));
+    box-shadow: var(--content-stage-shadow, var(--sesc-stage-shadow));
+    backdrop-filter: blur(var(--content-stage-blur, var(--sesc-stage-blur)));
+    -webkit-backdrop-filter: blur(var(--content-stage-blur, var(--sesc-stage-blur)));
+  }
+
+  /* Duplicate one of the theme classes below to create a new content-stage look per screen. */
+  .content-stage-theme-paper {
+    --content-stage-bg: var(--sesc-stage-bg-paper);
+    --content-stage-radius: var(--sesc-stage-radius-paper);
+    --content-stage-shadow: var(--sesc-stage-shadow-paper);
+    --content-stage-blur: var(--sesc-stage-blur-paper);
+  }
+
+  .content-stage-theme-cream {
+    --content-stage-bg: var(--sesc-stage-bg-cream);
+    --content-stage-radius: var(--sesc-stage-radius-cream);
+    --content-stage-shadow: var(--sesc-stage-shadow-cream);
+    --content-stage-blur: var(--sesc-stage-blur-cream);
+  }
+
+  .content-stage-theme-soft {
+    --content-stage-bg: var(--sesc-stage-bg-soft);
+    --content-stage-radius: var(--sesc-stage-radius-soft);
+    --content-stage-shadow: var(--sesc-stage-shadow-soft);
+    --content-stage-blur: var(--sesc-stage-blur-soft);
+  }
+
+  .content-stage-theme-frost {
+    --content-stage-bg: var(--sesc-stage-bg-frost);
+    --content-stage-radius: var(--sesc-stage-radius-frost);
+    --content-stage-shadow: var(--sesc-stage-shadow-frost);
+    --content-stage-blur: var(--sesc-stage-blur-frost);
   }
 
   .text-balance-pretty {

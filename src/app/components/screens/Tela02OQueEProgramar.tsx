@@ -12,7 +12,7 @@ interface Tela02OQueEProgramarProps {
 export function Tela02OQueEProgramar({ onPrevious, onNext }: Tela02OQueEProgramarProps) {
   return (
     <ScreenShell tone="transparent" showDecorations={false}>
-      <div className="content-stage pointer-events-none absolute inset-x-10 inset-y-8" />
+      <div className="content-stage content-stage-theme-cream pointer-events-none absolute inset-x-10 inset-y-8" />
 
       <Header currentScreen={2} totalScreens={16} />
 
