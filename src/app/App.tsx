@@ -15,26 +15,8 @@ import { Tela13StandOtto } from "./components/screens/Tela13StandOtto";
 import { Tela14StandArteGenerativa } from "./components/screens/Tela14StandArteGenerativa";
 import { Tela15StandMicroBit } from "./components/screens/Tela15StandMicroBit";
 import { Tela16AgoraESuaVez } from "./components/screens/Tela16AgoraESuaVez";
+import { APP_BACKGROUNDS_BY_SCREEN } from "./config/storyScreenThemes";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
-
-const appBackgrounds = [
-  "app-bg-tile app-bg-blue-dots",
-  "app-bg-tile app-bg-mustard-argyle",
-  "app-bg-tile app-bg-binary",
-  "app-bg-tile app-bg-pink-grid",
-  "app-bg-tile app-bg-mint-hex",
-  "app-bg-tile app-bg-blue-dots",
-  "app-bg-tile app-bg-pink-grid",
-  "app-bg-tile app-bg-mint-hex",
-  "app-bg-tile app-bg-binary",
-  "app-bg-tile app-bg-mustard-argyle",
-  "app-bg-tile app-bg-blue-dots",
-  "app-bg-tile app-bg-pink-grid",
-  "app-bg-tile app-bg-mint-hex",
-  "app-bg-tile app-bg-binary",
-  "app-bg-tile app-bg-mustard-argyle",
-  "app-bg-tile app-bg-blue-dots",
-];
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -90,7 +72,7 @@ export default function App() {
 
   return (
     <div className="relative size-full overflow-hidden touch-none">
-      <div className={appBackgrounds[currentScreen]} />
+      <div className={APP_BACKGROUNDS_BY_SCREEN[currentScreen]} />
 
       <div
         className="absolute left-1/2 top-1/2 z-10 origin-center overflow-hidden animate-fadeIn"
