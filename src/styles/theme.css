@@ -236,6 +236,90 @@
 }
 
 @layer components {
+  .app-bg-tile {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .app-bg-tile::before,
+  .app-bg-tile::after {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    pointer-events: none;
+  }
+
+  .app-bg-blue-argyle {
+    background-color: #6ea8dc;
+    background-image:
+      linear-gradient(45deg, rgba(91, 142, 194, 0.42) 12.5%, transparent 12.5%, transparent 50%, rgba(91, 142, 194, 0.42) 50%, rgba(91, 142, 194, 0.42) 62.5%, transparent 62.5%, transparent),
+      linear-gradient(-45deg, rgba(91, 142, 194, 0.3) 12.5%, transparent 12.5%, transparent 50%, rgba(91, 142, 194, 0.3) 50%, rgba(91, 142, 194, 0.3) 62.5%, transparent 62.5%, transparent);
+    background-size: 168px 168px;
+    background-position: 0 0, 84px 84px;
+  }
+
+  .app-bg-blue-argyle::after {
+    background-image:
+      radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 2px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.22) 0 1.25px, transparent 1.75px);
+    background-size: 28px 28px, 28px 28px;
+    background-position: 0 0, 14px 14px;
+    opacity: 0.45;
+  }
+
+  .app-bg-binary {
+    background-color: #eff4f4;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.92), transparent 38%),
+      radial-gradient(circle at 78% 70%, rgba(212, 238, 242, 0.7), transparent 42%);
+  }
+
+  .app-bg-binary::after {
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Cg font-family='Arial, sans-serif' font-size='26' fill='none' fill-opacity='1'%3E%3Ctext x='6' y='28' fill='%2397a7c6' fill-opacity='0.72'%3E101001001011%3C/text%3E%3Ctext x='20' y='58' fill='%23dfb086' fill-opacity='0.62'%3E010110010100%3C/text%3E%3Ctext x='0' y='88' fill='%23b8d68a' fill-opacity='0.68'%3E110010011001%3C/text%3E%3Ctext x='34' y='116' fill='%23d2b5de' fill-opacity='0.62'%3E001101010111%3C/text%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 120px;
+    opacity: 0.78;
+  }
+
+  .app-bg-mustard-argyle {
+    background-color: #dcaa3b;
+    background-image:
+      linear-gradient(45deg, rgba(247, 226, 163, 0.92) 2.5%, transparent 3%, transparent 47%, rgba(247, 226, 163, 0.92) 47.5%, rgba(247, 226, 163, 0.92) 52.5%, transparent 53%, transparent 97%, rgba(247, 226, 163, 0.92) 97.5%),
+      linear-gradient(-45deg, rgba(247, 226, 163, 0.92) 2.5%, transparent 3%, transparent 47%, rgba(247, 226, 163, 0.92) 47.5%, rgba(247, 226, 163, 0.92) 52.5%, transparent 53%, transparent 97%, rgba(247, 226, 163, 0.92) 97.5%);
+    background-size: 156px 156px;
+    background-position: 0 0, 78px 78px;
+  }
+
+  .app-bg-pink-grid {
+    background-color: #cf7ea3;
+    background-image:
+      linear-gradient(rgba(240, 179, 91, 0.78) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(240, 179, 91, 0.78) 2px, transparent 2px);
+    background-size: 108px 108px;
+    background-position: 0 0;
+  }
+
+  .app-bg-mint-hex {
+    background-color: #9cd3b7;
+  }
+
+  .app-bg-mint-hex::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='146' viewBox='0 0 168 146'%3E%3Cg fill='none' stroke='%23dbeadf' stroke-opacity='0.82' stroke-width='2'%3E%3Cpath d='M42 12 63 24 63 48 42 60 21 48 21 24Z'/%3E%3Cpath d='M42 0 73 18 73 54 42 72 11 54 11 18Z'/%3E%3Cpath d='M42 -12 83 12 83 60 42 84 1 60 1 12Z'/%3E%3Cpath d='M126 12 147 24 147 48 126 60 105 48 105 24Z'/%3E%3Cpath d='M126 0 157 18 157 54 126 72 95 54 95 18Z'/%3E%3Cpath d='M126 -12 167 12 167 60 126 84 85 60 85 12Z'/%3E%3Cpath d='M84 73 105 85 105 109 84 121 63 109 63 85Z'/%3E%3Cpath d='M84 61 115 79 115 115 84 133 53 115 53 79Z'/%3E%3Cpath d='M84 49 125 73 125 121 84 145 43 121 43 73Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 168px 146px;
+    opacity: 0.9;
+  }
+
+  .app-bg-soft-glow::before {
+    background:
+      radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.18), transparent 22%),
+      radial-gradient(circle at 82% 78%, rgba(255, 255, 255, 0.14), transparent 24%);
+    filter: blur(6px);
+    opacity: 0.85;
+  }
+
   .surface-panel {
     background: rgba(255, 250, 241, 0.92);
     border: 4px solid var(--sesc-ink);

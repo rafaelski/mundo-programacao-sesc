@@ -17,66 +17,24 @@ import { Tela15StandMicroBit } from "./components/screens/Tela15StandMicroBit";
 import { Tela16AgoraESuaVez } from "./components/screens/Tela16AgoraESuaVez";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 
-type AppBackgroundTone = "blue" | "beige" | "sunset";
-
-const appBackgrounds: AppBackgroundTone[] = [
-  "blue",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "beige",
-  "sunset",
+const appBackgrounds = [
+  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-mustard-argyle",
+  "app-bg-tile app-bg-binary",
+  "app-bg-tile app-bg-pink-grid",
+  "app-bg-tile app-bg-mint-hex",
+  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-pink-grid",
+  "app-bg-tile app-bg-mint-hex",
+  "app-bg-tile app-bg-binary",
+  "app-bg-tile app-bg-mustard-argyle",
+  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
+  "app-bg-tile app-bg-pink-grid",
+  "app-bg-tile app-bg-mint-hex",
+  "app-bg-tile app-bg-binary",
+  "app-bg-tile app-bg-mustard-argyle",
+  "app-bg-tile app-bg-blue-argyle app-bg-soft-glow",
 ];
-
-function AppBackground({ tone }: { tone: AppBackgroundTone }) {
-  if (tone === "blue") {
-    return (
-      <>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#0d4568_0%,#156189_100%)]" />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 18px 18px, rgba(255,255,255,0.38) 2px, transparent 0), linear-gradient(145deg, rgba(255,255,255,0.18), transparent 42%)",
-            backgroundSize: "38px 38px, 100% 100%",
-          }}
-        />
-        <div className="pointer-events-none absolute left-[-8%] top-[6%] h-[32vw] w-[32vw] rounded-full bg-[rgba(255,255,255,0.12)] blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-10%] right-[-6%] h-[34vw] w-[40vw] rounded-full bg-[rgba(255,255,255,0.14)] blur-3xl" />
-      </>
-    );
-  }
-
-  if (tone === "sunset") {
-    return <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--sesc-yellow-flower),var(--sesc-pink),var(--sesc-orange))]" />;
-  }
-
-  return (
-    <>
-      <div className="absolute inset-0 bg-[#f7efdf]" />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-75"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 16px 16px, rgba(255,255,255,0.28) 1.5px, transparent 0), linear-gradient(180deg, rgba(255,255,255,0.18), transparent 48%)",
-          backgroundSize: "34px 34px, 100% 100%",
-        }}
-      />
-      <div className="pointer-events-none absolute left-[-6%] top-[8%] h-[28vw] w-[28vw] rounded-full bg-[rgba(249,200,67,0.18)] blur-3xl" />
-      <div className="pointer-events-none absolute bottom-[-8%] right-[-5%] h-[30vw] w-[36vw] rounded-full bg-[rgba(249,200,67,0.16)] blur-3xl" />
-    </>
-  );
-}
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -132,7 +90,7 @@ export default function App() {
 
   return (
     <div className="relative size-full overflow-hidden touch-none">
-      <AppBackground tone={appBackgrounds[currentScreen]} />
+      <div className={appBackgrounds[currentScreen]} />
 
       <div
         className="absolute left-1/2 top-1/2 z-10 origin-center overflow-hidden animate-fadeIn"
