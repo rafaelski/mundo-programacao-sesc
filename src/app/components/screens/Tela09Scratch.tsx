@@ -24,7 +24,7 @@ const TELA09_LAYOUT = createStoryScreenLayout({
 });
 
 const blocks: Block[] = [
-  { id: '1', label: 'QUANDO CLICAR ▶', color: 'var(--sesc-yellow-flower)', correctOrder: 1 },
+  { id: '1', label: 'COMEÇAR ▶', color: 'var(--sesc-yellow-flower)', correctOrder: 1 },
   { id: '3', label: 'PULAR 50 ↑', color: 'var(--sesc-pink)', correctOrder: 3 },
   { id: '2', label: 'MOVER 10 PASSOS →', color: 'var(--sesc-blue-dark)', correctOrder: 2 },
   { id: '4', label: 'VOLTAR AO CHÃO ↓', color: 'var(--sesc-green-grass)', correctOrder: 4 },
@@ -108,12 +108,12 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
                     onClick={() => handleBlockClick(block)}
                     disabled={isDropped}
                     type="button"
-                    className={`flex h-[58px] items-center justify-center rounded-xl border-[4px] border-black px-2 text-center text-[14px] font-black leading-tight transition-all duration-200 ${
+                    className={`flex h-[58px] items-center justify-center rounded-xl border-[4px] border-black px-2 text-center text-[17px] font-black leading-tight transition-all duration-200 ${
                       isDropped
                         ? 'cursor-not-allowed opacity-45'
                         : 'cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
                     }`}
-                    style={{ backgroundColor: block.color }}
+                    style={{ backgroundColor: block.color, color: block.id === '2' ? 'white' : 'var(--sesc-blue-dark)' }}
                   >
                     {block.label}
                   </button>
@@ -130,8 +130,8 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
               {droppedBlocks.map((block, index) => (
                 <div
                   key={`${block.id}-${index}`}
-                  className="animate-fadeIn flex h-[40px] w-[150px] shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[14px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
-                  style={{ backgroundColor: block.color }}
+                  className="animate-fadeIn flex h-[40px] w-[150px] shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[16px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                  style={{ backgroundColor: block.color, color: block.id === '2' ? 'white' : 'var(--sesc-blue-dark)' }}
                 >
                   {block.label}
                 </div>
@@ -157,7 +157,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
 
           <div className="relative z-30 min-h-0 overflow-visible rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
-            <div className="absolute bottom-[150px] right-[122px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-90 shadow-[3px_3px_0_rgba(0,0,0,0.25)]" />
+            <div className="absolute bottom-[154px] right-[128px] h-[46px] w-[46px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] opacity-95 shadow-[4px_4px_0_rgba(0,0,0,0.25)]" />
             {!isCorrect && (
               <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
                 monte o código
@@ -165,7 +165,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             )}
 
             <div
-              className={`pointer-events-none absolute bottom-[26px] left-1/2 z-50 h-[242px] w-[310px] -translate-x-1/2 ${
+              className={`pointer-events-none absolute bottom-[26px] left-[46px] z-50 h-[242px] w-[310px] ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
               }`}
             >

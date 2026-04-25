@@ -389,41 +389,41 @@
 
 @keyframes scratchCatRunJump {
   0% {
-    transform: translate3d(-250px, 0, 0) rotate(-1deg);
+    transform: translate3d(0, 0, 0) rotate(-1deg);
   }
 
   18% {
-    transform: translate3d(-150px, 0, 0) rotate(1deg);
+    transform: translate3d(88px, 0, 0) rotate(1deg);
   }
 
   36% {
-    transform: translate3d(-44px, 0, 0) rotate(-1deg);
+    transform: translate3d(176px, 0, 0) rotate(-1deg);
   }
 
   52% {
-    transform: translate3d(82px, 0, 0) rotate(1deg);
+    transform: translate3d(276px, 0, 0) rotate(1deg);
   }
 
   64% {
-    transform: translate3d(168px, -116px, 0) rotate(-7deg);
+    transform: translate3d(356px, -116px, 0) rotate(-7deg);
   }
 
   76% {
-    transform: translate3d(238px, 0, 0) rotate(4deg);
+    transform: translate3d(404px, 0, 0) rotate(4deg);
   }
 
   88% {
-    transform: translate3d(270px, 0, 0) rotate(0deg);
+    transform: translate3d(420px, 0, 0) rotate(0deg);
     opacity: 1;
   }
 
   89% {
-    transform: translate3d(-250px, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
     opacity: 0;
   }
 
   100% {
-    transform: translate3d(-250px, 0, 0) rotate(-1deg);
+    transform: translate3d(0, 0, 0) rotate(-1deg);
     opacity: 1;
   }
 }
