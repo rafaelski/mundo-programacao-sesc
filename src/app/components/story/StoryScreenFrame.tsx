@@ -56,7 +56,7 @@ interface StoryScreenFrameProps {
 
 export function StoryScreenFrame({
   currentScreen,
-  totalScreens = 16,
+  totalScreens = 15,
   onPrevious,
   onNext,
   layout,

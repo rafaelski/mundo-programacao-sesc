@@ -1,16 +1,16 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Button } from '../Button';
 
-interface Tela16AgoraESuaVezProps {
+interface Tela15AgoraESuaVezProps {
   onRestart: () => void;
 }
 
-export const TELA16_THEME: ScreenThemeConfig = {
+export const TELA15_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-blue-dots",
   contentStageThemeClassName: "",
 };
 
-export function Tela16AgoraESuaVez({ onRestart }: Tela16AgoraESuaVezProps) {
+export function Tela15AgoraESuaVez({ onRestart }: Tela15AgoraESuaVezProps) {
   return (
     <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-gradient-to-br from-[var(--sesc-yellow-flower)] via-[var(--sesc-pink)] to-[var(--sesc-orange)]">
       {/* Personagens ao fundo acenando */}

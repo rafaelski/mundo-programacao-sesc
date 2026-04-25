@@ -4,17 +4,17 @@ import { Header } from '../Header';
 import { Navigation } from '../Navigation';
 import { Button } from '../Button';
 
-interface Tela15StandMicroBitProps {
+interface Tela14StandMicroBitProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-export const TELA15_THEME: ScreenThemeConfig = {
+export const TELA14_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-mustard-argyle",
   contentStageThemeClassName: "",
 };
 
-export function Tela15StandMicroBit({ onPrevious, onNext }: Tela15StandMicroBitProps) {
+export function Tela14StandMicroBit({ onPrevious, onNext }: Tela14StandMicroBitProps) {
   const [isHeartLit, setIsHeartLit] = useState(true);
 
   const handleMicroBitClick = () => {
@@ -32,7 +32,7 @@ export function Tela15StandMicroBit({ onPrevious, onNext }: Tela15StandMicroBitP
 
   return (
     <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-gradient-to-br from-[var(--sesc-green-grass)] to-[var(--sesc-blue-dark)]">
-      <Header currentScreen={15} totalScreens={16} onPrevious={onPrevious} onNext={onNext} />
+      <Header currentScreen={14} totalScreens={15} onPrevious={onPrevious} onNext={onNext} />
 
       <div className="pt-32 px-20 h-full flex flex-col items-center justify-center gap-12">
         {/* Badge "VEJA AO LADO" */}

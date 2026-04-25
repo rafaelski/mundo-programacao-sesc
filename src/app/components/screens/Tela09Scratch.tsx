@@ -2,12 +2,12 @@ import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
-interface Tela10ScratchProps {
+interface Tela09ScratchProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-export const TELA10_THEME: ScreenThemeConfig = {
+export const TELA09_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-mustard-argyle",
   contentStageThemeClassName: "content-stage-theme-soft",
 };
@@ -19,11 +19,11 @@ interface Block {
   correctOrder: number;
 }
 
-const TELA10_LAYOUT = createStoryScreenLayout({
+const TELA09_LAYOUT = createStoryScreenLayout({
   columns: '0.92fr 1.08fr',
 });
 
-export function Tela10Scratch({ onPrevious, onNext }: Tela10ScratchProps) {
+export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
   const [droppedBlocks, setDroppedBlocks] = useState<Block[]>([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const [catJumping, setCatJumping] = useState(false);
@@ -58,11 +58,11 @@ export function Tela10Scratch({ onPrevious, onNext }: Tela10ScratchProps) {
 
   return (
     <StoryScreenFrame
-      currentScreen={10}
+      currentScreen={9}
       onPrevious={onPrevious}
       onNext={onNext}
-      layout={TELA10_LAYOUT}
-      contentStageThemeClassName={TELA10_THEME.contentStageThemeClassName}
+      layout={TELA09_LAYOUT}
+      contentStageThemeClassName={TELA09_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
       leftMain={
         <>

@@ -34,7 +34,7 @@ export function Tela01Home({ onStart }: Tela01HomeProps) {
           </p>
 
           <div className="flex items-center gap-4 rounded-full border-[3px] border-[rgba(255,255,255,0.24)] bg-[rgba(255,255,255,0.12)] px-8 py-4 text-[22px] font-black uppercase tracking-[0.08em] text-white">
-            <span>16 telas</span>
+            <span>15 telas</span>
             <span className="text-[var(--sesc-yellow-soft)]">•</span>
             <span>histórias, jogos e experiências</span>
           </div>

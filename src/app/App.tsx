@@ -6,15 +6,14 @@ import { Tela04MaquinasGigantes, TELA04_THEME } from "./components/screens/Tela0
 import { Tela05ElasEnsinaram, TELA05_THEME } from "./components/screens/Tela05ElasEnsinaram";
 import { Tela06FalandoALingua, TELA06_THEME } from "./components/screens/Tela06FalandoALingua";
 import { Tela07VideogameNasce, TELA07_THEME } from "./components/screens/Tela07VideogameNasce";
-import { Tela08TartarugaDesenha, TELA08_THEME } from "./components/screens/Tela08TartarugaDesenha";
-import { Tela09ComputadorEmCasa, TELA09_THEME } from "./components/screens/Tela09ComputadorEmCasa";
-import { Tela10Scratch, TELA10_THEME } from "./components/screens/Tela10Scratch";
-import { Tela11GamesNoBolso, TELA11_THEME } from "./components/screens/Tela11GamesNoBolso";
-import { Tela12EAgora, TELA12_THEME } from "./components/screens/Tela12EAgora";
-import { Tela13StandOtto, TELA13_THEME } from "./components/screens/Tela13StandOtto";
-import { Tela14StandArteGenerativa, TELA14_THEME } from "./components/screens/Tela14StandArteGenerativa";
-import { Tela15StandMicroBit, TELA15_THEME } from "./components/screens/Tela15StandMicroBit";
-import { Tela16AgoraESuaVez, TELA16_THEME } from "./components/screens/Tela16AgoraESuaVez";
+import { Tela08ComputadorEmCasa, TELA08_THEME } from "./components/screens/Tela08ComputadorEmCasa";
+import { Tela09Scratch, TELA09_THEME } from "./components/screens/Tela09Scratch";
+import { Tela10GamesNoBolso, TELA10_THEME } from "./components/screens/Tela10GamesNoBolso";
+import { Tela11EAgora, TELA11_THEME } from "./components/screens/Tela11EAgora";
+import { Tela12StandOtto, TELA12_THEME } from "./components/screens/Tela12StandOtto";
+import { Tela13StandArteGenerativa, TELA13_THEME } from "./components/screens/Tela13StandArteGenerativa";
+import { Tela14StandMicroBit, TELA14_THEME } from "./components/screens/Tela14StandMicroBit";
+import { Tela15AgoraESuaVez, TELA15_THEME } from "./components/screens/Tela15AgoraESuaVez";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 
 const APP_BACKGROUNDS_BY_SCREEN = [
@@ -33,7 +32,6 @@ const APP_BACKGROUNDS_BY_SCREEN = [
   TELA13_THEME.appBackgroundClassName,
   TELA14_THEME.appBackgroundClassName,
   TELA15_THEME.appBackgroundClassName,
-  TELA16_THEME.appBackgroundClassName,
 ];
 
 export default function App() {
@@ -47,7 +45,7 @@ export default function App() {
   }, [currentScreen]);
 
   const goToNext = useCallback(() => {
-    if (currentScreen < 15) {
+    if (currentScreen < 14) {
       setCurrentScreen((prev) => prev + 1);
     }
   }, [currentScreen]);
@@ -77,15 +75,14 @@ export default function App() {
     <Tela05ElasEnsinaram key="tela05" onPrevious={() => goToScreen(3)} onNext={() => goToScreen(5)} />,
     <Tela06FalandoALingua key="tela06" onPrevious={() => goToScreen(4)} onNext={() => goToScreen(6)} />,
     <Tela07VideogameNasce key="tela07" onPrevious={() => goToScreen(5)} onNext={() => goToScreen(7)} />,
-    <Tela08TartarugaDesenha key="tela08" onPrevious={() => goToScreen(6)} onNext={() => goToScreen(8)} />,
-    <Tela09ComputadorEmCasa key="tela09" onPrevious={() => goToScreen(7)} onNext={() => goToScreen(9)} />,
-    <Tela10Scratch key="tela10" onPrevious={() => goToScreen(8)} onNext={() => goToScreen(10)} />,
-    <Tela11GamesNoBolso key="tela11" onPrevious={() => goToScreen(9)} onNext={() => goToScreen(11)} />,
-    <Tela12EAgora key="tela12" onPrevious={() => goToScreen(10)} onNext={() => goToScreen(12)} />,
-    <Tela13StandOtto key="tela13" onPrevious={() => goToScreen(11)} onNext={() => goToScreen(13)} />,
-    <Tela14StandArteGenerativa key="tela14" onPrevious={() => goToScreen(12)} onNext={() => goToScreen(14)} />,
-    <Tela15StandMicroBit key="tela15" onPrevious={() => goToScreen(13)} onNext={() => goToScreen(15)} />,
-    <Tela16AgoraESuaVez key="tela16" onRestart={() => goToScreen(0)} />,
+    <Tela08ComputadorEmCasa key="tela08" onPrevious={() => goToScreen(6)} onNext={() => goToScreen(8)} />,
+    <Tela09Scratch key="tela09" onPrevious={() => goToScreen(7)} onNext={() => goToScreen(9)} />,
+    <Tela10GamesNoBolso key="tela10" onPrevious={() => goToScreen(8)} onNext={() => goToScreen(10)} />,
+    <Tela11EAgora key="tela11" onPrevious={() => goToScreen(9)} onNext={() => goToScreen(11)} />,
+    <Tela12StandOtto key="tela12" onPrevious={() => goToScreen(10)} onNext={() => goToScreen(12)} />,
+    <Tela13StandArteGenerativa key="tela13" onPrevious={() => goToScreen(11)} onNext={() => goToScreen(13)} />,
+    <Tela14StandMicroBit key="tela14" onPrevious={() => goToScreen(12)} onNext={() => goToScreen(14)} />,
+    <Tela15AgoraESuaVez key="tela15" onRestart={() => goToScreen(0)} />,
   ];
 
   return (

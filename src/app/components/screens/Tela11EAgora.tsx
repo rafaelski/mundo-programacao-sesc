@@ -1,29 +1,29 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
-interface Tela12EAgoraProps {
+interface Tela11EAgoraProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-export const TELA12_THEME: ScreenThemeConfig = {
+export const TELA11_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-pink-grid",
   contentStageThemeClassName: "content-stage-theme-cream",
 };
 
-const TELA12_LAYOUT = createStoryScreenLayout({
+const TELA11_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '15rem',
   columns: '0.94fr 1.06fr',
 });
 
-export function Tela12EAgora({ onPrevious, onNext }: Tela12EAgoraProps) {
+export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
   return (
     <StoryScreenFrame
-      currentScreen={12}
+      currentScreen={11}
       onPrevious={onPrevious}
       onNext={onNext}
-      layout={TELA12_LAYOUT}
-      contentStageThemeClassName={TELA12_THEME.contentStageThemeClassName}
+      layout={TELA11_LAYOUT}
+      contentStageThemeClassName={TELA11_THEME.contentStageThemeClassName}
       leftMain={
         <>
           <div>

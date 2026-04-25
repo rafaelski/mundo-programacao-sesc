@@ -3,20 +3,20 @@ import { Header } from '../Header';
 import { Navigation } from '../Navigation';
 import { Button } from '../Button';
 
-interface Tela13StandOttoProps {
+interface Tela12StandOttoProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-export const TELA13_THEME: ScreenThemeConfig = {
+export const TELA12_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-mint-hex",
   contentStageThemeClassName: "",
 };
 
-export function Tela13StandOtto({ onPrevious, onNext }: Tela13StandOttoProps) {
+export function Tela12StandOtto({ onPrevious, onNext }: Tela12StandOttoProps) {
   return (
     <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-gradient-to-br from-[var(--sesc-blue-dark)] to-[var(--sesc-pink)]">
-      <Header currentScreen={13} totalScreens={16} onPrevious={onPrevious} onNext={onNext} />
+      <Header currentScreen={12} totalScreens={15} onPrevious={onPrevious} onNext={onNext} />
 
       <div className="pt-32 px-20 h-full flex flex-col items-center justify-center gap-12">
         {/* Badge "VEJA AO LADO" */}

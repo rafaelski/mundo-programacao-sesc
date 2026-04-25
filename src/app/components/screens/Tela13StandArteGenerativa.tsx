@@ -4,12 +4,12 @@ import { Header } from '../Header';
 import { Navigation } from '../Navigation';
 import { Button } from '../Button';
 
-interface Tela14StandArteGenerativaProps {
+interface Tela13StandArteGenerativaProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-export const TELA14_THEME: ScreenThemeConfig = {
+export const TELA13_THEME: ScreenThemeConfig = {
   appBackgroundClassName: "app-bg-tile app-bg-binary",
   contentStageThemeClassName: "",
 };
@@ -25,7 +25,7 @@ interface Particle {
   speed: number;
 }
 
-export function Tela14StandArteGenerativa({ onPrevious, onNext }: Tela14StandArteGenerativaProps) {
+export function Tela13StandArteGenerativa({ onPrevious, onNext }: Tela13StandArteGenerativaProps) {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export function Tela14StandArteGenerativa({ onPrevious, onNext }: Tela14StandArt
   return (
     <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-black">
       <div className="relative z-50">
-        <Header currentScreen={14} totalScreens={16} onPrevious={onPrevious} onNext={onNext} />
+        <Header currentScreen={13} totalScreens={15} onPrevious={onPrevious} onNext={onNext} />
       </div>
 
       {/* Partículas animadas no fundo */}
