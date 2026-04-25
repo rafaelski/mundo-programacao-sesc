@@ -34,6 +34,8 @@ const blocks: Block[] = [
 export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
   const [droppedBlocks, setDroppedBlocks] = useState<Block[]>([]);
   const [isCorrect, setIsCorrect] = useState(false);
+  const hasCompletedProgram = droppedBlocks.length === blocks.length;
+  const isWrong = hasCompletedProgram && !isCorrect;
 
   const handleBlockClick = (block: Block) => {
     if (droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id)) {
@@ -158,17 +160,17 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
                 <p className="text-center text-[19px] font-black text-white">Correto! Agora ele anda e pula!</p>
               </div>
             )}
+
+            {isWrong && (
+              <div className="absolute bottom-4 left-[176px] right-6 rounded-xl border-[4px] border-black bg-[#f15b5b] px-5 py-2">
+                <p className="text-center text-[18px] font-black text-white">Quase! Recomece e tente acertar a ordem.</p>
+              </div>
+            )}
           </div>
 
           <div className="relative z-30 min-h-0 overflow-visible rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
             <div className="absolute bottom-[154px] right-[128px] h-[46px] w-[46px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] opacity-95 shadow-[4px_4px_0_rgba(0,0,0,0.25)]" />
-            {!isCorrect && (
-              <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
-                monte o código
-              </div>
-            )}
-
             <div
               className={`pointer-events-none absolute bottom-[26px] left-[46px] z-50 h-[242px] w-[310px] ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
