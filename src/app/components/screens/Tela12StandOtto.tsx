@@ -1,7 +1,5 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
-import { Header } from '../Header';
-import { Navigation } from '../Navigation';
-import { Button } from '../Button';
+import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela12StandOttoProps {
   onPrevious: () => void;
@@ -9,159 +7,116 @@ interface Tela12StandOttoProps {
 }
 
 export const TELA12_THEME: ScreenThemeConfig = {
-  appBackgroundClassName: "app-bg-tile app-bg-mint-hex",
-  contentStageThemeClassName: "",
+  appBackgroundClassName: 'app-bg-tile app-bg-mint-hex',
+  contentStageThemeClassName: 'content-stage-theme-frost',
 };
+
+const TELA12_LAYOUT = createStoryScreenLayout({
+  columns: '0.9fr 1.1fr',
+  leftBottomMinHeight: '12rem',
+  columnGap: '2.75rem',
+});
+
+const OTTO_IMAGE_SRC = `${import.meta.env.BASE_URL}images/illustrations/otto.png`;
 
 export function Tela12StandOtto({ onPrevious, onNext }: Tela12StandOttoProps) {
   return (
-    <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-gradient-to-br from-[var(--sesc-blue-dark)] to-[var(--sesc-pink)]">
-      <Header currentScreen={12} totalScreens={15} onPrevious={onPrevious} onNext={onNext} />
+    <StoryScreenFrame
+      currentScreen={12}
+      onPrevious={onPrevious}
+      onNext={onNext}
+      layout={TELA12_LAYOUT}
+      contentStageThemeClassName={TELA12_THEME.contentStageThemeClassName}
+      rightClassName="overflow-hidden"
+      leftMain={
+        <>
+          <div>
+            <div className="mb-5 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-6 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
+              <span className="text-[22px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
+                stand ao lado
+              </span>
+            </div>
 
-      <div className="pt-32 px-20 h-full flex flex-col items-center justify-center gap-12">
-        {/* Badge "VEJA AO LADO" */}
-        <div className="bg-[var(--sesc-yellow-flower)] border-[6px] border-black rounded-full px-12 py-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-3">
-          <p className="text-[36px] font-black uppercase flex items-center gap-4">
-            <span>VEJA AO LADO</span>
-            <span className="text-[48px]">→</span>
-          </p>
-        </div>
-
-        {/* Título */}
-        <h2 className="relative">
-          <span className="absolute inset-0 text-[96px] font-black uppercase tracking-tight text-black transform translate-x-[8px] translate-y-[8px]">
-            OTTO DIY & OTTOKY
-          </span>
-          <span className="absolute inset-0 text-[96px] font-black uppercase tracking-tight text-[var(--sesc-orange)] transform translate-x-[4px] translate-y-[4px]">
-            OTTO DIY & OTTOKY
-          </span>
-          <span className="relative text-[96px] font-black uppercase tracking-tight text-white">
-            OTTO DIY & OTTOKY
-          </span>
-        </h2>
-
-        {/* Robô Otto em destaque */}
-        <div className="relative">
-          {/* Notas musicais flutuando */}
-          <div className="absolute -top-24 -left-24 text-[64px] animate-bounce">♪</div>
-          <div className="absolute -top-32 right-12 text-[56px] animate-bounce" style={{ animationDelay: '0.3s' }}>♫</div>
-          <div className="absolute top-12 -right-32 text-[52px] animate-bounce" style={{ animationDelay: '0.6s' }}>♪</div>
-
-          {/* Engrenagens */}
-          <div className="absolute -bottom-16 -left-32 w-[100px] h-[100px] animate-spin" style={{ animationDuration: '3s' }}>
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <circle cx="50" cy="50" r="35" fill="var(--sesc-gray-stone)" stroke="black" strokeWidth="4" />
-              <circle cx="50" cy="50" r="20" fill="var(--sesc-gray-light)" stroke="black" strokeWidth="3" />
-              {[...Array(8)].map((_, i) => (
-                <rect
-                  key={i}
-                  x="46"
-                  y="10"
-                  width="8"
-                  height="15"
-                  fill="var(--sesc-gray-stone)"
-                  stroke="black"
-                  strokeWidth="2"
-                  transform={`rotate(${i * 45} 50 50)`}
-                />
-              ))}
-            </svg>
+            <h2 className="relative inline-block">
+              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[74px] font-black uppercase leading-[0.95] tracking-tight text-black">
+                OTTO DIY
+              </span>
+              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[74px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-yellow-flower)]">
+                OTTO DIY
+              </span>
+              <span className="relative text-[74px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-blue-dark)]">
+                OTTO DIY
+              </span>
+            </h2>
           </div>
 
-          <div className="absolute bottom-24 -right-28 w-[80px] h-[80px] animate-spin" style={{ animationDuration: '4s', animationDirection: 'reverse' }}>
-            <svg viewBox="0 0 80 80" className="w-full h-full">
-              <circle cx="40" cy="40" r="28" fill="var(--sesc-orange)" stroke="black" strokeWidth="4" />
-              <circle cx="40" cy="40" r="16" fill="var(--sesc-yellow-flower)" stroke="black" strokeWidth="3" />
-              {[...Array(6)].map((_, i) => (
-                <rect
-                  key={i}
-                  x="37"
-                  y="8"
-                  width="6"
-                  height="12"
-                  fill="var(--sesc-orange)"
-                  stroke="black"
-                  strokeWidth="2"
-                  transform={`rotate(${i * 60} 40 40)`}
-                />
-              ))}
-            </svg>
+          <div className="mt-8 space-y-5 text-[30px] font-bold leading-relaxed text-black">
+            <p>
+              No stand ao lado, robôs Otto estão esperando por você. Eles são{' '}
+              <span className="text-[var(--sesc-orange)]">abertos</span>: qualquer pessoa pode montar, programar e até
+              imprimir as peças numa impressora 3D.
+            </p>
+            <p>
+              Você pode fazer o Otto <span className="text-[var(--sesc-pink)]">dançar</span>,{' '}
+              <span className="text-[var(--sesc-green-grass)]">andar</span>, desviar de obstáculos e piscar os olhos.
+            </p>
+          </div>
+        </>
+      }
+      leftBottom={
+        <div className="grid h-full grid-cols-3 gap-4">
+          {[
+            { label: 'montar', icon: '🧩', color: 'var(--sesc-yellow-flower)' },
+            { label: 'programar', icon: '</>', color: 'var(--sesc-blue-sky)' },
+            { label: 'brincar', icon: '♪', color: 'var(--sesc-pink-soft)' },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex min-h-[132px] flex-col items-center justify-center rounded-3xl border-[4px] border-black px-3 text-center shadow-[6px_6px_0_rgba(39,35,72,0.16)]"
+              style={{ backgroundColor: item.color }}
+            >
+              <span className="text-[42px] font-black text-[var(--sesc-blue-dark)]">{item.icon}</span>
+              <span className="mt-2 text-[22px] font-black uppercase tracking-[0.08em] text-[var(--sesc-blue-dark)]">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      }
+      right={
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#dff3ff_0%,#fffaf1_72%)]">
+          <div className="absolute inset-x-0 bottom-0 h-[150px] bg-[linear-gradient(180deg,rgba(111,179,63,0.18),rgba(111,179,63,0.42))]" />
+          <div className="absolute bottom-[58px] left-1/2 h-[42px] w-[520px] -translate-x-1/2 rounded-full bg-[rgba(39,35,72,0.18)] blur-sm" />
+
+          <div className="animate-symbol-float absolute left-[72px] top-[74px] rounded-3xl border-[4px] border-black bg-white px-5 py-3 text-[34px] font-black text-[var(--sesc-blue-dark)] shadow-[5px_5px_0_rgba(39,35,72,0.18)]">
+            {'{}'}
+          </div>
+          <div
+            className="animate-symbol-float absolute right-[90px] top-[98px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-3 text-[34px] font-black text-[var(--sesc-blue-dark)] shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '0.35s' }}
+          >
+            ⚙
+          </div>
+          <div
+            className="animate-symbol-float absolute left-[112px] bottom-[210px] rounded-full border-[4px] border-black bg-[var(--sesc-pink)] px-5 py-3 text-[34px] font-black text-white shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '0.7s' }}
+          >
+            ♪
+          </div>
+          <div
+            className="animate-symbol-float absolute right-[118px] bottom-[236px] rounded-3xl border-[4px] border-black bg-[var(--sesc-green-grass)] px-5 py-3 text-[32px] font-black text-white shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '1s' }}
+          >
+            3D
           </div>
 
-          {/* Robô Otto */}
-          <div className="relative scale-150">
-            {/* Cabeça */}
-            <div className="w-[240px] h-[200px] bg-[var(--sesc-orange)] border-[8px] border-black rounded-3xl mx-auto shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative">
-              {/* Antenas */}
-              <div className="absolute -top-16 left-[60px] w-[4px] h-[60px] bg-black"></div>
-              <div className="absolute -top-20 left-[55px] w-[20px] h-[20px] bg-[var(--sesc-yellow-flower)] border-[4px] border-black rounded-full"></div>
-
-              <div className="absolute -top-16 right-[60px] w-[4px] h-[60px] bg-black"></div>
-              <div className="absolute -top-20 right-[55px] w-[20px] h-[20px] bg-[var(--sesc-yellow-flower)] border-[4px] border-black rounded-full"></div>
-
-              {/* Olhos (LEDs) */}
-              <div className="absolute top-[50px] left-[40px] w-[50px] h-[50px] bg-[var(--sesc-green-grass)] border-[5px] border-black rounded-lg">
-                <div className="absolute inset-0 bg-[var(--sesc-yellow-flower)] rounded-full m-2 animate-pulse"></div>
-              </div>
-              <div className="absolute top-[50px] right-[40px] w-[50px] h-[50px] bg-[var(--sesc-green-grass)] border-[5px] border-black rounded-lg">
-                <div className="absolute inset-0 bg-[var(--sesc-yellow-flower)] rounded-full m-2 animate-pulse"></div>
-              </div>
-
-              {/* Boca */}
-              <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 w-[100px] h-[6px] bg-black rounded-full"></div>
-              <div className="absolute bottom-[35px] left-1/2 -translate-x-[35px] w-[70px] h-[30px] border-[4px] border-black border-t-0 rounded-b-full"></div>
-            </div>
-
-            {/* Corpo */}
-            <div className="w-[220px] h-[160px] bg-[var(--sesc-blue-dark)] border-[8px] border-black rounded-2xl mx-auto -mt-2 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative">
-              {/* Logo/Display */}
-              <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[120px] h-[80px] bg-black border-[4px] border-white rounded-lg">
-                <p className="text-[var(--sesc-green-grass)] text-[20px] font-bold text-center mt-6">OTTO</p>
-                <p className="text-[var(--sesc-yellow-flower)] text-[16px] font-bold text-center">DIY</p>
-              </div>
-
-              {/* Parafusos decorativos */}
-              <div className="absolute top-4 left-4 w-[12px] h-[12px] bg-[var(--sesc-gray-stone)] border-[3px] border-black rounded-full"></div>
-              <div className="absolute top-4 right-4 w-[12px] h-[12px] bg-[var(--sesc-gray-stone)] border-[3px] border-black rounded-full"></div>
-            </div>
-
-            {/* Braços */}
-            <div className="absolute top-[220px] -left-[80px] w-[60px] h-[120px] bg-[var(--sesc-blue-dark)] border-[6px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform rotate-12">
-              <div className="absolute -bottom-[50px] left-0 right-0 w-[50px] h-[50px] bg-[var(--sesc-orange)] border-[5px] border-black rounded-full mx-auto"></div>
-            </div>
-
-            <div className="absolute top-[220px] -right-[80px] w-[60px] h-[120px] bg-[var(--sesc-blue-dark)] border-[6px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform -rotate-12">
-              <div className="absolute -bottom-[50px] left-0 right-0 w-[50px] h-[50px] bg-[var(--sesc-orange)] border-[5px] border-black rounded-full mx-auto"></div>
-            </div>
-
-            {/* Pernas */}
-            <div className="flex justify-center gap-8 -mt-2">
-              <div className="w-[70px] h-[140px] bg-[var(--sesc-orange)] border-[6px] border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
-                {/* Pé */}
-                <div className="absolute -bottom-[45px] -left-[10px] w-[90px] h-[50px] bg-[var(--sesc-yellow-flower)] border-[6px] border-black rounded-2xl"></div>
-              </div>
-              <div className="w-[70px] h-[140px] bg-[var(--sesc-orange)] border-[6px] border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
-                {/* Pé */}
-                <div className="absolute -bottom-[45px] -left-[10px] w-[90px] h-[50px] bg-[var(--sesc-yellow-flower)] border-[6px] border-black rounded-2xl"></div>
-              </div>
-            </div>
-          </div>
+          <img
+            src={OTTO_IMAGE_SRC}
+            alt="Robô Otto DIY"
+            className="absolute bottom-[34px] left-1/2 z-10 h-[92%] max-h-[720px] w-auto -translate-x-1/2 object-contain"
+          />
         </div>
-
-        {/* Texto */}
-        <div className="bg-white bg-opacity-95 border-[6px] border-black rounded-3xl p-12 max-w-4xl shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-          <p className="text-[32px] leading-relaxed font-bold text-black text-center">
-            No stand ao lado, dois robôzinhos estão esperando por você. Eles são robôs <span className="text-[var(--sesc-orange)]">ABERTOS</span> — qualquer pessoa pode montar, programar e até imprimir as peças numa impressora 3D. Você pode fazer o Otto <span className="text-[var(--sesc-pink)]">dançar, andar, desviar de obstáculos</span> e piscar os olhos. Tudo com programação!
-          </p>
-        </div>
-
-        {/* Botão */}
-        <Button variant="primary" onClick={onNext} icon="▶" className="scale-125">
-          IR VER O OTTO
-        </Button>
-      </div>
-
-      <Navigation onPrevious={onPrevious} onNext={onNext} />
-    </div>
+      }
+    />
   );
 }
