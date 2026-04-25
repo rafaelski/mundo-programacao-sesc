@@ -387,6 +387,80 @@
   }
 }
 
+@keyframes scratchCatRunJump {
+  0% {
+    transform: translate3d(-230px, 0, 0) rotate(-1deg);
+  }
+
+  18% {
+    transform: translate3d(-120px, 0, 0) rotate(1deg);
+  }
+
+  36% {
+    transform: translate3d(-12px, 0, 0) rotate(-1deg);
+  }
+
+  52% {
+    transform: translate3d(96px, 0, 0) rotate(1deg);
+  }
+
+  64% {
+    transform: translate3d(176px, -128px, 0) rotate(-6deg);
+  }
+
+  76% {
+    transform: translate3d(236px, 0, 0) rotate(3deg);
+  }
+
+  88% {
+    transform: translate3d(270px, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+
+  89% {
+    transform: translate3d(-250px, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(-230px, 0, 0) rotate(-1deg);
+    opacity: 1;
+  }
+}
+
+@keyframes scratchCatWalkLegFront {
+  0%,
+  100% {
+    transform: rotate(16deg);
+  }
+
+  50% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes scratchCatWalkLegBack {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes scratchCatTailWag {
+  0%,
+  100% {
+    transform: rotate(-24deg);
+  }
+
+  50% {
+    transform: rotate(-6deg);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-in-out;
 }
@@ -439,6 +513,25 @@
 
 .animate-retro-cursor-path {
   animation: retroCursorPath 5.6s ease-in-out infinite;
+}
+
+.animate-scratch-cat-run-jump {
+  animation: scratchCatRunJump 4.6s ease-in-out infinite;
+}
+
+.animate-scratch-cat-run-jump .scratch-cat-leg-front {
+  animation: scratchCatWalkLegFront 0.38s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-scratch-cat-run-jump .scratch-cat-leg-back {
+  animation: scratchCatWalkLegBack 0.38s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-scratch-cat-run-jump .scratch-cat-tail {
+  animation: scratchCatTailWag 0.52s ease-in-out infinite;
+  transform-origin: right center;
 }
 
 .recipe-writing-caret::after {
