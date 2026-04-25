@@ -803,6 +803,49 @@
     --content-stage-padding: var(--sesc-stage-padding-frost);
   }
 
+  /* Tela10: cenario Minecraft */
+  @keyframes minecraft-clouds-float {
+    0%, 100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(26px);
+    }
+  }
+
+  @keyframes minecraft-trees-bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes minecraft-ground-shift {
+    0%, 100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-14px);
+    }
+  }
+
+  .minecraft-clouds {
+    animation: minecraft-clouds-float 8s ease-in-out infinite;
+  }
+
+  .minecraft-trees {
+    animation: minecraft-trees-bob 6s ease-in-out infinite;
+  }
+
+  .minecraft-ground-pattern {
+    animation: minecraft-ground-shift 7s ease-in-out infinite;
+  }
+
   /* Utilitarios gerais */
   .text-balance-pretty {
     text-wrap: balance;

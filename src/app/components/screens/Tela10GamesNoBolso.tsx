@@ -72,12 +72,12 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
         </Card>
       }
       right={
-        <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-[#9ed9ff]">
-          <svg viewBox="0 0 720 620" className="absolute inset-0 h-full w-full" aria-hidden="true">
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-[#8b5a2b]">
+          <svg viewBox="0 0 720 620" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
             <rect width="720" height="620" fill="#9ed9ff" />
             <rect x="0" y="380" width="720" height="72" fill="#4fbf45" />
-            <rect x="0" y="452" width="720" height="168" fill="#8b5a2b" />
-            <g opacity="0.28">
+            <rect x="0" y="452" width="720" height="190" fill="#8b5a2b" />
+            <g className="minecraft-ground-pattern" opacity="0.28">
               {Array.from({ length: 18 }).map((_, index) => (
                 <rect key={`grass-${index}`} x={index * 42 - 10} y="380" width="24" height="24" fill="#2d9f36" />
               ))}
@@ -89,7 +89,7 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
               ))}
             </g>
 
-            <g>
+            <g className="minecraft-trees">
               <rect x="64" y="246" width="46" height="134" fill="#6f3d1d" />
               <rect x="20" y="168" width="140" height="72" fill="#2f8f3a" />
               <rect x="44" y="112" width="96" height="78" fill="#3fb34b" />
@@ -100,7 +100,7 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
               <rect x="590" y="220" width="92" height="82" fill="#2f8f3a" />
             </g>
 
-            <g opacity="0.9">
+            <g className="minecraft-clouds" opacity="0.9">
               <rect x="76" y="76" width="64" height="32" fill="white" />
               <rect x="140" y="98" width="88" height="32" fill="white" />
               <rect x="484" y="66" width="80" height="32" fill="white" />
@@ -111,7 +111,7 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
           <img
             src={MINECRAFT_CHARACTER_SRC}
             alt="Personagem inspirado em Minecraft segurando uma placa de código"
-            className="pointer-events-none absolute bottom-[-38px] left-1/2 z-10 h-[92%] max-h-[620px] w-auto -translate-x-1/2 object-contain drop-shadow-[12px_14px_0_rgba(17,24,51,0.22)]"
+            className="pointer-events-none absolute bottom-[-38px] left-1/2 z-10 h-[92%] max-h-[620px] w-auto -translate-x-1/2 object-contain"
           />
         </div>
       }

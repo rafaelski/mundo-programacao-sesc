@@ -99,7 +99,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
         <div className="relative grid h-full w-full grid-rows-[152px_196px_minmax(0,1fr)] gap-5 overflow-visible">
           <div className="h-full overflow-hidden">
             <p className="mb-3 text-[22px] font-black leading-tight text-[var(--sesc-blue-dark)]">
-              Monte um programa para o personagem andar até a bolinha e depois pular para pegá-la.
+              Monte um programa para o gatinho andar até a bolinha e depois pular para pegá-la.
             </p>
             <div className="grid grid-cols-4 gap-3">
               {blocks.map((block) => {
@@ -170,55 +170,76 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
 
           <div className="relative z-30 min-h-0 overflow-visible rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
-            <div className="absolute bottom-[154px] right-[128px] h-[46px] w-[46px] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] opacity-95 shadow-[4px_4px_0_rgba(0,0,0,0.25)]" />
+            <svg
+              viewBox="0 0 76 76"
+              className="absolute bottom-[140px] right-[112px] h-[76px] w-[76px] overflow-visible"
+              aria-hidden="true"
+            >
+              <circle cx="38" cy="34" r="25" fill="var(--sesc-yellow-flower)" stroke="black" strokeWidth="5" />
+              <path d="M18 30 C26 18 44 15 56 27" fill="none" stroke="#d69f00" strokeWidth="4" strokeLinecap="round" />
+              <path d="M16 39 C30 30 47 29 61 38" fill="none" stroke="#d69f00" strokeWidth="4" strokeLinecap="round" />
+              <path d="M23 52 C29 39 40 24 50 14" fill="none" stroke="#f9ea7a" strokeWidth="4" strokeLinecap="round" />
+              <path d="M52 53 C45 41 35 27 23 17" fill="none" stroke="#d69f00" strokeWidth="4" strokeLinecap="round" />
+              <path d="M17 48 C8 53 7 62 2 67" fill="none" stroke="var(--sesc-yellow-flower)" strokeWidth="7" strokeLinecap="round" />
+              <path d="M17 48 C8 53 7 62 2 67" fill="none" stroke="#d69f00" strokeWidth="3" strokeLinecap="round" />
+            </svg>
             <div
               className={`pointer-events-none absolute bottom-[26px] left-[46px] z-50 h-[242px] w-[310px] ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
               }`}
             >
               <svg viewBox="0 0 310 242" className="h-full w-full overflow-visible" aria-hidden="true">
-                <g stroke="#111833" strokeLinejoin="round" strokeWidth="6">
-                  <g className="scratch-cat-leg-back">
-                    <path d="M104 176 H142 V226 H98 V202 H82 V176Z" fill="#293a9a" />
-                    <path d="M82 202 H142 V232 H72 V218Z" fill="#9fafdc" />
-                    <path d="M92 206 H118 V226 H88Z" fill="#8b98aa" strokeWidth="0" />
-                  </g>
-
-                  <g className="scratch-cat-leg-front">
-                    <path d="M170 176 H208 L226 226 H182 V202 H166 V176Z" fill="#3244a7" />
-                    <path d="M182 202 H238 V232 H174 V218Z" fill="#9fafdc" />
-                    <path d="M208 206 H232 V226 H204Z" fill="#8b98aa" strokeWidth="0" />
-                  </g>
-
-                  <path d="M72 100 H238 L256 172 L220 188 L206 130 H104 L90 188 L54 172Z" fill="#38b79f" />
-                  <path d="M54 172 L72 100 H102 L92 186Z" fill="#f59a2f" />
-                  <path d="M238 100 H268 L286 172 L248 186Z" fill="#f59a2f" />
-
-                  <path d="M92 122 H218 V184 H92Z" fill="#17233f" />
-                  <path d="M88 116 H222 V132 H88Z" fill="#4d688e" />
-                  <path d="M104 140 H116 V152 H104Z" fill="#f4b9d5" strokeWidth="0" />
-                  <path d="M126 140 H134 V152 H126Z" fill="#d7652d" strokeWidth="0" />
-                  <path d="M148 140 H170 V152 H148Z" fill="#e8ec27" strokeWidth="0" />
-                  <path d="M184 140 H210 V148 H184Z" fill="#5eb4e8" strokeWidth="0" />
-                  <path d="M114 164 H156 V172 H114Z" fill="#38b79f" strokeWidth="0" />
-                  <path d="M168 164 H206 V172 H168Z" fill="#f8db19" strokeWidth="0" />
-                  <path d="M112 148 H120 V160 H112Z" fill="#f4b9d5" strokeWidth="0" />
-                  <path d="M138 154 H160 V160 H138Z" fill="#5eb4e8" strokeWidth="0" />
-                  <path d="M198 154 H214 V160 H198Z" fill="#f4b9d5" strokeWidth="0" />
-
-                  <path d="M132 82 H178 V112 H132Z" fill="#d26728" />
-                  <path d="M116 10 H210 V88 H116Z" fill="#f59a2f" />
-                  <path d="M116 10 H210 V42 H116Z" fill="#5b2418" />
-                  <path d="M116 10 H148 V88 H116Z" fill="#5b2418" />
-                  <path d="M150 10 H210 V22 H150Z" fill="#cf5f24" strokeWidth="0" />
-                  <path d="M138 54 H164 V74 H138Z" fill="#fff8eb" strokeWidth="0" />
-                  <path d="M176 54 H202 V74 H176Z" fill="#fff8eb" strokeWidth="0" />
-                  <path d="M160 54 H176 V74 H160Z" fill="#111833" strokeWidth="0" />
-                  <path d="M202 54 H210 V74 H202Z" fill="#111833" strokeWidth="0" />
-                  <path d="M162 78 H188 V100 H162Z" fill="#805231" strokeWidth="0" />
-                  <path d="M138 100 H210 V122 H138Z" fill="#5b2418" />
-                  <path d="M158 104 H194 V118 H158Z" fill="#f59a2f" strokeWidth="0" />
+                <g className="scratch-cat-tail">
+                  <path
+                    d="M95 160 C30 166 34 78 94 86 C142 92 126 152 80 132"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="39"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M95 160 C30 166 34 78 94 86 C142 92 126 152 80 132"
+                    fill="none"
+                    stroke="#f5a623"
+                    strokeWidth="29"
+                    strokeLinecap="round"
+                  />
                 </g>
+
+                <ellipse cx="158" cy="164" rx="58" ry="52" fill="#f5a623" stroke="black" strokeWidth="6" />
+                <path d="M146 128 C125 150 125 196 158 211 C191 196 191 150 170 128Z" fill="#fff0c7" />
+                <path d="M116 138 C102 150 94 174 100 199" fill="none" stroke="#a96122" strokeWidth="7" strokeLinecap="round" />
+                <path d="M126 118 L108 132 M130 134 L110 148 M196 124 L218 136" stroke="#a96122" strokeWidth="6" strokeLinecap="round" />
+
+                <g className="scratch-cat-leg-back">
+                  <path d="M123 198 C120 219 134 227 150 215" fill="#fff0c7" stroke="black" strokeWidth="6" strokeLinecap="round" />
+                </g>
+                <g className="scratch-cat-leg-front">
+                  <path d="M172 196 C174 221 190 226 202 211" fill="#fff0c7" stroke="black" strokeWidth="6" strokeLinecap="round" />
+                </g>
+
+                <path
+                  d="M102 78 L122 20 L159 65 L198 65 L238 20 L258 78 C280 98 276 139 246 158 C214 178 145 178 112 158 C82 139 80 98 102 78Z"
+                  fill="#f5a623"
+                  stroke="black"
+                  strokeWidth="6"
+                  strokeLinejoin="round"
+                />
+                <path d="M116 74 L126 38 L148 70Z" fill="#f06292" stroke="#a96122" strokeWidth="5" strokeLinejoin="round" />
+                <path d="M244 74 L234 38 L212 70Z" fill="#f06292" stroke="#a96122" strokeWidth="5" strokeLinejoin="round" />
+                <path
+                  d="M110 132 C130 104 158 113 178 137 C197 113 226 104 250 132 C244 161 211 174 178 166 C145 174 116 161 110 132Z"
+                  fill="#fff0c7"
+                />
+                <ellipse cx="146" cy="106" rx="13" ry="18" fill="black" />
+                <ellipse cx="214" cy="106" rx="13" ry="18" fill="black" />
+                <circle cx="142" cy="99" r="4" fill="white" />
+                <circle cx="210" cy="99" r="4" fill="white" />
+                <path d="M176 125 C180 120 188 120 192 125 C188 132 181 132 176 125Z" fill="#f06292" stroke="black" strokeWidth="4" />
+                <path d="M184 132 C178 142 166 143 160 136" fill="none" stroke="#7a3f1a" strokeWidth="4" strokeLinecap="round" />
+                <path d="M184 132 C190 142 202 143 208 136" fill="none" stroke="#7a3f1a" strokeWidth="4" strokeLinecap="round" />
+                <path d="M128 127 L88 119 M130 139 L88 142 M228 127 L270 119 M226 139 L270 142" stroke="black" strokeWidth="4" strokeLinecap="round" />
+                <path d="M155 70 L150 52 M180 66 L180 48 M205 70 L210 52" stroke="#a96122" strokeWidth="7" strokeLinecap="round" />
               </svg>
             </div>
           </div>
