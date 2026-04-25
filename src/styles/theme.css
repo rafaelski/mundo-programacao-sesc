@@ -389,27 +389,27 @@
 
 @keyframes scratchCatRunJump {
   0% {
-    transform: translate3d(-230px, 0, 0) rotate(-1deg);
+    transform: translate3d(-250px, 0, 0) rotate(-1deg);
   }
 
   18% {
-    transform: translate3d(-120px, 0, 0) rotate(1deg);
+    transform: translate3d(-150px, 0, 0) rotate(1deg);
   }
 
   36% {
-    transform: translate3d(-12px, 0, 0) rotate(-1deg);
+    transform: translate3d(-44px, 0, 0) rotate(-1deg);
   }
 
   52% {
-    transform: translate3d(96px, 0, 0) rotate(1deg);
+    transform: translate3d(82px, 0, 0) rotate(1deg);
   }
 
   64% {
-    transform: translate3d(176px, -128px, 0) rotate(-6deg);
+    transform: translate3d(168px, -116px, 0) rotate(-7deg);
   }
 
   76% {
-    transform: translate3d(236px, 0, 0) rotate(3deg);
+    transform: translate3d(238px, 0, 0) rotate(4deg);
   }
 
   88% {
@@ -423,7 +423,7 @@
   }
 
   100% {
-    transform: translate3d(-230px, 0, 0) rotate(-1deg);
+    transform: translate3d(-250px, 0, 0) rotate(-1deg);
     opacity: 1;
   }
 }
@@ -521,17 +521,20 @@
 
 .animate-scratch-cat-run-jump .scratch-cat-leg-front {
   animation: scratchCatWalkLegFront 0.38s ease-in-out infinite;
+  transform-box: fill-box;
   transform-origin: top center;
 }
 
 .animate-scratch-cat-run-jump .scratch-cat-leg-back {
   animation: scratchCatWalkLegBack 0.38s ease-in-out infinite;
+  transform-box: fill-box;
   transform-origin: top center;
 }
 
 .animate-scratch-cat-run-jump .scratch-cat-tail {
   animation: scratchCatTailWag 0.52s ease-in-out infinite;
-  transform-origin: right center;
+  transform-box: fill-box;
+  transform-origin: 70% 50%;
 }
 
 .recipe-writing-caret::after {

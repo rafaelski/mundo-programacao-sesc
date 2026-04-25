@@ -35,15 +35,15 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const handleBlockClick = (block: Block) => {
-    if (droppedBlocks.find((droppedBlock) => droppedBlock.id === block.id)) {
+    if (droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id)) {
       return;
     }
 
-    const newDropped = [...droppedBlocks, block];
-    setDroppedBlocks(newDropped);
+    const nextDroppedBlocks = [...droppedBlocks, block];
+    setDroppedBlocks(nextDroppedBlocks);
 
-    if (newDropped.length === blocks.length) {
-      setIsCorrect(newDropped.every((droppedBlock, index) => droppedBlock.correctOrder === index + 1));
+    if (nextDroppedBlocks.length === blocks.length) {
+      setIsCorrect(nextDroppedBlocks.every((droppedBlock, index) => droppedBlock.correctOrder === index + 1));
     }
   };
 
@@ -96,8 +96,8 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
         </>
       }
       right={
-        <div className="flex h-full w-full flex-col gap-5">
-          <div className="flex flex-wrap gap-3">
+        <div className="grid h-full w-full grid-rows-[126px_216px_minmax(0,1fr)] gap-5">
+          <div className="flex h-full flex-wrap content-start gap-3 overflow-hidden">
             {blocks.map((block) => {
               const isDropped = droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id);
 
@@ -107,9 +107,9 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
                   onClick={() => handleBlockClick(block)}
                   disabled={isDropped}
                   type="button"
-                  className={`rounded-2xl border-[5px] border-black px-6 py-4 text-[21px] font-black transition-all duration-200 ${
+                  className={`h-[56px] rounded-2xl border-[5px] border-black px-6 text-[19px] font-black transition-all duration-200 ${
                     isDropped
-                      ? 'cursor-not-allowed opacity-30'
+                      ? 'cursor-not-allowed opacity-45'
                       : 'cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
                   }`}
                   style={{ backgroundColor: block.color }}
@@ -120,15 +120,15 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             })}
           </div>
 
-          <div className="min-h-[220px] rounded-3xl border-[6px] border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <p className="mb-4 text-[22px] font-bold text-[var(--sesc-gray-stone)]">
+          <div className="relative h-full overflow-hidden rounded-3xl border-[6px] border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <p className="mb-3 text-[22px] font-bold text-[var(--sesc-gray-stone)]">
               {droppedBlocks.length === 0 ? 'Monte o programa aqui:' : 'Seu programa:'}
             </p>
             <div className="grid grid-cols-2 gap-3">
               {droppedBlocks.map((block, index) => (
                 <div
                   key={`${block.id}-${index}`}
-                  className="animate-fadeIn rounded-2xl border-[4px] border-black px-5 py-3 text-[19px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                  className="animate-fadeIn flex h-[42px] items-center rounded-2xl border-[4px] border-black px-5 text-[17px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
                   style={{ backgroundColor: block.color }}
                 >
                   {block.label}
@@ -140,60 +140,84 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
               <button
                 onClick={handleReset}
                 type="button"
-                className="mt-4 rounded-xl border-[4px] border-black bg-[var(--sesc-gray-stone)] px-5 py-2 text-[18px] font-bold text-white"
+                className="absolute bottom-4 left-6 rounded-xl border-[4px] border-black bg-[var(--sesc-gray-stone)] px-5 py-2 text-[16px] font-bold text-white"
               >
                 Recomeçar
               </button>
             )}
 
             {isCorrect && (
-              <div className="mt-4 rounded-xl border-[4px] border-black bg-[var(--sesc-green-grass)] px-6 py-3">
-                <p className="text-center text-[22px] font-black text-white">Correto! O gatinho ganhou movimento!</p>
+              <div className="absolute bottom-4 left-[176px] right-6 rounded-xl border-[4px] border-black bg-[var(--sesc-green-grass)] px-5 py-2">
+                <p className="text-center text-[19px] font-black text-white">Correto! Agora ele anda e pula!</p>
               </div>
             )}
           </div>
 
-          <div className="relative flex min-h-0 flex-1 items-end justify-center overflow-hidden rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] px-8 pb-8 shadow-[7px_7px_0_rgba(0,0,0,1)]">
+          <div className="relative min-h-0 overflow-hidden rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
             <div className="absolute bottom-[48px] left-[92px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-70" />
-            <div className="absolute right-[92px] top-[44px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
+            <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
               {isCorrect ? 'vamos!' : 'monte o código'}
             </div>
 
             <div
-              className={`absolute bottom-[58px] left-1/2 h-[190px] w-[210px] -translate-x-1/2 ${
+              className={`absolute bottom-[56px] left-1/2 h-[242px] w-[310px] -translate-x-1/2 ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
               }`}
             >
-              <div className="relative h-full w-full">
-                <div className="scratch-cat-tail absolute left-[4px] top-[86px] h-[26px] w-[86px] rounded-full border-[5px] border-black bg-[var(--sesc-orange)]" />
+              <svg viewBox="0 0 310 242" className="h-full w-full overflow-visible" aria-hidden="true">
+                <g className="scratch-cat-tail">
+                  <path
+                    d="M95 160 C30 166 34 78 94 86 C142 92 126 152 80 132"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="39"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M95 160 C30 166 34 78 94 86 C142 92 126 152 80 132"
+                    fill="none"
+                    stroke="#f5a623"
+                    strokeWidth="29"
+                    strokeLinecap="round"
+                  />
+                </g>
 
-                <div className="absolute bottom-[24px] left-[54px] h-[86px] w-[118px] rounded-[52px_58px_46px_46px] border-[5px] border-black bg-[var(--sesc-orange)] shadow-[6px_6px_0_rgba(39,35,72,0.18)]">
-                  <div className="absolute left-[28px] top-[18px] h-[32px] w-[48px] rounded-full bg-[#ffb07a] opacity-80" />
-                </div>
+                <ellipse cx="158" cy="164" rx="58" ry="52" fill="#f5a623" stroke="black" strokeWidth="6" />
+                <path d="M146 128 C125 150 125 196 158 211 C191 196 191 150 170 128Z" fill="#fff0c7" />
+                <path d="M116 138 C102 150 94 174 100 199" fill="none" stroke="#a96122" strokeWidth="7" strokeLinecap="round" />
+                <path d="M126 118 L108 132 M130 134 L110 148 M196 124 L218 136" stroke="#a96122" strokeWidth="6" strokeLinecap="round" />
 
-                <div className="scratch-cat-leg-back absolute bottom-[6px] left-[76px] h-[54px] w-[28px] rounded-full border-[5px] border-black bg-[var(--sesc-orange)]" />
-                <div className="scratch-cat-leg-front absolute bottom-[6px] left-[128px] h-[54px] w-[28px] rounded-full border-[5px] border-black bg-[var(--sesc-orange)]" />
-                <div className="absolute bottom-0 left-[70px] h-[20px] w-[48px] rounded-full border-[5px] border-black bg-[var(--sesc-orange)]" />
-                <div className="absolute bottom-0 left-[122px] h-[20px] w-[48px] rounded-full border-[5px] border-black bg-[var(--sesc-orange)]" />
+                <g className="scratch-cat-leg-back">
+                  <path d="M123 198 C120 219 134 227 150 215" fill="#fff0c7" stroke="black" strokeWidth="6" strokeLinecap="round" />
+                </g>
+                <g className="scratch-cat-leg-front">
+                  <path d="M172 196 C174 221 190 226 202 211" fill="#fff0c7" stroke="black" strokeWidth="6" strokeLinecap="round" />
+                </g>
 
-                <div className="absolute left-[92px] top-[18px] h-[94px] w-[102px] rounded-[48px] border-[5px] border-black bg-[var(--sesc-orange)]">
-                  <div className="absolute -left-[4px] -top-[22px] h-[42px] w-[38px] rotate-[-20deg] rounded-[8px_26px_8px_26px] border-[5px] border-black bg-[var(--sesc-orange)]" />
-                  <div className="absolute right-[2px] -top-[24px] h-[42px] w-[38px] rotate-[22deg] rounded-[26px_8px_26px_8px] border-[5px] border-black bg-[var(--sesc-orange)]" />
-                  <div className="absolute left-[18px] top-[34px] h-[14px] w-[14px] rounded-full border-[4px] border-black bg-white">
-                    <div className="ml-[3px] mt-[3px] h-[4px] w-[4px] rounded-full bg-black" />
-                  </div>
-                  <div className="absolute right-[24px] top-[34px] h-[14px] w-[14px] rounded-full border-[4px] border-black bg-white">
-                    <div className="ml-[3px] mt-[3px] h-[4px] w-[4px] rounded-full bg-black" />
-                  </div>
-                  <div className="absolute left-[39px] top-[54px] h-[12px] w-[18px] rounded-full border-[3px] border-black bg-[var(--sesc-pink)]" />
-                  <div className="absolute left-[30px] top-[70px] h-[16px] w-[42px] rounded-b-full border-b-[5px] border-black" />
-                  <div className="absolute -right-[14px] top-[56px] h-[5px] w-[34px] rotate-[10deg] rounded-full bg-black" />
-                  <div className="absolute -right-[14px] top-[70px] h-[5px] w-[34px] rotate-[-10deg] rounded-full bg-black" />
-                  <div className="absolute -left-[20px] top-[56px] h-[5px] w-[34px] rotate-[-10deg] rounded-full bg-black" />
-                  <div className="absolute -left-[20px] top-[70px] h-[5px] w-[34px] rotate-[10deg] rounded-full bg-black" />
-                </div>
-              </div>
+                <path
+                  d="M102 78 L122 20 L159 65 L198 65 L238 20 L258 78 C280 98 276 139 246 158 C214 178 145 178 112 158 C82 139 80 98 102 78Z"
+                  fill="#f5a623"
+                  stroke="black"
+                  strokeWidth="6"
+                  strokeLinejoin="round"
+                />
+                <path d="M116 74 L126 38 L148 70Z" fill="#f06292" stroke="#a96122" strokeWidth="5" strokeLinejoin="round" />
+                <path d="M244 74 L234 38 L212 70Z" fill="#f06292" stroke="#a96122" strokeWidth="5" strokeLinejoin="round" />
+                <path
+                  d="M110 132 C130 104 158 113 178 137 C197 113 226 104 250 132 C244 161 211 174 178 166 C145 174 116 161 110 132Z"
+                  fill="#fff0c7"
+                />
+                <ellipse cx="146" cy="106" rx="13" ry="18" fill="black" />
+                <ellipse cx="214" cy="106" rx="13" ry="18" fill="black" />
+                <circle cx="142" cy="99" r="4" fill="white" />
+                <circle cx="210" cy="99" r="4" fill="white" />
+                <path d="M176 125 C180 120 188 120 192 125 C188 132 181 132 176 125Z" fill="#f06292" stroke="black" strokeWidth="4" />
+                <path d="M184 132 C178 142 166 143 160 136" fill="none" stroke="#7a3f1a" strokeWidth="4" strokeLinecap="round" />
+                <path d="M184 132 C190 142 202 143 208 136" fill="none" stroke="#7a3f1a" strokeWidth="4" strokeLinecap="round" />
+                <path d="M128 127 L88 119 M130 139 L88 142 M228 127 L270 119 M226 139 L270 142" stroke="black" strokeWidth="4" strokeLinecap="round" />
+                <path d="M155 70 L150 52 M180 66 L180 48 M205 70 L210 52" stroke="#a96122" strokeWidth="7" strokeLinecap="round" />
+              </svg>
             </div>
           </div>
         </div>
