@@ -90,34 +90,36 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             </p>
           </div>
 
-          <div className="mt-8 rounded-2xl border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-8 py-6">
-            <p className="text-[28px] font-bold text-black">Clique nos blocos na ordem certa para fazer o gatinho pular.</p>
-          </div>
         </>
       }
       right={
-        <div className="relative grid h-full w-full grid-rows-[126px_216px_minmax(0,1fr)] gap-5 overflow-visible">
-          <div className="flex h-full flex-nowrap items-start gap-3 overflow-hidden">
-            {blocks.map((block) => {
-              const isDropped = droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id);
+        <div className="relative grid h-full w-full grid-rows-[152px_196px_minmax(0,1fr)] gap-5 overflow-visible">
+          <div className="h-full overflow-hidden">
+            <p className="mb-3 text-[22px] font-black leading-tight text-[var(--sesc-blue-dark)]">
+              Monte um programa para o gatinho andar até a bolinha e depois pular para pegá-la.
+            </p>
+            <div className="grid grid-cols-4 gap-3">
+              {blocks.map((block) => {
+                const isDropped = droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id);
 
-              return (
-                <button
-                  key={block.id}
-                  onClick={() => handleBlockClick(block)}
-                  disabled={isDropped}
-                  type="button"
-                  className={`h-[48px] w-[162px] shrink-0 whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[15px] font-black transition-all duration-200 ${
-                    isDropped
-                      ? 'cursor-not-allowed opacity-45'
-                      : 'cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
-                  }`}
-                  style={{ backgroundColor: block.color }}
-                >
-                  {block.label}
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={block.id}
+                    onClick={() => handleBlockClick(block)}
+                    disabled={isDropped}
+                    type="button"
+                    className={`flex h-[58px] items-center justify-center rounded-xl border-[4px] border-black px-2 text-center text-[14px] font-black leading-tight transition-all duration-200 ${
+                      isDropped
+                        ? 'cursor-not-allowed opacity-45'
+                        : 'cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
+                    }`}
+                    style={{ backgroundColor: block.color }}
+                  >
+                    {block.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div className="relative h-full overflow-hidden rounded-3xl border-[6px] border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
@@ -155,7 +157,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
 
           <div className="relative z-30 min-h-0 overflow-visible rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
-            <div className="absolute bottom-[48px] left-[92px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-70" />
+            <div className="absolute bottom-[150px] right-[122px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-90 shadow-[3px_3px_0_rgba(0,0,0,0.25)]" />
             {!isCorrect && (
               <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
                 monte o código
