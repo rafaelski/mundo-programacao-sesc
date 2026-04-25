@@ -17,31 +17,35 @@ const TELA06_LAYOUT = createStoryScreenLayout({
 });
 
 export function Tela06FalandoALingua({ onPrevious, onNext }: Tela06FalandoALinguaProps) {
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
-
   const languages = [
     {
       id: 'python',
-      emoji: '🐍',
+      emoji: '\u{1F40D}',
       name: 'PYTHON',
-      code: 'print("Olá, mundo!")',
+      prompt: 'Ol\u00E1, mundo!',
+      code: 'print("Ol\u00E1, mundo!")',
       color: 'var(--sesc-green-grass)',
     },
     {
       id: 'javascript',
-      emoji: '☕',
+      emoji: '\u2615',
       name: 'JAVASCRIPT',
-      code: 'console.log("Olá, mundo!")',
+      prompt: 'Ol\u00E1, mundo!',
+      code: 'console.log("Ol\u00E1, mundo!")',
       color: 'var(--sesc-yellow-flower)',
     },
     {
       id: 'c',
-      emoji: '🔧',
+      emoji: '\u{1F527}',
       name: 'C',
-      code: 'printf("Olá, mundo!");',
+      prompt: 'Ol\u00E1, mundo!',
+      code: 'printf("Ol\u00E1, mundo!");',
       color: 'var(--sesc-pink)',
     },
-  ];
+  ] as const;
+
+  const [selectedLanguageId, setSelectedLanguageId] = useState<(typeof languages)[number]['id']>('python');
+  const selectedLanguage = languages.find((lang) => lang.id === selectedLanguageId) ?? languages[0];
 
   return (
     <StoryScreenFrame
@@ -103,35 +107,46 @@ export function Tela06FalandoALingua({ onPrevious, onNext }: Tela06FalandoALingu
         </>
       }
       right={
-        <div className="flex h-full w-full flex-col items-center justify-center gap-8">
-          {languages.map((lang) => (
-            <button
-              key={lang.id}
-              onClick={() => setSelectedLanguage(selectedLanguage === lang.id ? null : lang.id)}
-              type="button"
-              className={`w-full rounded-3xl border-[6px] border-black p-8 transition-all duration-300 ${
-                selectedLanguage === lang.id
-                  ? 'scale-105 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]'
-                  : 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
-              }`}
-              style={{ backgroundColor: lang.color }}
-            >
-              <div className="mb-6 flex items-center gap-6">
-                <span className="text-[72px]">{lang.emoji}</span>
-                <h3 className="text-[42px] font-black uppercase text-black">{lang.name}</h3>
-              </div>
+        <div className="flex h-full w-full flex-col gap-6 py-2">
+          <div className="grid grid-cols-3 gap-4">
+            {languages.map((lang) => {
+              const isSelected = selectedLanguage.id === lang.id;
 
-              <div className="rounded-2xl border-[4px] border-white bg-black p-6">
-                <code className="font-mono text-[28px] font-bold text-[var(--sesc-green-grass)]">{lang.code}</code>
-              </div>
+              return (
+                <button
+                  key={lang.id}
+                  onClick={() => setSelectedLanguageId(lang.id)}
+                  type="button"
+                  className={`flex min-h-[116px] flex-col items-center justify-center rounded-[28px] border-[5px] border-black px-4 py-4 text-center transition-all duration-200 ${
+                    isSelected
+                      ? 'translate-y-[-4px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'
+                      : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                  }`}
+                  style={{ backgroundColor: lang.color }}
+                >
+                  <span className="text-[42px] leading-none">{lang.emoji}</span>
+                  <span className="mt-2 text-[24px] font-black uppercase leading-none text-black">{lang.name}</span>
+                  <span className="mt-2 text-[17px] font-bold leading-tight text-black">{lang.prompt}</span>
+                </button>
+              );
+            })}
+          </div>
 
-              {selectedLanguage === lang.id && (
-                <div className="mt-6 rounded-2xl border-[4px] border-black bg-white p-6">
-                  <p className="text-[24px] font-bold text-black">Essa linguagem diz: “Olá, mundo!”.</p>
-                </div>
-              )}
-            </button>
-          ))}
+          <div
+            className="flex flex-1 flex-col rounded-[34px] border-[6px] border-black px-7 py-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
+            style={{ backgroundColor: selectedLanguage.color }}
+          >
+            <div className="mb-5 flex items-center gap-4">
+              <span className="text-[52px] leading-none">{selectedLanguage.emoji}</span>
+              <h3 className="text-[36px] font-black uppercase leading-none text-black">{selectedLanguage.name}</h3>
+            </div>
+
+            <div className="flex flex-1 items-center justify-center rounded-[26px] border-[4px] border-white bg-black px-6 py-6">
+              <code className="block max-w-full overflow-x-auto font-mono text-[30px] font-bold leading-[1.3] text-[var(--sesc-green-grass)]">
+                {selectedLanguage.code}
+              </code>
+            </div>
+          </div>
         </div>
       }
     />
