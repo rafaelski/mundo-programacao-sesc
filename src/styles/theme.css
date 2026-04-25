@@ -846,6 +846,22 @@
     animation: minecraft-ground-shift 7s ease-in-out infinite;
   }
 
+  /* Tela13: arte generativa */
+  @keyframes generativeOrbit {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .generative-orbit {
+    animation: generativeOrbit 7s linear infinite;
+    transform-origin: center;
+  }
+
   /* Utilitarios gerais */
   .text-balance-pretty {
     text-wrap: balance;

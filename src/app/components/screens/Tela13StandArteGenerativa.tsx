@@ -1,8 +1,5 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
-import { useState, useEffect } from 'react';
-import { Header } from '../Header';
-import { Navigation } from '../Navigation';
-import { Button } from '../Button';
+import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela13StandArteGenerativaProps {
   onPrevious: () => void;
@@ -10,151 +7,154 @@ interface Tela13StandArteGenerativaProps {
 }
 
 export const TELA13_THEME: ScreenThemeConfig = {
-  appBackgroundClassName: "app-bg-tile app-bg-binary",
-  contentStageThemeClassName: "",
+  appBackgroundClassName: 'app-bg-tile app-bg-binary',
+  contentStageThemeClassName: 'content-stage-theme-frost',
 };
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  color: string;
-  size: number;
-  angle: number;
-  speed: number;
-}
+const TELA13_LAYOUT = createStoryScreenLayout({
+  columns: '0.92fr 1.08fr',
+  columnGap: '2.75rem',
+  leftBottomMinHeight: '12rem',
+});
+
+const PARTICLE_COLORS = [
+  'var(--sesc-pink)',
+  'var(--sesc-yellow-flower)',
+  'var(--sesc-green-grass)',
+  'var(--sesc-orange)',
+  'var(--sesc-blue-sky)',
+];
+
+const GENERATIVE_PARTICLES = Array.from({ length: 30 }, (_, index) => ({
+  angle: (index * 137) % 360,
+  radius: 74 + (index % 6) * 32,
+  size: 10 + (index % 5) * 7,
+  color: PARTICLE_COLORS[index % PARTICLE_COLORS.length],
+  duration: 5.8 + (index % 7) * 0.55,
+  delay: -(index % 9) * 0.42,
+}));
 
 export function Tela13StandArteGenerativa({ onPrevious, onNext }: Tela13StandArteGenerativaProps) {
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  useEffect(() => {
-    const colors = [
-      'var(--sesc-pink)',
-      'var(--sesc-yellow-flower)',
-      'var(--sesc-green-grass)',
-      'var(--sesc-orange)',
-      'var(--sesc-blue-dark)'
-    ];
-
-    const centerX = 960;
-    const centerY = 540;
-
-    const newParticles: Particle[] = [...Array(150)].map((_, i) => {
-      const angle = (i / 150) * Math.PI * 2;
-      const radius = 50 + Math.random() * 300;
-      const speed = 0.5 + Math.random() * 2;
-
-      return {
-        x: centerX + Math.cos(angle) * radius,
-        y: centerY + Math.sin(angle) * radius,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        size: 8 + Math.random() * 20,
-        angle: angle,
-        speed: speed
-      };
-    });
-
-    setParticles(newParticles);
-
-    const interval = setInterval(() => {
-      setParticles(prev => prev.map(p => {
-        const newAngle = p.angle + p.speed * 0.01;
-        const radius = Math.sqrt(Math.pow(p.x - centerX, 2) + Math.pow(p.y - centerY, 2));
-
-        return {
-          ...p,
-          x: centerX + Math.cos(newAngle) * radius,
-          y: centerY + Math.sin(newAngle) * radius,
-          angle: newAngle
-        };
-      }));
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="w-[1920px] h-[1080px] relative overflow-hidden bg-black">
-      <div className="relative z-50">
-        <Header currentScreen={13} totalScreens={15} onPrevious={onPrevious} onNext={onNext} />
-      </div>
+    <StoryScreenFrame
+      currentScreen={13}
+      onPrevious={onPrevious}
+      onNext={onNext}
+      layout={TELA13_LAYOUT}
+      contentStageThemeClassName={TELA13_THEME.contentStageThemeClassName}
+      rightClassName="overflow-hidden"
+      leftMain={
+        <>
+          <div>
+            <div className="mb-5 inline-flex rotate-[2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-6 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
+              <span className="text-[22px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
+                stand ao lado
+              </span>
+            </div>
 
-      {/* Partículas animadas no fundo */}
-      <div className="absolute inset-0 pointer-events-none">
-        {particles.map((particle, i) => (
+            <h2 className="relative inline-block">
+              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[70px] font-black uppercase leading-[0.95] tracking-tight text-black">
+                ARTE GENERATIVA
+              </span>
+              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[70px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-pink)]">
+                ARTE GENERATIVA
+              </span>
+              <span className="relative text-[70px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-blue-dark)]">
+                ARTE GENERATIVA
+              </span>
+            </h2>
+          </div>
+
+          <div className="mt-8 space-y-5 text-[30px] font-bold leading-relaxed text-black">
+            <p>
+              Programação não serve só para jogos e robôs. Ela também faz{' '}
+              <span className="text-[var(--sesc-pink)]">arte</span>.
+            </p>
+            <p>
+              No stand, cada partícula nasce de uma regra: cor, tamanho, posição e velocidade são{' '}
+              <span className="text-[var(--sesc-orange)]">decisões do código</span>.
+            </p>
+            <p>
+              O resultado nunca fica igual duas vezes. É desenho, matemática e imaginação trabalhando juntos.
+            </p>
+          </div>
+        </>
+      }
+      leftBottom={
+        <div className="grid h-full grid-cols-[1fr_auto] items-center gap-5 rounded-3xl border-[5px] border-black bg-[#111833] p-6 shadow-[8px_8px_0_rgba(39,35,72,0.18)]">
+          <code className="font-mono text-[22px] font-black leading-relaxed text-white">
+            <span className="text-[var(--sesc-pink)]">function</span>{' '}
+            <span className="text-[var(--sesc-yellow-flower)]">draw</span>() {'{'}
+            <br />
+            &nbsp;&nbsp;<span className="text-[var(--sesc-green-grass)]">criarParticula</span>();
+            <br />
+            {'}'}
+          </code>
+          <div className="rounded-2xl border-[4px] border-white bg-[var(--sesc-yellow-flower)] px-5 py-4 text-center text-[24px] font-black uppercase leading-tight text-[var(--sesc-blue-dark)]">
+            p5.js
+          </div>
+        </div>
+      }
+      right={
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] border-[4px] border-black bg-[#111833] shadow-[10px_10px_0_rgba(39,35,72,0.16)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(21,130,196,0.42),transparent_38%),radial-gradient(circle_at_20%_22%,rgba(240,98,146,0.22),transparent_22%),radial-gradient(circle_at_84%_78%,rgba(249,200,67,0.2),transparent_24%)]" />
+
+          <div className="animate-symbol-float absolute left-[58px] top-[58px] rounded-3xl border-[4px] border-white bg-[var(--sesc-pink)] px-5 py-3 text-[32px] font-black text-white shadow-[5px_5px_0_rgba(0,0,0,0.28)]">
+            {'{}'}
+          </div>
           <div
-            key={i}
-            className="absolute rounded-full border-[3px] border-black"
-            style={{
-              left: `${particle.x}px`,
-              top: `${particle.y}px`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              backgroundColor: particle.color,
-              transform: 'translate(-50%, -50%)',
-              transition: 'all 0.03s linear',
-              boxShadow: `0 0 ${particle.size / 2}px ${particle.color}`
-            }}
-          ></div>
-        ))}
-      </div>
-
-      <div className="relative z-50 pt-32 px-20 h-full flex flex-col items-center justify-between pointer-events-auto">
-        {/* Badge "VEJA AO LADO" */}
-        <div className="bg-[var(--sesc-yellow-flower)] border-[6px] border-black rounded-full px-12 py-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform rotate-2">
-          <p className="text-[36px] font-black uppercase flex items-center gap-4">
-            <span>VEJA AO LADO</span>
-            <span className="text-[48px]">→</span>
-          </p>
-        </div>
-
-        {/* Conteúdo central */}
-        <div className="flex flex-col items-center gap-12">
-          {/* Título */}
-          <h2 className="relative">
-            <span className="absolute inset-0 text-[100px] font-black uppercase tracking-tight text-black transform translate-x-[8px] translate-y-[8px]">
-              ARTE GENERATIVA
-            </span>
-            <span className="absolute inset-0 text-[100px] font-black uppercase tracking-tight text-[var(--sesc-pink)] transform translate-x-[4px] translate-y-[4px]">
-              ARTE GENERATIVA
-            </span>
-            <span className="relative text-[100px] font-black uppercase tracking-tight text-white">
-              ARTE GENERATIVA
-            </span>
-          </h2>
-
-          {/* Texto */}
-          <div className="bg-black bg-opacity-80 border-[6px] border-white rounded-3xl p-12 max-w-4xl shadow-[0_0_40px_rgba(249,200,67,0.5)]">
-            <p className="text-[32px] leading-relaxed font-bold text-white text-center">
-              Programação não serve só pra jogos e robôs. Ela também faz <span className="text-[var(--sesc-yellow-flower)]">ARTE</span>. No stand ao lado, cada partícula que você vê na tela é uma <span className="text-[var(--sesc-pink)]">linha de código</span>. A cor, o tamanho, a velocidade — tudo programado.
-            </p>
-            <p className="text-[32px] leading-relaxed font-bold text-white text-center mt-6">
-              E o mais legal: o desenho <span className="text-[var(--sesc-green-grass)]">NUNCA FICA IGUAL DUAS VEZES</span>. Foi feito com uma ferramenta chamada <span className="text-[var(--sesc-orange)]">p5.js</span>.
-            </p>
+            className="animate-symbol-float absolute right-[68px] top-[86px] rounded-full border-[4px] border-white bg-[var(--sesc-yellow-flower)] px-5 py-3 text-[28px] font-black text-[var(--sesc-blue-dark)] shadow-[5px_5px_0_rgba(0,0,0,0.28)]"
+            style={{ animationDelay: '0.35s' }}
+          >
+            cor
+          </div>
+          <div
+            className="animate-symbol-float absolute bottom-[118px] left-[76px] rounded-full border-[4px] border-white bg-[var(--sesc-green-grass)] px-5 py-3 text-[30px] font-black text-white shadow-[5px_5px_0_rgba(0,0,0,0.28)]"
+            style={{ animationDelay: '0.75s' }}
+          >
+            x,y
+          </div>
+          <div
+            className="animate-symbol-float absolute bottom-[152px] right-[72px] rounded-3xl border-[4px] border-white bg-[var(--sesc-orange)] px-5 py-3 text-[28px] font-black text-white shadow-[5px_5px_0_rgba(0,0,0,0.28)]"
+            style={{ animationDelay: '1.1s' }}
+          >
+            loop
           </div>
 
-          {/* Tag p5.js */}
-          <div className="bg-white border-[5px] border-black rounded-2xl px-8 py-4">
-            <code className="text-[24px] font-bold font-mono text-black">
-              <span className="text-[var(--sesc-pink)]">function</span> draw() &#123; <span className="text-[var(--sesc-green-grass)]">createParticle</span>(); &#125;
-            </code>
+          <div className="absolute left-1/2 top-[52%] h-[570px] w-[570px] -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[rgba(255,255,255,0.2)]">
+            <div className="absolute inset-[74px] rounded-full border-[3px] border-dashed border-[rgba(255,255,255,0.2)]" />
+            <div className="absolute inset-[150px] rounded-full border-[3px] border-[rgba(255,255,255,0.18)]" />
+
+            <div className="absolute left-1/2 top-1/2 h-[142px] w-[142px] -translate-x-1/2 -translate-y-1/2 rounded-[34px] border-[6px] border-white bg-[var(--sesc-blue-dark)] shadow-[0_0_44px_rgba(249,200,67,0.42)]">
+              <div className="flex h-full flex-col items-center justify-center text-center">
+                <span className="text-[42px] font-black text-[var(--sesc-yellow-flower)]">p5</span>
+                <span className="text-[20px] font-black uppercase tracking-[0.12em] text-white">arte</span>
+              </div>
+            </div>
+
+            {GENERATIVE_PARTICLES.map((particle, index) => (
+              <div
+                key={index}
+                className="generative-orbit absolute left-1/2 top-1/2"
+                style={{
+                  animationDuration: `${particle.duration}s`,
+                  animationDelay: `${particle.delay}s`,
+                }}
+              >
+                <div
+                  className="rounded-full border-[3px] border-black shadow-[0_0_18px_rgba(255,255,255,0.35)]"
+                  style={{
+                    width: `${particle.size}px`,
+                    height: `${particle.size}px`,
+                    backgroundColor: particle.color,
+                    transform: `rotate(${particle.angle}deg) translateX(${particle.radius}px)`,
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Botão */}
-        <div className="pb-20">
-          <Button variant="primary" onClick={onNext} icon="▶" className="scale-125">
-            IR VER A ARTE
-          </Button>
-        </div>
-      </div>
-
-      <div className="relative z-50">
-        <Navigation onPrevious={onPrevious} onNext={onNext} />
-      </div>
-    </div>
+      }
+    />
   );
 }
