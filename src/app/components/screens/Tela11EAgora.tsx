@@ -7,14 +7,33 @@ interface Tela11EAgoraProps {
 }
 
 export const TELA11_THEME: ScreenThemeConfig = {
-  appBackgroundClassName: "app-bg-tile app-bg-pink-grid",
-  contentStageThemeClassName: "content-stage-theme-cream",
+  appBackgroundClassName: 'app-bg-tile app-bg-pink-grid',
+  contentStageThemeClassName: 'content-stage-theme-cream',
 };
 
 const TELA11_LAYOUT = createStoryScreenLayout({
-  leftBottomMinHeight: '15rem',
-  columns: '0.94fr 1.06fr',
+  columns: '0.92fr 1.08fr',
+  columnGap: '2.75rem',
+  leftBottomMinHeight: '12rem',
 });
+
+const FUTURE_TOPICS = [
+  {
+    title: 'Motores de jogo',
+    text: 'Unity e Unreal ajudam a construir mundos, personagens e fases em 3D.',
+    color: 'var(--sesc-orange)',
+  },
+  {
+    title: 'Inteligência artificial',
+    text: 'IA conversa, desenha, escreve ideias e pode ajudar a programar.',
+    color: 'var(--sesc-pink)',
+  },
+  {
+    title: 'Tudo vira criação',
+    text: 'Jogos, robôs, arte e histórias podem nascer de uma sequência de instruções.',
+    color: 'var(--sesc-green-grass)',
+  },
+];
 
 export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
   return (
@@ -24,65 +43,159 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
       onNext={onNext}
       layout={TELA11_LAYOUT}
       contentStageThemeClassName={TELA11_THEME.contentStageThemeClassName}
+      rightClassName="overflow-hidden"
       leftMain={
         <>
           <div>
+            <div className="mb-4 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-6 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
+              <span className="text-[22px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
+                hoje
+              </span>
+            </div>
+
             <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[80px] font-black uppercase tracking-tight text-black">
+              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[78px] font-black uppercase leading-[0.95] tracking-tight text-black">
                 E AGORA?
               </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[80px] font-black uppercase tracking-tight text-[var(--sesc-yellow-flower)]">
+              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[78px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-yellow-flower)]">
                 E AGORA?
               </span>
-              <span className="relative text-[80px] font-black uppercase tracking-tight text-[var(--sesc-blue-dark)]">
+              <span className="relative text-[78px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-blue-dark)]">
                 E AGORA?
               </span>
             </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">anos 2020</p>
+
+            <p className="mt-3 text-[44px] font-bold leading-none text-[var(--sesc-gray-stone)]">anos 2020</p>
           </div>
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
-            <p>
-              Hoje, programadores usam ferramentas poderosas chamadas <span className="text-[var(--sesc-orange)]">motores de jogo</span>,
-              como a <span className="text-[var(--sesc-blue-dark)]">Unity</span> e a Unreal, para criar jogos incríveis em 3D.
-            </p>
-            <p>
-              E a <span className="text-[var(--sesc-pink)]">inteligência artificial</span> aprendeu a desenhar, conversar e até
-              programar sozinha.
-            </p>
-          </div>
-
-          <div className="relative mt-8 rounded-3xl border-[6px] border-black bg-[var(--sesc-green-grass)] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <p className="text-center text-[32px] font-bold text-white">Este app que você está usando agora foi feito com Unity!</p>
+          <div className="mt-7 grid gap-4">
+            {FUTURE_TOPICS.map((topic) => (
+              <div
+                key={topic.title}
+                className="rounded-3xl border-[4px] border-black bg-white/72 px-6 py-4 shadow-[5px_5px_0_rgba(39,35,72,0.12)]"
+              >
+                <p className="text-[23px] font-black uppercase tracking-[0.1em]" style={{ color: topic.color }}>
+                  {topic.title}
+                </p>
+                <p className="mt-1 text-[25px] font-bold leading-snug text-black">{topic.text}</p>
+              </div>
+            ))}
           </div>
         </>
       }
       leftBottom={
-        <div className="mt-8 rotate-[-1deg] transform rounded-3xl border-[8px] border-black bg-[var(--sesc-yellow-flower)] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-          <p className="text-center text-[42px] font-black uppercase leading-tight text-[var(--sesc-blue-dark)]">
+        <div className="grid h-full grid-cols-[1fr_auto] items-center gap-5 rounded-3xl border-[5px] border-black bg-[var(--sesc-yellow-flower)] p-7 shadow-[8px_8px_0_rgba(39,35,72,0.2)]">
+          <p className="text-[31px] font-black uppercase leading-tight text-[var(--sesc-blue-dark)]">
             Se você pudesse programar qualquer coisa no mundo, o que seria?
           </p>
-          <div className="mt-6 text-center text-[64px]">💭 🚀 🎨 🎮 🤖</div>
+          <div className="grid grid-cols-2 gap-3">
+            {['jogo', 'arte', 'robô', 'ideia'].map((item, index) => (
+              <span
+                key={item}
+                className="rounded-2xl border-[3px] border-black bg-white px-4 py-2 text-center text-[20px] font-black uppercase tracking-[0.08em] text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(39,35,72,0.12)]"
+                style={{ transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)` }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       }
       right={
-        <div className="relative h-[700px] w-full">
-          <div className="absolute left-20 top-0 h-[350px] w-[500px] overflow-hidden rounded-3xl border-[8px] border-black bg-[var(--sesc-blue-dark)] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
-            <div className="relative h-full w-full bg-gradient-to-b from-[#4a9fd8] to-[var(--sesc-green-grass)]"></div>
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#dff3ff_0%,#fff4db_72%)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_17%_17%,rgba(240,98,146,0.18),transparent_18%),radial-gradient(circle_at_85%_18%,rgba(249,200,67,0.22),transparent_19%),radial-gradient(circle_at_80%_80%,rgba(111,179,63,0.18),transparent_23%)]" />
+
+          <div className="animate-symbol-float absolute left-[58px] top-[54px] rounded-3xl border-[4px] border-black bg-white px-5 py-3 text-[30px] font-black text-[var(--sesc-blue-dark)] shadow-[5px_5px_0_rgba(39,35,72,0.18)]">
+            {'{}'}
           </div>
-          <div className="absolute right-12 top-48 h-[240px] w-[240px] rounded-[120px_120px_100px_100px] border-[8px] border-black bg-[var(--sesc-pink)] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"></div>
-          <div className="absolute bottom-24 left-12 rotate-3 transform rounded-2xl border-[6px] border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="space-y-1 font-mono text-[18px]">
-              <div>
-                <span className="text-[var(--sesc-pink)]">function</span>{' '}
-                <span className="text-[var(--sesc-blue-dark)]">criar()</span>
-              </div>
-              <div className="text-[var(--sesc-green-grass)]">{'{'}</div>
-              <div className="ml-4">
-                <span className="text-[var(--sesc-orange)]">return</span> ✨
-              </div>
-              <div className="text-[var(--sesc-green-grass)]">{'}'}</div>
+          <div
+            className="animate-symbol-float absolute right-[66px] top-[70px] rounded-full border-[4px] border-black bg-[var(--sesc-pink)] px-5 py-3 text-[28px] font-black text-white shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '0.35s' }}
+          >
+            IA
+          </div>
+          <div
+            className="animate-symbol-float absolute left-[72px] bottom-[132px] rounded-full border-[4px] border-black bg-[var(--sesc-green-grass)] px-5 py-3 text-[26px] font-black text-white shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '0.75s' }}
+          >
+            jogo
+          </div>
+          <div
+            className="animate-symbol-float absolute right-[72px] bottom-[148px] rounded-3xl border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-3 text-[26px] font-black text-[var(--sesc-blue-dark)] shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+            style={{ animationDelay: '1.1s' }}
+          >
+            arte
+          </div>
+
+          <div className="absolute left-1/2 top-[43%] h-[402px] w-[610px] -translate-x-1/2 -translate-y-1/2 rounded-[34px] border-[8px] border-black bg-[#151b38] shadow-[13px_13px_0_rgba(39,35,72,0.18)]">
+            <div className="flex h-[46px] items-center gap-3 border-b-[5px] border-black bg-[var(--sesc-blue-dark)] px-5">
+              <span className="h-4 w-4 rounded-full bg-[var(--sesc-pink)]" />
+              <span className="h-4 w-4 rounded-full bg-[var(--sesc-yellow-flower)]" />
+              <span className="h-4 w-4 rounded-full bg-[var(--sesc-green-grass)]" />
+              <span className="ml-4 text-[18px] font-black uppercase tracking-[0.12em] text-white">motor de criação</span>
             </div>
+
+            <div className="relative h-[356px] overflow-hidden bg-[linear-gradient(180deg,#7fd3ff_0%,#dff3ff_50%,#76c653_51%,#4fa13c_100%)]">
+              <div className="absolute bottom-0 left-0 right-0 h-[120px] bg-[linear-gradient(90deg,rgba(0,0,0,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(0,0,0,0.12)_1px,transparent_1px)] bg-[length:44px_44px]" />
+
+              <div className="absolute left-[68px] top-[108px] h-[92px] w-[92px] rounded-[18px] border-[5px] border-black bg-[var(--sesc-yellow-flower)] shadow-[7px_7px_0_rgba(0,0,0,0.22)]" />
+              <div className="absolute left-[162px] top-[148px] h-[74px] w-[118px] rounded-[18px] border-[5px] border-black bg-[var(--sesc-pink)] shadow-[7px_7px_0_rgba(0,0,0,0.22)]" />
+              <div className="absolute left-[260px] top-[82px] h-[132px] w-[132px] rounded-full border-[5px] border-black bg-[var(--sesc-green-grass)] shadow-[7px_7px_0_rgba(0,0,0,0.22)]" />
+
+              <div className="absolute right-0 top-0 h-full w-[154px] border-l-[5px] border-black bg-white/86 p-4">
+                <p className="text-[18px] font-black uppercase tracking-[0.12em] text-[var(--sesc-blue-dark)]">regras</p>
+                {['cor', 'som', 'pulo', 'luz'].map((item, index) => (
+                  <div key={item} className="mt-4">
+                    <div className="mb-1 text-[15px] font-black uppercase tracking-[0.08em] text-[var(--sesc-gray-stone)]">
+                      {item}
+                    </div>
+                    <div className="h-4 overflow-hidden rounded-full border-[2px] border-black bg-white">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${52 + index * 12}%`,
+                          backgroundColor:
+                            index === 0
+                              ? 'var(--sesc-pink)'
+                              : index === 1
+                                ? 'var(--sesc-yellow-flower)'
+                                : index === 2
+                                  ? 'var(--sesc-green-grass)'
+                                  : 'var(--sesc-blue-sky)',
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute bottom-[18px] left-[22px] right-[176px] flex items-center gap-3 rounded-2xl border-[4px] border-black bg-white/90 px-4 py-3">
+                <span className="rounded-xl bg-[var(--sesc-blue-dark)] px-3 py-2 text-[18px] font-black uppercase text-white">
+                  cena
+                </span>
+                <span className="rounded-xl bg-[var(--sesc-yellow-flower)] px-3 py-2 text-[18px] font-black uppercase text-[var(--sesc-blue-dark)]">
+                  animação
+                </span>
+                <span className="rounded-xl bg-[var(--sesc-pink)] px-3 py-2 text-[18px] font-black uppercase text-white">
+                  som
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-[66px] left-[54px] rotate-[-3deg] rounded-3xl border-[5px] border-black bg-white p-5 shadow-[8px_8px_0_rgba(39,35,72,0.18)]">
+            <code className="font-mono text-[20px] font-black leading-relaxed text-[var(--sesc-blue-dark)]">
+              <span className="text-[var(--sesc-pink)]">function</span> criar() {'{'}
+              <br />
+              &nbsp;&nbsp;<span className="text-[var(--sesc-orange)]">return</span> mundoNovo;
+              <br />
+              {'}'}
+            </code>
+          </div>
+
+          <div className="absolute bottom-[62px] right-[48px] w-[276px] rotate-[3deg] rounded-3xl border-[5px] border-black bg-[var(--sesc-yellow-flower)] p-5 shadow-[8px_8px_0_rgba(39,35,72,0.18)]">
+            <p className="text-[21px] font-black uppercase tracking-[0.08em] text-[var(--sesc-blue-dark)]">prompt da ideia</p>
+            <p className="mt-2 text-[24px] font-bold leading-snug text-black">“crie um jogo de foguete no espaço”</p>
           </div>
         </div>
       }
