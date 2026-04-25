@@ -335,6 +335,58 @@
   }
 }
 
+@keyframes retroWindowPop {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.82);
+  }
+
+  28%,
+  82% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+}
+
+@keyframes retroCursorPath {
+  0% {
+    transform: translate3d(280px, 190px, 0) rotate(-10deg);
+  }
+
+  28% {
+    transform: translate3d(110px, 72px, 0) rotate(-10deg);
+  }
+
+  52% {
+    transform: translate3d(246px, 126px, 0) rotate(-10deg);
+  }
+
+  76% {
+    transform: translate3d(170px, 206px, 0) rotate(-10deg);
+  }
+
+  100% {
+    transform: translate3d(280px, 190px, 0) rotate(-10deg);
+  }
+}
+
+@keyframes retroScreenGlow {
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+
+  50% {
+    filter: brightness(1.08) saturate(1.12);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-in-out;
 }
@@ -374,6 +426,19 @@
 .animate-rocket-flame {
   animation: rocketFlamePulse 0.75s ease-in-out infinite;
   transform-origin: center top;
+}
+
+.animate-retro-screen-glow {
+  animation: retroScreenGlow 2.8s ease-in-out infinite;
+}
+
+.animate-retro-window-pop {
+  animation: retroWindowPop 5.6s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.animate-retro-cursor-path {
+  animation: retroCursorPath 5.6s ease-in-out infinite;
 }
 
 .recipe-writing-caret::after {
