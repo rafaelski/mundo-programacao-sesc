@@ -25,8 +25,8 @@ const TELA09_LAYOUT = createStoryScreenLayout({
 
 const blocks: Block[] = [
   { id: '1', label: 'QUANDO CLICAR ▶', color: 'var(--sesc-yellow-flower)', correctOrder: 1 },
-  { id: '2', label: 'MOVER 10 PASSOS →', color: 'var(--sesc-blue-dark)', correctOrder: 2 },
   { id: '3', label: 'PULAR 50 ↑', color: 'var(--sesc-pink)', correctOrder: 3 },
+  { id: '2', label: 'MOVER 10 PASSOS →', color: 'var(--sesc-blue-dark)', correctOrder: 2 },
   { id: '4', label: 'VOLTAR AO CHÃO ↓', color: 'var(--sesc-green-grass)', correctOrder: 4 },
 ];
 
@@ -97,7 +97,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
       }
       right={
         <div className="grid h-full w-full grid-rows-[126px_216px_minmax(0,1fr)] gap-5">
-          <div className="flex h-full flex-wrap content-start gap-3 overflow-hidden">
+          <div className="flex h-full flex-nowrap items-start gap-3 overflow-hidden">
             {blocks.map((block) => {
               const isDropped = droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id);
 
@@ -107,7 +107,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
                   onClick={() => handleBlockClick(block)}
                   disabled={isDropped}
                   type="button"
-                  className={`h-[56px] rounded-2xl border-[5px] border-black px-6 text-[19px] font-black transition-all duration-200 ${
+                  className={`h-[48px] w-[162px] shrink-0 whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[15px] font-black transition-all duration-200 ${
                     isDropped
                       ? 'cursor-not-allowed opacity-45'
                       : 'cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
@@ -124,11 +124,11 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             <p className="mb-3 text-[22px] font-bold text-[var(--sesc-gray-stone)]">
               {droppedBlocks.length === 0 ? 'Monte o programa aqui:' : 'Seu programa:'}
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-nowrap gap-2 overflow-hidden">
               {droppedBlocks.map((block, index) => (
                 <div
                   key={`${block.id}-${index}`}
-                  className="animate-fadeIn flex h-[42px] items-center rounded-2xl border-[4px] border-black px-5 text-[17px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                  className="animate-fadeIn flex h-[40px] w-[150px] shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[14px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
                   style={{ backgroundColor: block.color }}
                 >
                   {block.label}
@@ -156,12 +156,14 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
           <div className="relative min-h-0 overflow-hidden rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
             <div className="absolute bottom-[48px] left-[92px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-70" />
-            <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
-              {isCorrect ? 'vamos!' : 'monte o código'}
-            </div>
+            {!isCorrect && (
+              <div className="absolute right-[92px] top-[34px] rounded-full border-[4px] border-black bg-white px-5 py-3 text-[20px] font-black text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(0,0,0,1)]">
+                monte o código
+              </div>
+            )}
 
             <div
-              className={`absolute bottom-[56px] left-1/2 h-[242px] w-[310px] -translate-x-1/2 ${
+              className={`absolute bottom-[26px] left-1/2 h-[242px] w-[310px] -translate-x-1/2 ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
               }`}
             >
