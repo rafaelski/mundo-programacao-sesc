@@ -17,6 +17,7 @@ interface Block {
   label: string;
   color: string;
   correctOrder: number;
+  programWidth: string;
 }
 
 const TELA09_LAYOUT = createStoryScreenLayout({
@@ -24,10 +25,10 @@ const TELA09_LAYOUT = createStoryScreenLayout({
 });
 
 const blocks: Block[] = [
-  { id: '1', label: 'COMEÇAR ▶', color: 'var(--sesc-yellow-flower)', correctOrder: 1 },
-  { id: '3', label: 'PULAR 50 ↑', color: 'var(--sesc-pink)', correctOrder: 3 },
-  { id: '2', label: 'MOVER 10 PASSOS →', color: 'var(--sesc-blue-dark)', correctOrder: 2 },
-  { id: '4', label: 'VOLTAR AO CHÃO ↓', color: 'var(--sesc-green-grass)', correctOrder: 4 },
+  { id: '1', label: 'COMEÇAR ▶', color: 'var(--sesc-yellow-flower)', correctOrder: 1, programWidth: '138px' },
+  { id: '3', label: 'PULAR 50 ↑', color: 'var(--sesc-pink)', correctOrder: 3, programWidth: '132px' },
+  { id: '2', label: 'MOVER 10 PASSOS →', color: 'var(--sesc-blue-dark)', correctOrder: 2, programWidth: '192px' },
+  { id: '4', label: 'VOLTAR AO CHÃO ↓', color: 'var(--sesc-green-grass)', correctOrder: 4, programWidth: '176px' },
 ];
 
 export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
@@ -126,12 +127,16 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             <p className="mb-3 text-[22px] font-bold text-[var(--sesc-gray-stone)]">
               {droppedBlocks.length === 0 ? 'Monte o programa aqui:' : 'Seu programa:'}
             </p>
-            <div className="flex flex-nowrap gap-2 overflow-hidden">
+            <div className="flex flex-nowrap gap-2 overflow-visible">
               {droppedBlocks.map((block, index) => (
                 <div
                   key={`${block.id}-${index}`}
-                  className="animate-fadeIn flex h-[40px] w-[150px] shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[16px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
-                  style={{ backgroundColor: block.color, color: block.id === '2' ? 'white' : 'var(--sesc-blue-dark)' }}
+                  className="animate-fadeIn flex h-[40px] shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-[4px] border-black px-2 text-[15px] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                  style={{
+                    width: block.programWidth,
+                    backgroundColor: block.color,
+                    color: block.id === '2' ? 'white' : 'var(--sesc-blue-dark)',
+                  }}
                 >
                   {block.label}
                 </div>
