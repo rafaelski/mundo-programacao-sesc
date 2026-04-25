@@ -16,6 +16,8 @@ const TELA10_LAYOUT = createStoryScreenLayout({
   leftBottomMinHeight: '12rem',
 });
 
+const MINECRAFT_CHARACTER_SRC = `${import.meta.env.BASE_URL}images/illustrations/minecraft.png`;
+
 export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoProps) {
   return (
     <StoryScreenFrame
@@ -70,17 +72,47 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
         </Card>
       }
       right={
-        <div className="relative">
-          <div className="relative">
-            <div className="mx-auto h-[200px] w-[200px] border-[6px] border-black bg-[#d4a574] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              <div className="absolute left-0 right-0 top-0 h-[60px] border-b-0 border-[6px] border-black bg-[#6d4c3d]"></div>
-            </div>
-            <div className="-mt-[6px] mx-auto h-[200px] w-[160px] border-[6px] border-black bg-[#4a9fd8] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"></div>
-            <div className="absolute -left-[80px] top-[200px] h-[180px] w-[60px] border-[6px] border-black bg-[#4a9fd8] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
-            <div className="absolute -right-[80px] top-[200px] h-[180px] w-[60px] -rotate-45 origin-top transform border-[6px] border-black bg-[#4a9fd8] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
-            <div className="absolute bottom-[-220px] left-1/2 h-[220px] w-[60px] -translate-x-[90px] border-[6px] border-black bg-[#2c3e91] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
-            <div className="absolute bottom-[-220px] left-1/2 h-[220px] w-[60px] translate-x-[30px] border-[6px] border-black bg-[#2c3e91] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
-          </div>
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-[#9ed9ff]">
+          <svg viewBox="0 0 720 620" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <rect width="720" height="620" fill="#9ed9ff" />
+            <rect x="0" y="380" width="720" height="72" fill="#4fbf45" />
+            <rect x="0" y="452" width="720" height="168" fill="#8b5a2b" />
+            <g opacity="0.28">
+              {Array.from({ length: 18 }).map((_, index) => (
+                <rect key={`grass-${index}`} x={index * 42 - 10} y="380" width="24" height="24" fill="#2d9f36" />
+              ))}
+              {Array.from({ length: 18 }).map((_, index) => (
+                <rect key={`dirt-${index}`} x={index * 46 + 8} y="468" width="26" height="26" fill="#6d3f1d" />
+              ))}
+              {Array.from({ length: 12 }).map((_, index) => (
+                <rect key={`stone-${index}`} x={index * 66 + 20} y="536" width="34" height="34" fill="#a27a4c" />
+              ))}
+            </g>
+
+            <g>
+              <rect x="64" y="246" width="46" height="134" fill="#6f3d1d" />
+              <rect x="20" y="168" width="140" height="72" fill="#2f8f3a" />
+              <rect x="44" y="112" width="96" height="78" fill="#3fb34b" />
+              <rect x="88" y="190" width="96" height="86" fill="#2f8f3a" />
+              <rect x="552" y="268" width="48" height="112" fill="#6f3d1d" />
+              <rect x="504" y="196" width="146" height="74" fill="#2f8f3a" />
+              <rect x="530" y="136" width="104" height="82" fill="#3fb34b" />
+              <rect x="590" y="220" width="92" height="82" fill="#2f8f3a" />
+            </g>
+
+            <g opacity="0.9">
+              <rect x="76" y="76" width="64" height="32" fill="white" />
+              <rect x="140" y="98" width="88" height="32" fill="white" />
+              <rect x="484" y="66" width="80" height="32" fill="white" />
+              <rect x="564" y="88" width="58" height="32" fill="white" />
+            </g>
+          </svg>
+
+          <img
+            src={MINECRAFT_CHARACTER_SRC}
+            alt="Personagem inspirado em Minecraft segurando uma placa de código"
+            className="pointer-events-none absolute bottom-[-38px] left-1/2 z-10 h-[92%] max-h-[620px] w-auto -translate-x-1/2 object-contain drop-shadow-[12px_14px_0_rgba(17,24,51,0.22)]"
+          />
         </div>
       }
     />
