@@ -96,7 +96,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
         </>
       }
       right={
-        <div className="grid h-full w-full grid-rows-[126px_216px_minmax(0,1fr)] gap-5">
+        <div className="relative grid h-full w-full grid-rows-[126px_216px_minmax(0,1fr)] gap-5 overflow-visible">
           <div className="flex h-full flex-nowrap items-start gap-3 overflow-hidden">
             {blocks.map((block) => {
               const isDropped = droppedBlocks.some((droppedBlock) => droppedBlock.id === block.id);
@@ -153,7 +153,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             )}
           </div>
 
-          <div className="relative min-h-0 overflow-hidden rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
+          <div className="relative z-30 min-h-0 overflow-visible rounded-[28px] border-[5px] border-black bg-[linear-gradient(180deg,#d9efff_0%,#fffaf1_68%)] shadow-[7px_7px_0_rgba(0,0,0,1)]">
             <div className="absolute bottom-[34px] left-10 right-10 h-[10px] rounded-full border-t-[4px] border-black bg-[var(--sesc-gray-stone)]" />
             <div className="absolute bottom-[48px] left-[92px] h-[36px] w-[36px] rounded-full bg-[var(--sesc-yellow-flower)] opacity-70" />
             {!isCorrect && (
@@ -163,7 +163,7 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             )}
 
             <div
-              className={`absolute bottom-[26px] left-1/2 h-[242px] w-[310px] -translate-x-1/2 ${
+              className={`pointer-events-none absolute bottom-[26px] left-1/2 z-50 h-[242px] w-[310px] -translate-x-1/2 ${
                 isCorrect ? 'animate-scratch-cat-run-jump' : ''
               }`}
             >
