@@ -1,5 +1,6 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useEffect, useRef, useState } from 'react';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela07VideogameNasceProps {
@@ -143,24 +144,17 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
       layout={TELA07_LAYOUT}
       contentStageThemeClassName={TELA07_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <div>
-            <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[72px] font-black uppercase tracking-tight text-black">
-                O VIDEOGAME NASCE!
-              </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[72px] font-black uppercase tracking-tight text-[var(--sesc-yellow-flower)]">
-                O VIDEOGAME NASCE!
-              </span>
-              <span className="relative text-[72px] font-black uppercase tracking-tight text-[var(--sesc-blue-dark)]">
-                O VIDEOGAME NASCE!
-              </span>
-            </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">anos 1970-80</p>
-          </div>
+          <ScreenTitle
+            title="O videogame nasce!"
+            eyebrow="anos 1970-80"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[24px]"
+          />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Em <span className="text-[var(--sesc-orange)]">1972</span> apareceu o{' '}
               <span className="text-[var(--sesc-blue-dark)]">PONG</span>: uma bolinha quicando entre duas raquetes.

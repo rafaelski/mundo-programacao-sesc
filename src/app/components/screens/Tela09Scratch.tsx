@@ -1,5 +1,6 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela09ScratchProps {
@@ -63,36 +64,26 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
       layout={TELA09_LAYOUT}
       contentStageThemeClassName={TELA09_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <div>
-            <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[56px] font-black uppercase leading-tight tracking-tight text-black">
-                SCRATCH: PROGRAMAR BRINCANDO
-              </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[56px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-yellow-flower)]">
-                SCRATCH: PROGRAMAR BRINCANDO
-              </span>
-              <span className="relative text-[56px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-blue-dark)]">
-                SCRATCH: PROGRAMAR BRINCANDO
-              </span>
-            </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">2007</p>
-          </div>
+          <ScreenTitle
+            title="Scratch: programar brincando"
+            eyebrow="2007"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[24px]"
+            titleClassName="!text-[44px] whitespace-nowrap tracking-[-0.06em]"
+          />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Em 2007, um laboratório chamado <span className="text-[var(--sesc-orange)]">MIT</span> criou o{' '}
               <span className="text-[var(--sesc-pink)]">Scratch</span>: uma linguagem feita de blocos coloridos que você
-              arrasta.
-            </p>
-            <p>Nada de digitar código difícil.</p>
-            <p>
-              Hoje <span className="text-[var(--sesc-green-grass)]">milhões de crianças</span> no mundo todo fazem seus
+              arrasta. Nada de digitar código difícil. Hoje{' '}
+              <span className="text-[var(--sesc-green-grass)]">milhões de crianças</span> no mundo todo fazem seus
               primeiros jogos e animações com Scratch.
             </p>
           </div>
-
         </>
       }
       right={

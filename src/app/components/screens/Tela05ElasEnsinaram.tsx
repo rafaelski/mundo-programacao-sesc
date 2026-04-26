@@ -1,4 +1,5 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela05ElasEnsinaramProps {
@@ -23,25 +24,16 @@ export function Tela05ElasEnsinaram({ onPrevious, onNext }: Tela05ElasEnsinaramP
       onNext={onNext}
       layout={TELA05_LAYOUT}
       contentStageThemeClassName={TELA05_THEME.contentStageThemeClassName}
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <h2 className="relative inline-block">
-            <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-black">
-              ELAS ENSINARAM OS COMPUTADORES
-            </span>
-            <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-yellow-flower)]">
-              ELAS ENSINARAM OS COMPUTADORES
-            </span>
-            <span className="relative text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-blue-dark)]">
-              ELAS ENSINARAM OS COMPUTADORES
-            </span>
-          </h2>
+          <ScreenTitle title="Elas ensinaram os computadores" gapClassName="gap-1" />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Quem programava aquelas máquinas gigantes? Um grupo de <span className="text-[var(--sesc-pink)]">seis mulheres</span>:
             </p>
-            <p className="text-[28px]">
+            <p>
               <span className="text-[var(--sesc-blue-dark)]">Kathleen</span>, <span className="text-[var(--sesc-orange)]">Jean</span>,{' '}
               <span className="text-[var(--sesc-pink)]">Frances</span>, <span className="text-[var(--sesc-green-grass)]">Marlyn</span>,{' '}
               <span className="text-[var(--sesc-blue-dark)]">Ruth</span> e <span className="text-[var(--sesc-orange)]">Betty</span>:

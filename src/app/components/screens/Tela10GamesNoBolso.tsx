@@ -1,5 +1,6 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela10GamesNoBolsoProps {
@@ -26,24 +27,17 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
       onNext={onNext}
       layout={TELA10_LAYOUT}
       contentStageThemeClassName={TELA10_THEME.contentStageThemeClassName}
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <div>
-            <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[72px] font-black uppercase tracking-tight text-black">
-                GAMES NO BOLSO
-              </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[72px] font-black uppercase tracking-tight text-[var(--sesc-yellow-flower)]">
-                GAMES NO BOLSO
-              </span>
-              <span className="relative text-[72px] font-black uppercase tracking-tight text-[var(--sesc-blue-dark)]">
-                GAMES NO BOLSO
-              </span>
-            </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">anos 2000-2010</p>
-          </div>
+          <ScreenTitle
+            title="Games no bolso"
+            eyebrow="anos 2000-2010"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[24px]"
+          />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Os celulares viraram <span className="text-[var(--sesc-orange)]">minicomputadores</span>.
             </p>
@@ -65,7 +59,7 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
         </>
       }
       leftBottom={
-        <Card variant="you-knew">
+        <Card variant="you-knew" className="!py-7">
           O <span className="text-[var(--sesc-green-grass)]">Minecraft</span>, um dos jogos mais famosos do mundo, começou
           sendo feito por <span className="text-[var(--sesc-orange)]">uma pessoa só</span>: o programador sueco Markus
           Persson. Hoje mais de <span className="text-[var(--sesc-pink)]">300 milhões</span> de cópias já foram vendidas.
