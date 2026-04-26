@@ -5,7 +5,7 @@ interface Tela15AgoraESuaVezProps {
 }
 
 export const TELA15_THEME: ScreenThemeConfig = {
-  appBackgroundClassName: 'app-bg-tile app-bg-blue-dots',
+  appBackgroundClassName: 'app-bg-tile app-bg-final-gradient',
   contentStageThemeClassName: '',
 };
 
@@ -16,7 +16,7 @@ const FLOATING_MARKS = [
   { label: '3D', left: '82%', top: '63%', color: 'var(--sesc-blue-sky)', delay: '1.2s' },
 ];
 
-export function Tela15AgoraESuaVez(_props: Tela15AgoraESuaVezProps) {
+export function Tela15AgoraESuaVez({ onRestart }: Tela15AgoraESuaVezProps) {
   return (
     <div className="relative h-[1080px] w-[1920px] overflow-hidden bg-[radial-gradient(circle_at_20%_12%,rgba(249,200,67,0.7),transparent_25%),radial-gradient(circle_at_82%_78%,rgba(240,98,146,0.62),transparent_24%),linear-gradient(135deg,var(--sesc-yellow-flower)_0%,var(--sesc-orange)_35%,var(--sesc-pink)_100%)]">
       <div
@@ -121,6 +121,14 @@ export function Tela15AgoraESuaVez(_props: Tela15AgoraESuaVezProps) {
           Uma experiência interativa do SESC
         </p>
       </main>
+
+      <button
+        type="button"
+        onClick={onRestart}
+        className="absolute bottom-8 right-10 z-20 rounded-full border-[3px] border-white/70 bg-[rgba(255,250,241,0.72)] px-5 py-2 text-[16px] font-black uppercase tracking-[0.12em] text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(39,35,72,0.18)] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/90"
+      >
+        Reiniciar
+      </button>
     </div>
   );
 }

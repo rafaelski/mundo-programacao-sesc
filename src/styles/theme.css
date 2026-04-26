@@ -712,6 +712,25 @@
     background-position: 0 0;
   }
 
+  .app-bg-final-gradient {
+    background:
+      radial-gradient(circle at 20% 12%, rgba(249, 200, 67, 0.7), transparent 25%),
+      radial-gradient(circle at 82% 78%, rgba(240, 98, 146, 0.62), transparent 24%),
+      linear-gradient(135deg, var(--sesc-yellow-flower) 0%, var(--sesc-orange) 35%, var(--sesc-pink) 100%);
+  }
+
+  .app-bg-final-gradient::before {
+    inset: 0;
+    background-image: radial-gradient(circle at 22px 22px, rgba(255, 255, 255, 0.5) 2px, transparent 0);
+    background-size: 44px 44px;
+    opacity: 0.35;
+  }
+
+  .app-bg-final-gradient::after {
+    background: none;
+    opacity: 0;
+  }
+
   .app-bg-mint-hex {
     background-color: #9cd3b7;
   }
