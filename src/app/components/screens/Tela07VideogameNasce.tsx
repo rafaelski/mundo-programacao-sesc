@@ -110,25 +110,35 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
     };
   }, [ballVel, paddleY]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const updatePaddleFromPointer = (clientX: number, clientY: number) => {
     if (!gameRef.current) {
       return;
     }
 
     const rect = gameRef.current.getBoundingClientRect();
-    const y = e.clientY - rect.top;
+    const scaleX = GAME_WIDTH / rect.width;
+    const scaleY = GAME_HEIGHT / rect.height;
+    const x = (clientX - rect.left) * scaleX;
+    const y = (clientY - rect.top) * scaleY;
+
+    if (x < PLAYFIELD_LEFT || x > PLAYFIELD_RIGHT || y < PLAYFIELD_TOP || y > PLAYFIELD_BOTTOM) {
+      return;
+    }
+
     setPaddleY(Math.max(PLAYFIELD_TOP, Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, y - PADDLE_HEIGHT / 2)));
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    updatePaddleFromPointer(e.clientX, e.clientY);
+  };
+
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!gameRef.current || e.touches.length === 0) {
+    if (e.touches.length === 0) {
       return;
     }
 
     e.preventDefault();
-    const rect = gameRef.current.getBoundingClientRect();
-    const y = e.touches[0].clientY - rect.top;
-    setPaddleY(Math.max(PLAYFIELD_TOP, Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, y - PADDLE_HEIGHT / 2)));
+    updatePaddleFromPointer(e.touches[0].clientX, e.touches[0].clientY);
   };
 
   const cpuPaddleY = Math.max(
