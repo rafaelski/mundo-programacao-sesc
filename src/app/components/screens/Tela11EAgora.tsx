@@ -13,8 +13,8 @@ export const TELA11_THEME: ScreenThemeConfig = {
 
 const TELA11_LAYOUT = createStoryScreenLayout({
   columns: '0.92fr 1.08fr',
-  columnGap: '2.75rem',
-  leftBottomMinHeight: '10.5rem',
+  columnGap: '1.75rem',
+  leftBottomMinHeight: ''8.75rem',
 });
 
 const FUTURE_TOPICS = [
@@ -47,6 +47,9 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
       leftMain={
         <>
           <div>
+            
+            <p className="mt-3 text-[26px] font-bold leading-none text-[var(--sesc-orange)]">anos 2020</p>
+            
             <div className="mb-3 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
               <span className="text-[20px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
                 hoje
@@ -65,7 +68,6 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
               </span>
             </h2>
 
-            <p className="mt-3 text-[38px] font-bold leading-none text-[var(--sesc-gray-stone)]">anos 2020</p>
           </div>
 
           <div className="mt-5 grid gap-3">
