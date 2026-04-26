@@ -33,10 +33,10 @@ export function Tela08ComputadorEmCasa({ onPrevious, onNext }: Tela08ComputadorE
             eyebrow="anos 1990"
             gapClassName="gap-1"
             eyebrowClassName="text-[24px]"
-            titleClassName="!text-[58px]"
+            titleClassName="!text-[55px]"
           />
 
-          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
+          <div className="mt-5 space-y-2 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Nos anos 90, os computadores <span className="text-[var(--sesc-pink)]">encolheram</span> e entraram nas casas das pessoas.
             </p>
