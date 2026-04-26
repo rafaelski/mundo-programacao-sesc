@@ -16,6 +16,27 @@ const FLOATING_MARKS = [
   { label: '3D', left: '82%', top: '63%', color: 'var(--sesc-blue-sky)', delay: '1.2s' },
 ];
 
+const LOGO_CREDITS = [
+  {
+    label: 'realização',
+    src: `${import.meta.env.BASE_URL}images/logos/sesc.png`,
+    alt: 'SESC',
+    logoClassName: 'h-[42px] max-w-[150px]',
+  },
+  {
+    label: 'desenvolvimento',
+    src: `${import.meta.env.BASE_URL}images/logos/vitro.png`,
+    alt: 'VITRO',
+    logoClassName: 'h-[38px] max-w-[180px]',
+  },
+  {
+    label: 'direção',
+    src: `${import.meta.env.BASE_URL}images/logos/rafaelski.png`,
+    alt: 'Rafael Ski',
+    logoClassName: 'h-[34px] max-w-[150px]',
+  },
+];
+
 export function Tela15AgoraESuaVez({ onRestart }: Tela15AgoraESuaVezProps) {
   return (
     <div className="relative h-[1080px] w-[1920px] overflow-hidden bg-[radial-gradient(circle_at_20%_12%,rgba(249,200,67,0.7),transparent_25%),radial-gradient(circle_at_82%_78%,rgba(240,98,146,0.62),transparent_24%),linear-gradient(135deg,var(--sesc-yellow-flower)_0%,var(--sesc-orange)_35%,var(--sesc-pink)_100%)]">
@@ -97,21 +118,19 @@ export function Tela15AgoraESuaVez({ onRestart }: Tela15AgoraESuaVezProps) {
           </div>
         </section>
 
-        <section className="mt-7 flex h-[130px] w-[1100px] items-center justify-between rounded-[28px] border-[6px] border-dashed border-[rgba(39,35,72,0.72)] bg-white/58 px-9 shadow-[10px_10px_0_rgba(39,35,72,0.12)] backdrop-blur-sm">
-          <div>
-            <p className="text-[22px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
-              Espaço reservado
-            </p>
-            <p className="mt-1 text-[23px] font-bold text-black/70">Cartela de logos entra aqui depois.</p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            {Array.from({ length: 4 }).map((_, index) => (
-              <div
-                key={index}
-                className="flex h-[70px] w-[136px] items-center justify-center rounded-2xl border-[4px] border-[rgba(39,35,72,0.42)] bg-white/70 text-[17px] font-black uppercase tracking-[0.12em] text-[rgba(39,35,72,0.5)]"
-              >
-                logo
+        <section className="mt-7 flex h-[130px] w-[1100px] items-center justify-center rounded-[28px] border-[5px] border-white/35 bg-[rgba(9,60,92,0.58)] px-10 shadow-[10px_10px_0_rgba(39,35,72,0.18)] backdrop-blur-sm">
+          <div className="flex w-full items-center justify-center gap-9">
+            {LOGO_CREDITS.map((credit) => (
+              <div key={credit.label} className="flex min-w-0 items-center justify-center gap-4">
+                <span className="text-[15px] font-black uppercase tracking-[0.14em] text-white/78">
+                  {credit.label}
+                </span>
+                <img
+                  src={credit.src}
+                  alt={credit.alt}
+                  className={`${credit.logoClassName} object-contain`}
+                  draggable={false}
+                />
               </div>
             ))}
           </div>
