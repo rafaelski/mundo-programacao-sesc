@@ -1,5 +1,6 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { Card } from '../Card';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela08ComputadorEmCasaProps {
@@ -24,24 +25,18 @@ export function Tela08ComputadorEmCasa({ onPrevious, onNext }: Tela08ComputadorE
       onNext={onNext}
       layout={TELA08_LAYOUT}
       contentStageThemeClassName={TELA08_THEME.contentStageThemeClassName}
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <div>
-            <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-black">
-                UM COMPUTADOR EM CADA CASA
-              </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-yellow-flower)]">
-                UM COMPUTADOR EM CADA CASA
-              </span>
-              <span className="relative text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-blue-dark)]">
-                UM COMPUTADOR EM CADA CASA
-              </span>
-            </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">anos 1990</p>
-          </div>
+          <ScreenTitle
+            title="Um computador em cada casa"
+            eyebrow="anos 1990"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[24px]"
+            titleClassName="!text-[58px]"
+          />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Nos anos 90, os computadores <span className="text-[var(--sesc-pink)]">encolheram</span> e entraram nas casas das pessoas.
             </p>
@@ -61,7 +56,7 @@ export function Tela08ComputadorEmCasa({ onPrevious, onNext }: Tela08ComputadorE
         </>
       }
       leftBottom={
-        <Card variant="you-knew">
+        <Card variant="you-knew" className="!py-7">
           O primeiro site do mundo <span className="text-[var(--sesc-blue-dark)]">ainda está no ar</span>. Não tem imagens,
           só texto, e foi publicado em <span className="text-[var(--sesc-pink)]">1991</span>.
         </Card>

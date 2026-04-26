@@ -50,11 +50,11 @@ export function Tela10GamesNoBolso({ onPrevious, onNext }: Tela10GamesNoBolsoPro
             </p>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-6">
-            <div className="text-[72px]">🐦</div>
-            <div className="text-[72px]">🍬</div>
-            <div className="text-[72px]">👾</div>
-            <div className="text-[72px]">📱</div>
+          <div className="mt-3 flex flex-wrap gap-4">
+            <div className="text-[52px]">🐦</div>
+            <div className="text-[52px]">🍬</div>
+            <div className="text-[52px]">👾</div>
+            <div className="text-[52px]">📱</div>
           </div>
         </>
       }

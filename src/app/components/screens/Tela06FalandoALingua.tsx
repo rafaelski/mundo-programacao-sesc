@@ -1,5 +1,6 @@
 import type { ScreenThemeConfig } from '../../config/screenTheme';
 import { useState } from 'react';
+import { ScreenTitle } from '../ScreenTitle';
 import { StoryScreenFrame, createStoryScreenLayout } from '../story/StoryScreenFrame';
 
 interface Tela06FalandoALinguaProps {
@@ -55,52 +56,71 @@ export function Tela06FalandoALingua({ onPrevious, onNext }: Tela06FalandoALingu
       layout={TELA06_LAYOUT}
       contentStageThemeClassName={TELA06_THEME.contentStageThemeClassName}
       rightClassName="items-stretch"
+      leftMainClassName="pt-8"
       leftMain={
         <>
-          <div>
-            <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-black">
-                FALANDO A LÍNGUA DO COMPUTADOR
-              </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-yellow-flower)]">
-                FALANDO A LÍNGUA DO COMPUTADOR
-              </span>
-              <span className="relative text-[64px] font-black uppercase leading-tight tracking-tight text-[var(--sesc-blue-dark)]">
-                FALANDO A LÍNGUA DO COMPUTADOR
-              </span>
-            </h2>
-            <p className="mt-2 text-[48px] font-bold text-[var(--sesc-gray-stone)]">anos 1950-60</p>
-          </div>
+          <ScreenTitle
+            title="Falando a língua do computador"
+            eyebrow="anos 1950-60"
+            gapClassName="gap-1"
+            eyebrowClassName="text-[24px]"
+            titleClassName="!text-[58px]"
+          />
 
-          <div className="mt-8 space-y-6 text-[32px] font-bold leading-relaxed text-black">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Computadores não entendem português. Eles entendem{' '}
               <span className="text-[var(--sesc-orange)]">linguagens de programação</span>: jeitos especiais de escrever instruções.
             </p>
-            <p className="text-[28px] text-[var(--sesc-blue-dark)]">
+          </div>
+
+          <div className="mt-5 rounded-3xl border-[4px] border-[var(--sesc-ink)] bg-[rgba(255,250,241,0.86)] px-6 py-5 shadow-[0_12px_28px_rgba(39,35,72,0.14)]">
+            <p className="font-bold-text text-[24px] leading-[1.25] text-[var(--sesc-blue-dark)]">
               Clique nos cards ao lado para ver como diferentes linguagens dizem “Olá, mundo!”.
             </p>
           </div>
 
-          <div className="mt-8">
-            <div className="relative h-[200px] w-[300px]">
-              <svg viewBox="0 0 300 200" className="h-full w-full">
+          <div className="mt-5">
+            <div className="relative h-[178px] w-[330px]">
+              <svg viewBox="0 0 300 200" className="h-full w-full overflow-visible">
                 <path
-                  d="M 50 180 Q 80 120, 120 140 T 200 100 T 260 120"
-                  stroke="var(--sesc-green-grass)"
-                  strokeWidth="50"
+                  d="M 42 170 C 62 118, 105 118, 132 144 C 158 170, 198 155, 204 118 C 209 88, 236 76, 263 96"
+                  stroke="#1f2a44"
+                  strokeWidth="58"
                   fill="none"
                   strokeLinecap="round"
                 />
-                <circle cx="260" cy="120" r="40" fill="var(--sesc-green-grass)" stroke="black" strokeWidth="5" />
-                <circle cx="250" cy="110" r="8" fill="white" stroke="black" strokeWidth="3" />
-                <circle cx="270" cy="110" r="8" fill="white" stroke="black" strokeWidth="3" />
-                <circle cx="252" cy="110" r="4" fill="black" />
-                <circle cx="272" cy="110" r="4" fill="black" />
-                <path d="M 280 130 L 310 130 M 310 130 L 305 125 M 310 130 L 305 135" stroke="#ff0000" strokeWidth="4" fill="none" />
-                <circle cx="150" cy="140" r="8" fill="var(--sesc-yellow-flower)" opacity="0.6" />
-                <circle cx="180" cy="115" r="8" fill="var(--sesc-yellow-flower)" opacity="0.6" />
-                <circle cx="210" cy="105" r="8" fill="var(--sesc-yellow-flower)" opacity="0.6" />
+                <path
+                  d="M 42 170 C 62 118, 105 118, 132 144 C 158 170, 198 155, 204 118 C 209 88, 236 76, 263 96"
+                  stroke="var(--sesc-green-grass)"
+                  strokeWidth="48"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M 66 154 C 88 130, 110 134, 128 154 C 154 181, 206 154, 210 112"
+                  stroke="#9bd56a"
+                  strokeWidth="16"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.9"
+                />
+                <circle cx="263" cy="96" r="40" fill="var(--sesc-green-grass)" stroke="black" strokeWidth="5" />
+                <circle cx="251" cy="86" r="9" fill="white" stroke="black" strokeWidth="3" />
+                <circle cx="273" cy="86" r="9" fill="white" stroke="black" strokeWidth="3" />
+                <circle cx="253" cy="87" r="4" fill="black" />
+                <circle cx="275" cy="87" r="4" fill="black" />
+                <path d="M 260 103 C 266 109, 273 109, 279 103" stroke="black" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <path d="M 294 103 L 323 103 M 323 103 L 316 96 M 323 103 L 316 110" stroke="#e7354c" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="96" cy="126" r="8" fill="var(--sesc-yellow-flower)" opacity="0.75" />
+                <circle cx="132" cy="146" r="8" fill="var(--sesc-yellow-flower)" opacity="0.75" />
+                <circle cx="176" cy="146" r="8" fill="var(--sesc-yellow-flower)" opacity="0.75" />
+                <text x="54" y="98" fill="var(--sesc-blue-dark)" fontSize="20" fontWeight="900">
+                  {'{}'}
+                </text>
+                <text x="178" y="80" fill="var(--sesc-blue-dark)" fontSize="22" fontWeight="900">
+                  ;
+                </text>
               </svg>
             </div>
           </div>

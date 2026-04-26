@@ -14,7 +14,7 @@ export const TELA11_THEME: ScreenThemeConfig = {
 const TELA11_LAYOUT = createStoryScreenLayout({
   columns: '0.92fr 1.08fr',
   columnGap: '2.75rem',
-  leftBottomMinHeight: '12rem',
+  leftBottomMinHeight: '10.5rem',
 });
 
 const FUTURE_TOPICS = [
@@ -47,52 +47,52 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
       leftMain={
         <>
           <div>
-            <div className="mb-4 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-6 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
-              <span className="text-[22px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
+            <div className="mb-3 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
+              <span className="text-[20px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
                 hoje
               </span>
             </div>
 
             <h2 className="relative inline-block">
-              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[78px] font-black uppercase leading-[0.95] tracking-tight text-black">
+              <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] transform text-[68px] font-black uppercase leading-[0.95] tracking-tight text-black">
                 E AGORA?
               </span>
-              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[78px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-yellow-flower)]">
+              <span className="absolute inset-0 translate-x-[3px] translate-y-[3px] transform text-[68px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-yellow-flower)]">
                 E AGORA?
               </span>
-              <span className="relative text-[78px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-blue-dark)]">
+              <span className="relative text-[68px] font-black uppercase leading-[0.95] tracking-tight text-[var(--sesc-blue-dark)]">
                 E AGORA?
               </span>
             </h2>
 
-            <p className="mt-3 text-[44px] font-bold leading-none text-[var(--sesc-gray-stone)]">anos 2020</p>
+            <p className="mt-3 text-[38px] font-bold leading-none text-[var(--sesc-gray-stone)]">anos 2020</p>
           </div>
 
-          <div className="mt-7 grid gap-4">
+          <div className="mt-5 grid gap-3">
             {FUTURE_TOPICS.map((topic) => (
               <div
                 key={topic.title}
-                className="rounded-3xl border-[4px] border-black bg-white/72 px-6 py-4 shadow-[5px_5px_0_rgba(39,35,72,0.12)]"
+                className="rounded-3xl border-[4px] border-black bg-white/72 px-5 py-3 shadow-[5px_5px_0_rgba(39,35,72,0.12)]"
               >
-                <p className="text-[23px] font-black uppercase tracking-[0.1em]" style={{ color: topic.color }}>
+                <p className="text-[19px] font-black uppercase tracking-[0.1em]" style={{ color: topic.color }}>
                   {topic.title}
                 </p>
-                <p className="mt-1 text-[25px] font-bold leading-snug text-black">{topic.text}</p>
+                <p className="mt-1 text-[22px] font-bold leading-snug text-black">{topic.text}</p>
               </div>
             ))}
           </div>
         </>
       }
       leftBottom={
-        <div className="grid h-full grid-cols-[1fr_auto] items-center gap-5 rounded-3xl border-[5px] border-black bg-[var(--sesc-yellow-flower)] p-7 shadow-[8px_8px_0_rgba(39,35,72,0.2)]">
-          <p className="text-[31px] font-black uppercase leading-tight text-[var(--sesc-blue-dark)]">
+        <div className="grid h-full grid-cols-[1fr_auto] items-center gap-4 rounded-3xl border-[5px] border-black bg-[var(--sesc-yellow-flower)] p-6 shadow-[8px_8px_0_rgba(39,35,72,0.2)]">
+          <p className="text-[27px] font-black uppercase leading-tight text-[var(--sesc-blue-dark)]">
             Se você pudesse programar qualquer coisa no mundo, o que seria?
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             {['jogo', 'arte', 'robô', 'ideia'].map((item, index) => (
               <span
                 key={item}
-                className="rounded-2xl border-[3px] border-black bg-white px-4 py-2 text-center text-[20px] font-black uppercase tracking-[0.08em] text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(39,35,72,0.12)]"
+                className="rounded-2xl border-[3px] border-black bg-white px-4 py-2 text-center text-[18px] font-black uppercase tracking-[0.08em] text-[var(--sesc-blue-dark)] shadow-[4px_4px_0_rgba(39,35,72,0.12)]"
                 style={{ transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)` }}
               >
                 {item}

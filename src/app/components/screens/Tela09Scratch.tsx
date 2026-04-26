@@ -75,14 +75,36 @@ export function Tela09Scratch({ onPrevious, onNext }: Tela09ScratchProps) {
             titleClassName="!text-[44px] whitespace-nowrap tracking-[-0.06em]"
           />
 
-          <div className="mt-5 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
+          <div className="mt-5 space-y-3 font-bold-text text-[26px] leading-[1.34] text-[var(--sesc-ink)]">
             <p>
               Em 2007, um laboratório chamado <span className="text-[var(--sesc-orange)]">MIT</span> criou o{' '}
               <span className="text-[var(--sesc-pink)]">Scratch</span>: uma linguagem feita de blocos coloridos que você
-              arrasta. Nada de digitar código difícil. Hoje{' '}
+              arrasta.
+            </p>
+            <p>Nada de digitar código difícil.</p>
+            <p>
+              Hoje{' '}
               <span className="text-[var(--sesc-green-grass)]">milhões de crianças</span> no mundo todo fazem seus
               primeiros jogos e animações com Scratch.
             </p>
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-4">
+            {[
+              { icon: '▶', label: 'ação', color: 'var(--sesc-yellow-flower)' },
+              { icon: '↑', label: 'pulo', color: 'var(--sesc-pink)' },
+              { icon: '{}', label: 'blocos', color: 'var(--sesc-blue-dark)' },
+              { icon: '★', label: 'jogo', color: 'var(--sesc-green-grass)' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex h-[62px] w-[76px] rotate-[-2deg] items-center justify-center rounded-2xl border-[4px] border-black text-[28px] font-black text-white shadow-[5px_5px_0_rgba(39,35,72,0.18)]"
+                style={{ backgroundColor: item.color }}
+                aria-label={item.label}
+              >
+                {item.icon}
+              </div>
+            ))}
           </div>
         </>
       }
