@@ -14,7 +14,7 @@ export const TELA11_THEME: ScreenThemeConfig = {
 const TELA11_LAYOUT = createStoryScreenLayout({
   columns: '0.92fr 1.08fr',
   columnGap: '1.75rem',
-  leftBottomMinHeight: '7.75rem',
+  leftBottomMinHeight: '5.75rem',
 });
 
 const FUTURE_TOPICS = [
@@ -48,9 +48,9 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
         <>
           <div>
             
-            <p className="mt-3 text-[26px] font-bold leading-none text-[var(--sesc-orange)]">anos T2020</p>
+            <p className="mt-0 text-[25px] font-bold leading-none text-[var(--sesc-orange)]">anos 2020</p>
             
-            <div className="mb-3 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
+            <div className="mb-2 inline-flex rotate-[-2deg] rounded-full border-[4px] border-black bg-[var(--sesc-yellow-flower)] px-5 py-2 shadow-[5px_5px_0_rgba(0,0,0,0.18)]">
               <span className="text-[20px] font-black uppercase tracking-[0.16em] text-[var(--sesc-blue-dark)]">
                 hoje
               </span>
@@ -70,7 +70,7 @@ export function Tela11EAgora({ onPrevious, onNext }: Tela11EAgoraProps) {
 
           </div>
 
-          <div className="mt-5 grid gap-3">
+          <div className="mt-3 grid gap-3">
             {FUTURE_TOPICS.map((topic) => (
               <div
                 key={topic.title}
