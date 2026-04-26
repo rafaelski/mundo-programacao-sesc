@@ -135,10 +135,6 @@ export function Tela15AgoraESuaVez({ onRestart }: Tela15AgoraESuaVezProps) {
             ))}
           </div>
         </section>
-
-        <p className="mt-4 text-center text-[20px] font-black uppercase tracking-[0.16em] text-white drop-shadow-[3px_3px_0_rgba(39,35,72,0.55)]">
-          Uma experiência interativa do SESC
-        </p>
       </main>
 
       <button
