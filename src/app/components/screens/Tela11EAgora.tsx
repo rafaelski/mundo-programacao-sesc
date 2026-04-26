@@ -14,7 +14,9 @@ export const TELA11_THEME: ScreenThemeConfig = {
 const TELA11_LAYOUT = createStoryScreenLayout({
   columns: '0.92fr 1.08fr',
   columnGap: '1.75rem',
-  leftBottomMinHeight: '5.75rem',
+  leftBottomMinHeight: '10.75rem',
+  contentTopPadding: '9.5rem',
+  contentBottomSafeArea: '9rem',
 });
 
 const FUTURE_TOPICS = [
