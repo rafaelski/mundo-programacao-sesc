@@ -34,13 +34,21 @@ const PLAYER_PADDLE_X = PLAYFIELD_LEFT + PADDLE_INSET;
 const CPU_PADDLE_X = PLAYFIELD_RIGHT - PADDLE_INSET - PADDLE_WIDTH;
 const BALL_START_X = PLAYFIELD_LEFT + PLAYFIELD_WIDTH / 2 - BALL_SIZE / 2;
 const BALL_START_Y = PLAYFIELD_TOP + PLAYFIELD_HEIGHT / 2 - BALL_SIZE / 2;
+const PADDLE_START_Y = PLAYFIELD_TOP + PLAYFIELD_HEIGHT / 2 - PADDLE_HEIGHT / 2;
+const CPU_PADDLE_SPEED = 2.45;
+const CPU_AIM_DRIFT = 34;
+
+const clampPaddleY = (value: number) =>
+  Math.max(PLAYFIELD_TOP, Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, value));
 
 export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasceProps) {
   const [ballPos, setBallPos] = useState({ x: BALL_START_X, y: BALL_START_Y });
   const [ballVel, setBallVel] = useState({ x: 4, y: 3 });
-  const [paddleY, setPaddleY] = useState(PLAYFIELD_TOP + PLAYFIELD_HEIGHT / 2 - PADDLE_HEIGHT / 2);
+  const [paddleY, setPaddleY] = useState(PADDLE_START_Y);
+  const [cpuPaddleY, setCpuPaddleY] = useState(PADDLE_START_Y);
   const [score, setScore] = useState({ player: 0, cpu: 0 });
   const gameRef = useRef<HTMLDivElement>(null);
+  const cpuPaddleYRef = useRef(PADDLE_START_Y);
   const animationRef = useRef<number>();
 
   useEffect(() => {
@@ -66,16 +74,23 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
           newX = PLAYER_PADDLE_X + PADDLE_WIDTH;
         }
 
-        const cpuPaddleY = Math.max(
-          PLAYFIELD_TOP,
-          Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, newY - PADDLE_HEIGHT / 2),
+        const cpuTargetY =
+          newVelX > 0
+            ? newY + BALL_SIZE / 2 - PADDLE_HEIGHT / 2 + Math.sin(performance.now() / 420) * CPU_AIM_DRIFT
+            : PADDLE_START_Y;
+        const cpuDistance = cpuTargetY - cpuPaddleYRef.current;
+        const cpuMaxStep = newVelX > 0 ? CPU_PADDLE_SPEED : CPU_PADDLE_SPEED * 0.55;
+        const nextCpuPaddleY = clampPaddleY(
+          cpuPaddleYRef.current + Math.max(-cpuMaxStep, Math.min(cpuMaxStep, cpuDistance)),
         );
+        cpuPaddleYRef.current = nextCpuPaddleY;
+        setCpuPaddleY(nextCpuPaddleY);
 
         if (
           newX + BALL_SIZE >= CPU_PADDLE_X &&
           newX <= CPU_PADDLE_X + PADDLE_WIDTH &&
-          newY + BALL_SIZE >= cpuPaddleY &&
-          newY <= cpuPaddleY + PADDLE_HEIGHT
+          newY + BALL_SIZE >= nextCpuPaddleY &&
+          newY <= nextCpuPaddleY + PADDLE_HEIGHT
         ) {
           newVelX = -Math.abs(newVelX);
           newX = CPU_PADDLE_X - BALL_SIZE;
@@ -125,7 +140,7 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
       return;
     }
 
-    setPaddleY(Math.max(PLAYFIELD_TOP, Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, y - PADDLE_HEIGHT / 2)));
+    setPaddleY(clampPaddleY(y - PADDLE_HEIGHT / 2));
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -140,11 +155,6 @@ export function Tela07VideogameNasce({ onPrevious, onNext }: Tela07VideogameNasc
     e.preventDefault();
     updatePaddleFromPointer(e.touches[0].clientX, e.touches[0].clientY);
   };
-
-  const cpuPaddleY = Math.max(
-    PLAYFIELD_TOP,
-    Math.min(PLAYFIELD_BOTTOM - PADDLE_HEIGHT, ballPos.y - PADDLE_HEIGHT / 2),
-  );
 
   return (
     <StoryScreenFrame
